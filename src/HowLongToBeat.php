@@ -38,12 +38,31 @@ class HowLongToBeat
 
     public function get($id)
     {
+        $crawler = $this->client->request('GET', 'https://howlongtobeat.com/game?id=' . $id);
+
+        $labels = [
+            'Developers' => 'Developer',
+            'Publishers' => 'Publisher',
+            'Genres' => 'Genre',
+        ];
+
+        $profileInfo = $crawler->filter('.profile_info')->each(function ($node) use ($labels) {
+            $key = str_replace(':', '', $node->filter('strong')->text());
+            $key = isset($labels[$key]) ? $labels[$key] : $key;
+            return [
+                $key => explode(': ', $node->text())[1]
+            ];
+        });
+
+        $profileInfo = $this->flattenArray($profileInfo);
+
         return [
             'id' => $id,
-            'image' => '',
-            'description' => '',
-            'developer' => '',
-            'publisher' => '',
+            'image' => $crawler->filter('.game_image img')->attr('src'),
+            'description' => $crawler->filter('.in.back_primary > p')->text(),
+            'developer' => $profileInfo['Developer'],
+            'publisher' => $profileInfo['Publisher'],
+            'last_update' => $profileInfo['Updated'],
             'playable_on' => [],
             'genres' => [],
             'stats' => [],
@@ -51,7 +70,6 @@ class HowLongToBeat
                 'na' => '',
                 'eu' => '',
             ],
-            'last_update' => '',
             'general' => [
                 'main_story' => '',
                 'main_and_extra' => '',
@@ -92,5 +110,14 @@ class HowLongToBeat
             'multiplayer' => [],
             'platform' => [],
         ];
+    }
+
+    protected function flattenArray($array)
+    {
+        $return = array();
+
+        array_walk_recursive($array, function($x, $key) use (&$return) { $return[$key] = $x; });
+
+        return $return;
     }
 }
