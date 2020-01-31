@@ -8,6 +8,9 @@ class HowLongToBeat
 {
     protected $client;
 
+    /**
+     * HowLongToBeat constructor.
+     */
     public function __construct()
     {
         $this->client = new Client();
@@ -54,70 +57,67 @@ class HowLongToBeat
             ];
         });
 
-        $profileInfo = $this->flattenArray($profileInfo);
+        $profileInfo = Utilities::flattenArray($profileInfo);
 
-        return [
+        $profileDetails = $crawler->filter('.profile_details ul li')->each(function ($node) {
+            $text = explode(' ', $node->text());
+            $key = $text[1];
+            $value = str_replace(['.', 'K'], ['', '00'], $text[0]);
+            return [$key => $value];
+        });
+
+        $profileDetails = Utilities::flattenArray($profileDetails);
+
+        $gameTimes = $crawler->filter('.game_times')->each(function ($node) {
+            return [
+                'main_story' => $node->filter('li:nth-child(1) div')->text(),
+                'main_and_extra' => $node->filter('li:nth-child(2) div')->text(),
+                'completionist' => $node->filter('li:nth-child(3) div')->text(),
+                'all_styles' => $node->filter('li:nth-child(4) div')->text(),
+            ];
+        });
+
+        $tables = [];
+
+        $crawler->filter('.game_main_table')->each(function ($node) use (&$tables) {
+            $key = $node->filter('thead > tr > td:first-child')->text();
+            $columns = $node->filter('thead > tr > td:not(:first-child)')->each(function ($n) {
+                return $n->text();
+            });
+            $rows = $node->filter('tbody > tr > td:first-child')->each(function ($n) {
+                return $n->text();
+            });
+            $tables[$key] = [];
+
+            foreach ($rows as $i => $row) {
+                $node->filter(".spreadsheet")->each(function ($n) use ($key, &$tables, $columns) {
+                    $title = $n->filter('td:first-child')->text();
+                    $data = $n->filter('td:not(:first-child)')->each(function ($nn) use ($key, &$tables, $columns) {
+                        return $nn->text();
+                    });
+                    $tables[$key][$title] = array_combine($columns, $data);
+                });
+            }
+        });
+
+        return array_merge([
             'id' => $id,
             'image' => $crawler->filter('.game_image img')->attr('src'),
             'description' => $crawler->filter('.in.back_primary > p')->text(),
             'developer' => $profileInfo['Developer'],
             'publisher' => $profileInfo['Publisher'],
             'last_update' => $profileInfo['Updated'],
-            'playable_on' => [],
-            'genres' => [],
-            'stats' => [],
-            'release_date' => [
-                'na' => '',
-                'eu' => '',
+            'playable_on' => $profileInfo['Playable On'],
+            'genres' => $profileInfo['Genre'],
+            'stats' => [
+                'playing' => $profileDetails['Playing'],
+                'backlogs' => $profileDetails['Backlogs'],
+                'replays' => $profileDetails['Replays'],
+                'retired' => $profileDetails['Retired'],
+                'rating' => $profileDetails['Rating'],
+                'beat' => $profileDetails['Beat'],
             ],
-            'general' => [
-                'main_story' => '',
-                'main_and_extra' => '',
-                'completionist' => '',
-                'all_styles' => '',
-            ],
-            'single_player' => [
-                'main_story' => [
-                    'polled' => '',
-                    'average' => '',
-                    'median' => '',
-                    'rushed' => '',
-                    'leisure' => '',
-                ],
-                'main_and_extra' => [
-                    'polled' => '',
-                    'average' => '',
-                    'median' => '',
-                    'rushed' => '',
-                    'leisure' => '',
-                ],
-                'completionists' => [
-                    'polled' => '',
-                    'average' => '',
-                    'median' => '',
-                    'rushed' => '',
-                    'leisure' => '',
-                ],
-                'all_playstyles' => [
-                    'polled' => '',
-                    'average' => '',
-                    'median' => '',
-                    'rushed' => '',
-                    'leisure' => '',
-                ]
-            ],
-            'speedrun' => [],
-            'multiplayer' => [],
-            'platform' => [],
-        ];
-    }
-
-    protected function flattenArray($array)
-    {
-        $return = array();
-
-        array_walk_recursive($array, function($x, $key) use (&$return) { $return[$key] = $x; });
-
-        return $return;
+            'general' => $gameTimes,
+        ], $tables);
     }
 }
