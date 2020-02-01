@@ -21,14 +21,6 @@ jobs:
     
     - name: Run PHPUnit
       run: ./vendor/bin/phpunit tests
-      
-    - name: Code Climate Test Reporter
-      uses: aktions/codeclimate-test-reporter@v1.0.3
-      with:
-        # The test reporter ID. This is a write-only ID that can only post test reports.
-        codeclimate-test-reporter-id: b0195035d3bd681436f6710fc5b2d171170bffe036166d258b833f3c6a2074c3
-        # The test reporter version. By default "latest" is used. If not explicitly set in semver format, caching will not work.
-        command: after-build --coverage-input-type clover
 
     # Add a test script to composer.json, for instance: "test": "vendor/bin/phpunit"
     # Docs: https://getcomposer.org/doc/articles/scripts.md
