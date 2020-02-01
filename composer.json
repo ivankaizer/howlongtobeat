@@ -10,7 +10,7 @@
     "keywords": ["how long to beat", "hl2b", "howlongtobeat"],
     "homepage": "https://github.com/ivankayzer/howlongtobeat",
     "license": "MIT",
-    "description": "How long to beat provides information games and how long it will take to finish them. This library is a simple wrapper to fetch data from How long to beat website",
+    "description": "howlongtobeat.com provides information about games and how long it will take to finish them. This library is a simple wrapper to fetch data from Howlongtobeat website",
     "require": {
         "fabpot/goutte": "^4.0"
     },
