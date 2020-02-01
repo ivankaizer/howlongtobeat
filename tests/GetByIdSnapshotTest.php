@@ -21,30 +21,30 @@ class GetByIdSnapshotTest extends \PHPUnit\Framework\TestCase
 
         $response = $hl2b->get(10270);
 
-        $this->assertEquals(10270, $response['id']);
-        $this->assertEquals('https://howlongtobeat.com/gameimages/256px-TW3_Wild_Hunt_logo.png', $response['image']);
-        $this->assertEquals('In The Witcher 3 an ancient evil stirs, awakening. An evil that sows terror and abducts the young. An evil whose name is spoken only in whispers: the Wild Hunt. Led by four wraith commanders, this ravenous band of phantoms is the ultimate predator and has been for centuries. Its quarry: humans.', $response['description']);
-        $this->assertEquals('CD Projekt RED', $response['developer']);
-        $this->assertEquals('CD Projekt, Warner Bros. Interactive Entertainment', $response['publisher']);
-        $this->assertEquals('34 Mins Ago', $response['last_update']);
-        $this->assertEquals('Third-Person, Action, Open World, Role-Playing', $response['genres']);
+        $this->assertEquals(10270, $response['ID']);
+        $this->assertEquals('https://howlongtobeat.com/gameimages/256px-TW3_Wild_Hunt_logo.png', $response['Image']);
+        $this->assertEquals('In The Witcher 3 an ancient evil stirs, awakening. An evil that sows terror and abducts the young. An evil whose name is spoken only in whispers: the Wild Hunt. Led by four wraith commanders, this ravenous band of phantoms is the ultimate predator and has been for centuries. Its quarry: humans.', $response['Description']);
+        $this->assertEquals('CD Projekt RED', $response['Developer']);
+        $this->assertEquals('CD Projekt, Warner Bros. Interactive Entertainment', $response['Publisher']);
+        $this->assertEquals('34 Mins Ago', $response['Last Update']);
+        $this->assertEquals('Third-Person, Action, Open World, Role-Playing', $response['Genres']);
         $this->assertEquals([
-            'playing' => '3300',
-            'backlogs' => '9300',
-            'replays' => '1200',
-            'retired' => '2%',
-            'rating' => '95%',
-            'beat' => '8200',
-        ], $response['stats']);
+            'Playing' => '3300',
+            'Backlogs' => '9300',
+            'Replays' => '1200',
+            'Retired' => '2%',
+            'Rating' => '95%',
+            'Beat' => '8200',
+        ], $response['Statistics']);
 
         $this->assertEquals([
             [
-                'main_story' => '51 Hours',
-                'main_and_extra' => '103 Hours',
-                'completionist' => '173 Hours',
-                'all_styles' => '101 Hours',
+                'Main Story' => '51 Hours',
+                'Main + Extras' => '103 Hours',
+                'Completionist' => '173 Hours',
+                'All Styles' => '101 Hours',
             ]
-        ], $response['general']);
+        ], $response['Summary']);
 
         $this->assertEquals([
             'Main Story' => [

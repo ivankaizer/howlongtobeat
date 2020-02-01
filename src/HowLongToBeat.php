@@ -71,10 +71,10 @@ class HowLongToBeat
 
         $gameTimes = $crawler->filter('.game_times')->each(function ($node) {
             return [
-                'main_story' => $node->filter('li:nth-child(1) div')->text(),
-                'main_and_extra' => $node->filter('li:nth-child(2) div')->text(),
-                'completionist' => $node->filter('li:nth-child(3) div')->text(),
-                'all_styles' => $node->filter('li:nth-child(4) div')->text(),
+                'Main Story' => $node->filter('li:nth-child(1) div')->text(),
+                'Main + Extras' => $node->filter('li:nth-child(2) div')->text(),
+                'Completionist' => $node->filter('li:nth-child(3) div')->text(),
+                'All Styles' => $node->filter('li:nth-child(4) div')->text(),
             ];
         });
 
@@ -102,23 +102,23 @@ class HowLongToBeat
         });
 
         return array_merge([
-            'id' => $id,
-            'image' => $crawler->filter('.game_image img')->attr('src'),
-            'description' => $crawler->filter('.in.back_primary > p')->text(),
-            'developer' => $profileInfo['Developer'],
-            'publisher' => $profileInfo['Publisher'],
-            'last_update' => $profileInfo['Updated'],
-            'playable_on' => $profileInfo['Playable On'],
-            'genres' => $profileInfo['Genre'],
-            'stats' => [
-                'playing' => $profileDetails['Playing'],
-                'backlogs' => $profileDetails['Backlogs'],
-                'replays' => $profileDetails['Replays'],
-                'retired' => $profileDetails['Retired'],
-                'rating' => $profileDetails['Rating'],
-                'beat' => $profileDetails['Beat'],
+            'ID' => $id,
+            'Image' => $crawler->filter('.game_image img')->attr('src'),
+            'Description' => $crawler->filter('.in.back_primary > p')->text(),
+            'Developer' => $profileInfo['Developer'],
+            'Publisher' => $profileInfo['Publisher'],
+            'Last Update' => $profileInfo['Updated'],
+            'Playable On' => $profileInfo['Playable On'],
+            'Genres' => $profileInfo['Genre'],
+            'Statistics' => [
+                'Playing' => $profileDetails['Playing'],
+                'Backlogs' => $profileDetails['Backlogs'],
+                'Replays' => $profileDetails['Replays'],
+                'Retired' => $profileDetails['Retired'],
+                'Rating' => $profileDetails['Rating'],
+                'Beat' => $profileDetails['Beat'],
             ],
-            'general' => $gameTimes,
+            'Summary' => $gameTimes,
         ], $tables);
     }
 }
