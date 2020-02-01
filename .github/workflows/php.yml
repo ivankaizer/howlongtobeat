@@ -21,6 +21,9 @@ jobs:
     
     - name: Run PHPUnit
       run: ./vendor/bin/phpunit tests
+      
+    - name: Code Climate Coverage Action
+      uses: paambaati/codeclimate-action@v2.4.0
 
     # Add a test script to composer.json, for instance: "test": "vendor/bin/phpunit"
     # Docs: https://getcomposer.org/doc/articles/scripts.md
