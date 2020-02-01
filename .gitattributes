@@ -1,2 +1,2 @@
-tests/snapshots linguist-vendored
-tests/templates linguist-vendored
+tests/snapshots/* linguist-vendored
+tests/templates/* linguist-vendored
