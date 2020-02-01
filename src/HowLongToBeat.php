@@ -17,9 +17,14 @@ class HowLongToBeat
         $this->client = $client ?? new Client();
     }
 
-    public function search($query)
+    /**
+     * @param $query
+     * @param int $page
+     * @return array
+     */
+    public function search($query, $page = 1)
     {
-        $crawler = $this->client->request('POST', 'https://howlongtobeat.com/search_results?page=1', [
+        $crawler = $this->client->request('POST', "https://howlongtobeat.com/search_results?page={$page}", [
             'queryString' => $query,
             't' => 'games',
             'sorthead' => 'popular',
@@ -30,16 +35,18 @@ class HowLongToBeat
             $node = new ListNodeCrawler($node);
 
             return [
-                'id' => $node->getId(),
-                'image' => $node->getImage(),
-                'name' => $node->getName(),
-                'main_story' => $node->getMainStoryTime(),
-                'main_and_extra' => $node->getMainAndExtraTime(),
-                'completionist' => $node->getCompletionistTime(),
+                'ID' => $node->getId(),
+                'Image' => $node->getImage(),
+                'Title' => $node->getTitle(),
+                'Time' => $node->getTime()
             ];
         });
     }
 
+    /**
+     * @param $id
+     * @return array
+     */
     public function get($id)
     {
         $crawler = $this->client->request('GET', 'https://howlongtobeat.com/game?id=' . $id);

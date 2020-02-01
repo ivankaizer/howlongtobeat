@@ -1,9 +1,15 @@
 <?php
 
 use ivankayzer\HowLongToBeat\HowLongToBeat;
+use Symfony\Component\DomCrawler\Crawler;
 
 class SearchTest extends \PHPUnit\Framework\TestCase
 {
+    public function tearDown()
+    {
+        Mockery::close();
+    }
+
     /** @test */
     public function it_searches_for_a_game()
     {
@@ -21,12 +27,12 @@ class SearchTest extends \PHPUnit\Framework\TestCase
 
         $results = $hl2b->search('The Witcher 3: Wild Hunt - Hearts of Stone');
 
-        $this->assertEquals(30003, $results[0]['id']);
-        $this->assertEquals('The Witcher 3: Wild Hunt - Hearts of Stone', $results[0]['name']);
-        $this->assertEquals('https://howlongtobeat.com/gameimages/The-Witcher-3-Wild-Hunt-Hearts-of-Stone-Expansion-Teaser.jpg', $results[0]['image']);
-        $this->assertEquals('10 Hours', $results[0]['main_story']);
-        $this->assertEquals('14 Hours', $results[0]['main_and_extra']);
-        $this->assertEquals('19 Hours', $results[0]['completionist']);
+        $this->assertEquals(30003, $results[0]['ID']);
+        $this->assertEquals('The Witcher 3: Wild Hunt - Hearts of Stone', $results[0]['Title']);
+        $this->assertEquals('https://howlongtobeat.com/gameimages/The-Witcher-3-Wild-Hunt-Hearts-of-Stone-Expansion-Teaser.jpg', $results[0]['Image']);
+        $this->assertEquals('10 Hours', $results[0]['Time']['Main Story']);
+        $this->assertEquals('14 Hours', $results[0]['Time']['Main + Extra']);
+        $this->assertEquals('19 Hours', $results[0]['Time']['Completionist']);
     }
 
     /** @test */
@@ -36,9 +42,59 @@ class SearchTest extends \PHPUnit\Framework\TestCase
 
         $results = $hl2b->search('Fable legends');
 
-        $this->assertEquals(21275, $results[0]['id']);
-        $this->assertNull($results[0]['main_story']);
-        $this->assertNull($results[0]['main_and_extra']);
-        $this->assertNull($results[0]['completionist']);
+        $this->assertEquals(21275, $results[0]['ID']);
+        $this->assertNull($results[0]['Time']['Main Story']);
+        $this->assertNull($results[0]['Time']['Main + Extra']);
+        $this->assertNull($results[0]['Time']['Completionist']);
+    }
+
+    /** @test */
+    public function card_can_have_main_story_main_and_completionist_fields()
+    {
+        $client = Mockery::mock('Goutte\Client');
+        $client->shouldReceive('request')
+            ->times(1)
+            ->andReturn(new Crawler(file_get_contents(__DIR__ . '/templates/default_card.html')));
+
+        $hl2b = new HowLongToBeat($client);
+
+        $result = $hl2b->search('Lego');
+
+        $this->assertEquals([
+            'ID' => '5256',
+            'Image' => 'https://howlongtobeat.com/gameimages/Lego_Pirates_of_the_Caribbean.jpg',
+            'Title' => 'Lego Pirates of the Caribbean: The Video Game',
+            'Time' => [
+                'Main Story' => '8.5 Hours',
+                'Main + Extra' => '15.5 Hours',
+                'Completionist' => '25.5 Hours',
+            ]
+        ], $result[0]);
+
+    }
+
+    /** @test */
+    public function card_can_have_solo_co_op_and_vs_fields()
+    {
+        $client = Mockery::mock('Goutte\Client');
+        $client->shouldReceive('request')
+            ->times(1)
+            ->andReturn(new Crawler(file_get_contents(__DIR__ . '/templates/solo_co-op_card.html')));
+
+        $hl2b = new HowLongToBeat($client);
+
+        $result = $hl2b->search('Lego');
+
+        $this->assertEquals([
+            'ID' => '47803',
+            'Image' => 'https://howlongtobeat.com/gameimages/47803_Lego_Harry_Potter_Collection.jpg',
+            'Title' => 'Lego Harry Potter Collection',
+            'Time' => [
+                'Solo' => '42 Hours',
+                'Co-Op' => null,
+                'Vs.' => null,
+            ]
+        ], $result[0]);
+
     }
 }

@@ -36,6 +36,8 @@ class Utilities
      */
     public function formatTime($time)
     {
+        $time = str_replace('½', '.5', $time);
+
         return $time === '--' ? null : $time;
     }
 }

@@ -42,11 +42,17 @@ class UtilitiesTest extends \PHPUnit\Framework\TestCase
     }
 
     /** @test */
-    public function formatTimeConvertsDashesToNull()
+    public function formatTime_converts_dashes_to_null()
     {
         $this->assertNull($this->utilities->formatTime('--'));
         $this->assertEquals('10h', $this->utilities->formatTime('10h'));
         $this->assertEquals('10h 5m', $this->utilities->formatTime('10h 5m'));
         $this->assertEquals('5m', $this->utilities->formatTime('5m'));
+    }
+
+    /** @test */
+    public function formatTime_converts_special_symbols()
+    {
+        $this->assertEquals('10.5 Hours', $this->utilities->formatTime('10½ Hours'));
     }
 }

@@ -46,33 +46,9 @@ class ListNodeCrawler
     /**
      * @return string
      */
-    public function getName()
+    public function getTitle()
     {
         return $this->node->filter('.search_list_details h3')->text();
-    }
-
-    /**
-     * @return string|null
-     */
-    public function getMainStoryTime()
-    {
-        return $this->utilities->formatTime($this->node->filter('.search_list_details_block .search_list_tidbit:nth-child(2)')->text());
-    }
-
-    /**
-     * @return string|null
-     */
-    public function getMainAndExtraTime()
-    {
-        return $this->utilities->formatTime($this->node->filter('.search_list_details_block .search_list_tidbit:nth-child(4)')->text());
-    }
-
-    /**
-     * @return string|null
-     */
-    public function getCompletionistTime()
-    {
-        return $this->utilities->formatTime($this->node->filter('.search_list_details_block .search_list_tidbit:nth-child(6)')->text());
     }
 
     /**
@@ -81,5 +57,18 @@ class ListNodeCrawler
     public function getImage()
     {
         return $this->node->filter('.search_list_image img')->attr('src');
+    }
+
+    public function getTime()
+    {
+        $keys = $this->node->filter('.search_list_details_block [class^=search_list_tidbit]:nth-child(odd)')->each(function (Crawler $node) {
+            return $node->text();
+        });
+
+        $values = $this->node->filter('.search_list_details_block [class^=search_list_tidbit]:nth-child(even)')->each(function (Crawler $node) {
+            return $this->utilities->formatTime($node->text());
+        });
+
+        return array_combine($keys, $values);
     }
 }
