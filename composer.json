@@ -16,7 +16,7 @@
     },
     "autoload": {
         "psr-4": {
-            "ivankayzer\\HowLongToBeat\\": "src/"
+            "IvanKayzer\\HowLongToBeat\\": "src/"
         }
     },
     "require-dev": {
