@@ -39,16 +39,25 @@ class PageNodeCrawler
         return $this->node;
     }
 
+    /**
+     * @return string|null
+     */
     public function getImage()
     {
         return $this->node->filter('.game_image img')->attr('src');
     }
 
+    /**
+     * @return string
+     */
     public function getDescription()
     {
         return str_replace('...Read More', '', $this->node->filter('.in.back_primary > p')->text());
     }
 
+    /**
+     * @return array
+     */
     public function getStatistics()
     {
         $utils = $this->utilities;
@@ -62,6 +71,9 @@ class PageNodeCrawler
         return $utils->flattenArray($stats);
     }
 
+    /**
+     * @return array
+     */
     public function getGameTimes()
     {
         return $this->node->filter('.game_times')->each(function (Crawler $node) {
@@ -80,6 +92,9 @@ class PageNodeCrawler
         });
     }
 
+    /**
+     * @return array
+     */
     public function getGameTimeTables()
     {
         $utils = $this->utilities;
@@ -110,6 +125,9 @@ class PageNodeCrawler
         return $tables;
     }
 
+    /**
+     * @return string|null
+     */
     public function getDeveloper()
     {
         $profileInfo = $this->getProfileInfo();
@@ -117,6 +135,9 @@ class PageNodeCrawler
         return $profileInfo['Developer'] ?? null;
     }
 
+    /**
+     * @return string|null
+     */
     public function getPublisher()
     {
         $profileInfo = $this->getProfileInfo();
@@ -124,6 +145,9 @@ class PageNodeCrawler
         return $profileInfo['Publisher'] ?? null;
     }
 
+    /**
+     * @return string|null
+     */
     public function getLastUpdate()
     {
         $profileInfo = $this->getProfileInfo();
@@ -131,6 +155,9 @@ class PageNodeCrawler
         return $profileInfo['Updated'] ?? null;
     }
 
+    /**
+     * @return string|null
+     */
     public function getPlayableOn()
     {
         $profileInfo = $this->getProfileInfo();
@@ -138,6 +165,9 @@ class PageNodeCrawler
         return $profileInfo['Playable On'] ?? null;
     }
 
+    /**
+     * @return string|null
+     */
     public function getGenres()
     {
         $profileInfo = $this->getProfileInfo();
@@ -145,11 +175,17 @@ class PageNodeCrawler
         return $profileInfo['Genre'] ?? null;
     }
 
+    /**
+     * @return string
+     */
     public function getTitle()
     {
         return $this->node->filter('.profile_header')->text();
     }
 
+    /**
+     * @return array
+     */
     protected function getProfileInfo()
     {
         $utils = $this->utilities;
@@ -175,10 +211,5 @@ class PageNodeCrawler
         }
 
         return $details[$this->id];
-    }
-
-    protected function getGameTimesAtIndex(Crawler $node, $index)
-    {
-        return $this->utilities->formatTime($node->filter("li:nth-of-type({$index}) div")->text());
     }
 }

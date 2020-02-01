@@ -36,7 +36,7 @@ class ListNodeCrawler
     }
 
     /**
-     * @return string|string[]
+     * @return string
      */
     public function getId()
     {
@@ -59,6 +59,9 @@ class ListNodeCrawler
         return $this->node->filter('.search_list_image img')->attr('src');
     }
 
+    /**
+     * @return array
+     */
     public function getTime()
     {
         $keys = $this->node->filter('.search_list_details_block [class^=search_list_tidbit]:nth-child(odd)')->each(function (Crawler $node) {
