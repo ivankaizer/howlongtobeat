@@ -39,13 +39,13 @@ class GetByIdSnapshotTest extends \PHPUnit\Framework\TestCase
         ], $response['Statistics']);
 
         $this->assertEquals([
-            [
-                'Main Story' => '51 Hours',
-                'Main + Extras' => '103 Hours',
-                'Completionist' => '173 Hours',
-                'All Styles' => '101 Hours',
-            ]
-        ], $response['Summary']);
+            'Main Story' => '51 Hours',
+            'Main + Extras' => '103 Hours',
+            'Completionist' => '173 Hours',
+            'All Styles' => '101 Hours',
+        ], $response['Summary'][0]['Time']);
+
+        $this->assertNull($response['Summary'][0]['Title']);
 
         $this->assertEquals([
             'Main Story' => [
@@ -162,13 +162,13 @@ class GetByIdSnapshotTest extends \PHPUnit\Framework\TestCase
         ], $response['Statistics']);
 
         $this->assertEquals([
-            [
-                'Main Story' => null,
-                'Main + Extras' => null,
-                'Completionist' => null,
-                'All Styles' => null,
-            ]
-        ], $response['Summary']);
+            'Main Story' => null,
+            'Main + Extras' => null,
+            'Completionist' => null,
+            'All Styles' => null,
+        ], $response['Summary'][0]['Time']);
+
+        $this->assertNull($response['Summary'][0]['Title']);
 
         $this->assertArrayNotHasKey('Single-Player', $response);
         $this->assertArrayNotHasKey('Speedrun', $response);
@@ -205,16 +205,62 @@ class GetByIdSnapshotTest extends \PHPUnit\Framework\TestCase
         ], $response['Statistics']);
 
         $this->assertEquals([
-            [
-                'Main Story' => null,
-                'Main + Extras' => null,
-                'Completionist' => null,
-                'All Styles' => null,
-            ]
-        ], $response['Summary']);
+            'Main Story' => null,
+            'Main + Extras' => null,
+            'Completionist' => null,
+            'All Styles' => null,
+        ], $response['Summary'][0]['Time']);
 
         $this->assertArrayNotHasKey('Single-Player', $response);
         $this->assertArrayNotHasKey('Speedrun', $response);
         $this->assertArrayNotHasKey('Platform', $response);
+    }
+
+    /** @test */
+    public function it_gets_game_info_from_html_snapshot_for_id_1468()
+    {
+        $client = Mockery::mock('Goutte\Client');
+        $client->shouldReceive('request')
+            ->times(1)
+            ->andReturn(new Crawler(file_get_contents(__DIR__ . '/snapshots/1468.html')));
+
+        $hl2b = new ivankayzer\HowLongToBeat\HowLongToBeat($client);
+
+        $response = $hl2b->get(1468);
+
+        $this->assertEquals(1468, $response['ID']);
+        $this->assertEquals('Call of Duty 4: Modern Warfare', $response['Title']);
+        $this->assertEquals('https://howlongtobeat.com/gameimages/Call_of_Duty_4_Modern_Warfare.jpg', $response['Image']);
+        $this->assertEquals('Call of Duty 4: Modern Warfare, the new action thriller from the award-winning team at Infinity Ward, the creators of the Call of Duty series, delivers the most intense and cinematic action experience ever. Armed with an arsenal of advanced and powerful modern-day firepower, players are transported to treacherous hotspots around the globe to take on a rogue enemy group threatening the world. As both a U.S. Marine and British S.A.S. soldier fighting through an unfolding story full of twists and turns, players use sophisticated technology, superior firepower, and coordinated land and air strikes on a battlefield where speed, accuracy, and communication are essential to victory. The epic title also delivers an added depth of multiplayer action providing online fans an all-new community of persistence, addictive, and customizable gameplay.', $response['Description']);
+        $this->assertEquals('Infinity Ward', $response['Developer']);
+        $this->assertEquals('Activision', $response['Publisher']);
+        $this->assertEquals('PC, Nintendo DS, PlayStation 3, Xbox 360, Xbox One', $response['Playable On']);
+        $this->assertEquals('3.5 Hours Ago', $response['Last Update']);
+        $this->assertEquals('First-Person, Action, Shooter', $response['Genres']);
+        $this->assertEquals([
+            'Playing' => '122',
+            'Backlogs' => '866',
+            'Replays' => '135',
+            'Retired' => '5%',
+            'Rating' => '82%',
+            'Beat' => '3400',
+        ], $response['Statistics']);
+
+        $this->assertEquals([
+            'Main Story' => '4h',
+            'Main + Extras' => '5h',
+            'Completionist' => '7h',
+            'All Styles' => '4h',
+        ], $response['Summary'][0]['Time']);
+
+        $this->assertEquals([
+            'Main Story' => '7h',
+            'Main + Extras' => '10h',
+            'Completionist' => '15h',
+            'All Styles' => '8h',
+        ], $response['Summary'][1]['Time']);
+
+        $this->assertEquals('Nintendo DS', $response['Summary'][0]['Title']);
+        $this->assertEquals('PC, PlayStation 3, Xbox 360', $response['Summary'][1]['Title']);
     }
 }

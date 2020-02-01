@@ -66,10 +66,13 @@ class PageNodeCrawler
     {
         return $this->node->filter('.game_times')->each(function (Crawler $node) {
             return [
-                'Main Story' => $this->getGameTimesAtIndex($node, 1),
-                'Main + Extras' => $this->getGameTimesAtIndex($node, 2),
-                'Completionist' => $this->getGameTimesAtIndex($node, 3),
-                'All Styles' => $this->getGameTimesAtIndex($node, 4),
+                'Title' => $node->filter('h2')->count() ? $node->filter('h2')->text() : null,
+                'Time' => [
+                    'Main Story' => $this->getGameTimesAtIndex($node, 1),
+                    'Main + Extras' => $this->getGameTimesAtIndex($node, 2),
+                    'Completionist' => $this->getGameTimesAtIndex($node, 3),
+                    'All Styles' => $this->getGameTimesAtIndex($node, 4),
+                ]
             ];
         });
     }
@@ -173,6 +176,6 @@ class PageNodeCrawler
 
     protected function getGameTimesAtIndex(Crawler $node, $index)
     {
-        return $this->utilities->formatTime($node->filter("li:nth-child({$index}) div")->text());
+        return $this->utilities->formatTime($node->filter("li:nth-of-type({$index}) div")->text());
     }
 }
