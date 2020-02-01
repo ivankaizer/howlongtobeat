@@ -31,7 +31,7 @@ class HowLongToBeat
             'sortd' => 'Normal Order',
         ]);
 
-        return $crawler->filter('.back_darkish')->each(function ($node) {
+        $results = $crawler->filter('.back_darkish')->each(function ($node) {
             $node = new ListNodeCrawler($node);
 
             return [
@@ -41,6 +41,16 @@ class HowLongToBeat
                 'Time' => $node->getTime()
             ];
         });
+
+        $pageCount = $crawler->filter('.search_list_page:last-child');
+
+        return [
+            'Results' => $results,
+            'Pagination' => [
+                'Current Page' => $page,
+                'Last Page' => $pageCount->count() ? (int)$pageCount->text() : $page
+            ]
+        ];
     }
 
     /**

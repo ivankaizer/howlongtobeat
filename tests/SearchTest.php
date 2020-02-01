@@ -17,7 +17,7 @@ class SearchTest extends \PHPUnit\Framework\TestCase
 
         $results = $hl2b->search('The Witcher 3');
 
-        $this->assertCount(4, $results);
+        $this->assertCount(4, $results['Results']);
     }
 
     /** @test */
@@ -27,12 +27,12 @@ class SearchTest extends \PHPUnit\Framework\TestCase
 
         $results = $hl2b->search('The Witcher 3: Wild Hunt - Hearts of Stone');
 
-        $this->assertEquals(30003, $results[0]['ID']);
-        $this->assertEquals('The Witcher 3: Wild Hunt - Hearts of Stone', $results[0]['Title']);
-        $this->assertEquals('https://howlongtobeat.com/gameimages/The-Witcher-3-Wild-Hunt-Hearts-of-Stone-Expansion-Teaser.jpg', $results[0]['Image']);
-        $this->assertEquals('10 Hours', $results[0]['Time']['Main Story']);
-        $this->assertEquals('14 Hours', $results[0]['Time']['Main + Extra']);
-        $this->assertEquals('19 Hours', $results[0]['Time']['Completionist']);
+        $this->assertEquals(30003, $results['Results'][0]['ID']);
+        $this->assertEquals('The Witcher 3: Wild Hunt - Hearts of Stone', $results['Results'][0]['Title']);
+        $this->assertEquals('https://howlongtobeat.com/gameimages/The-Witcher-3-Wild-Hunt-Hearts-of-Stone-Expansion-Teaser.jpg', $results['Results'][0]['Image']);
+        $this->assertEquals('10 Hours', $results['Results'][0]['Time']['Main Story']);
+        $this->assertEquals('14 Hours', $results['Results'][0]['Time']['Main + Extra']);
+        $this->assertEquals('19 Hours', $results['Results'][0]['Time']['Completionist']);
     }
 
     /** @test */
@@ -42,10 +42,10 @@ class SearchTest extends \PHPUnit\Framework\TestCase
 
         $results = $hl2b->search('Fable legends');
 
-        $this->assertEquals(21275, $results[0]['ID']);
-        $this->assertNull($results[0]['Time']['Main Story']);
-        $this->assertNull($results[0]['Time']['Main + Extra']);
-        $this->assertNull($results[0]['Time']['Completionist']);
+        $this->assertEquals(21275, $results['Results'][0]['ID']);
+        $this->assertNull($results['Results'][0]['Time']['Main Story']);
+        $this->assertNull($results['Results'][0]['Time']['Main + Extra']);
+        $this->assertNull($results['Results'][0]['Time']['Completionist']);
     }
 
     /** @test */
@@ -69,7 +69,7 @@ class SearchTest extends \PHPUnit\Framework\TestCase
                 'Main + Extra' => '15.5 Hours',
                 'Completionist' => '25.5 Hours',
             ]
-        ], $result[0]);
+        ], $result['Results'][0]);
 
     }
 
@@ -94,7 +94,7 @@ class SearchTest extends \PHPUnit\Framework\TestCase
                 'Co-Op' => null,
                 'Vs.' => null,
             ]
-        ], $result[0]);
+        ], $result['Results'][0]);
 
     }
 }
