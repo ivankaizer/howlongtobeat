@@ -12,7 +12,9 @@ class Utilities
     {
         $return = array();
 
-        array_walk_recursive($array, function($x, $key) use (&$return) { $return[$key] = $x; });
+        array_walk_recursive($array, function ($x, $key) use (&$return) {
+            $return[$key] = $x;
+        });
 
         return $return;
     }

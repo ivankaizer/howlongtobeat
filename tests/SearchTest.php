@@ -70,7 +70,6 @@ class SearchTest extends \PHPUnit\Framework\TestCase
                 'Completionist' => '25.5 Hours',
             ]
         ], $result['Results'][0]);
-
     }
 
     /** @test */
@@ -95,6 +94,5 @@ class SearchTest extends \PHPUnit\Framework\TestCase
                 'Vs.' => null,
             ]
         ], $result['Results'][0]);
-
     }
 }
