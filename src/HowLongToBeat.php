@@ -44,81 +44,21 @@ class HowLongToBeat
     {
         $crawler = $this->client->request('GET', 'https://howlongtobeat.com/game?id=' . $id);
 
-        $labels = [
-            'Developers' => 'Developer',
-            'Publishers' => 'Publisher',
-            'Genres' => 'Genre',
+        $node = new PageNodeCrawler($crawler);
+
+        $gameInfo = [
+            'ID' => $id,
+            'Image' => $node->getImage(),
+            'Description' => $node->getDescription(),
+            'Developer' => $node->getDeveloper(),
+            'Publisher' => $node->getPublisher(),
+            'Last Update' => $node->getLastUpdate(),
+            'Playable On' => $node->getPlayableOn(),
+            'Genres' => $node->getGenres(),
+            'Statistics' => $node->getStatistics(),
+            'Summary' => $node->getGameTimes(),
         ];
 
-        $profileInfo = $crawler->filter('.profile_info')->each(function ($node) use ($labels) {
-            $key = str_replace(':', '', $node->filter('strong')->text());
-            $key = isset($labels[$key]) ? $labels[$key] : $key;
-            return [
-                $key => explode(': ', $node->text())[1]
-            ];
-        });
-
-        $profileInfo = Utilities::flattenArray($profileInfo);
-
-        $profileDetails = $crawler->filter('.profile_details ul li')->each(function ($node) {
-            $text = explode(' ', $node->text());
-            $key = $text[1];
-            $value = Utilities::convertAbbreviationsToNumber($text[0]);
-            return [$key => $value];
-        });
-
-        $profileDetails = Utilities::flattenArray($profileDetails);
-
-        $gameTimes = $crawler->filter('.game_times')->each(function ($node) {
-            return [
-                'Main Story' => $node->filter('li:nth-child(1) div')->text(),
-                'Main + Extras' => $node->filter('li:nth-child(2) div')->text(),
-                'Completionist' => $node->filter('li:nth-child(3) div')->text(),
-                'All Styles' => $node->filter('li:nth-child(4) div')->text(),
-            ];
-        });
-
-        $tables = [];
-
-        $crawler->filter('.game_main_table')->each(function ($node) use (&$tables) {
-            $key = $node->filter('thead > tr > td:first-child')->text();
-            $columns = $node->filter('thead > tr > td:not(:first-child)')->each(function ($n) {
-                return $n->text();
-            });
-            $rows = $node->filter('tbody > tr > td:first-child')->each(function ($n) {
-                return $n->text();
-            });
-            $tables[$key] = [];
-
-            foreach ($rows as $i => $row) {
-                $node->filter(".spreadsheet")->each(function ($n) use ($key, &$tables, $columns) {
-                    $title = $n->filter('td:first-child')->text();
-                    $data = $n->filter('td:not(:first-child)')->each(function ($nn) use ($key, &$tables, $columns) {
-                        return Utilities::convertAbbreviationsToNumber($nn->text());
-                    });
-                    $tables[$key][$title] = array_combine($columns, $data);
-                });
-            }
-        });
-
-        return array_merge([
-            'ID' => $id,
-            'Image' => $crawler->filter('.game_image img')->attr('src'),
-            'Description' => $crawler->filter('.in.back_primary > p')->text(),
-            'Developer' => $profileInfo['Developer'],
-            'Publisher' => $profileInfo['Publisher'],
-            'Last Update' => $profileInfo['Updated'],
-            'Playable On' => $profileInfo['Playable On'],
-            'Genres' => $profileInfo['Genre'],
-            'Statistics' => [
-                'Playing' => $profileDetails['Playing'],
-                'Backlogs' => $profileDetails['Backlogs'],
-                'Replays' => $profileDetails['Replays'],
-                'Retired' => $profileDetails['Retired'],
-                'Rating' => $profileDetails['Rating'],
-                'Beat' => $profileDetails['Beat'],
-            ],
-            'Summary' => $gameTimes,
-        ], $tables);
+        return array_merge($gameInfo, $node->getGameTimeTables());
     }
 }
