@@ -9,15 +9,26 @@ class PageNodeCrawler
     /**
      * @var Crawler
      */
-    private $node;
+    protected $node;
+
+    /**
+     * @var Utilities|null
+     */
+    protected $utilities;
+
+    protected $id;
 
     /**
      * ListNodeCrawler constructor.
      * @param Crawler $node
+     * @param $id
+     * @param Utilities|null $utilities
      */
-    public function __construct(Crawler $node)
+    public function __construct(Crawler $node, $id, Utilities $utilities = null)
     {
         $this->node = $node;
+        $this->utilities = $utilities ?? new Utilities();
+        $this->id = $id;
     }
 
     /**
@@ -35,37 +46,41 @@ class PageNodeCrawler
 
     public function getDescription()
     {
-        return $this->node->filter('.in.back_primary > p')->text();
+        return str_replace('...Read More', '', $this->node->filter('.in.back_primary > p')->text());
     }
 
     public function getStatistics()
     {
-        $stats = $this->node->filter('.profile_details ul li')->each(function (Crawler $node) {
+        $utils = $this->utilities;
+
+        $stats = $this->node->filter('.profile_details ul li')->each(function (Crawler $node) use ($utils) {
             list($value, $key) = explode(' ', $node->text());
-            $value = Utilities::convertAbbreviationsToNumber($value);
+            $value = $utils->convertAbbreviationsToNumber($value);
             return [$key => $value];
         });
 
-        return Utilities::flattenArray($stats);
+        return $utils->flattenArray($stats);
     }
 
     public function getGameTimes()
     {
         return $this->node->filter('.game_times')->each(function (Crawler $node) {
             return [
-                'Main Story' => $node->filter('li:nth-child(1) div')->text(),
-                'Main + Extras' => $node->filter('li:nth-child(2) div')->text(),
-                'Completionist' => $node->filter('li:nth-child(3) div')->text(),
-                'All Styles' => $node->filter('li:nth-child(4) div')->text(),
+                'Main Story' => $this->getGameTimesAtIndex($node, 1),
+                'Main + Extras' => $this->getGameTimesAtIndex($node, 2),
+                'Completionist' => $this->getGameTimesAtIndex($node, 3),
+                'All Styles' => $this->getGameTimesAtIndex($node, 4),
             ];
         });
     }
 
     public function getGameTimeTables()
     {
+        $utils = $this->utilities;
+
         $tables = [];
 
-        $this->node->filter('.game_main_table')->each(function (Crawler $node) use (&$tables) {
+        $this->node->filter('.game_main_table')->each(function (Crawler $node) use (&$tables, $utils) {
             $key = $node->filter('thead > tr > td:first-child')->text();
             $columns = $node->filter('thead > tr > td:not(:first-child)')->each(function (Crawler $n) {
                 return $n->text();
@@ -76,10 +91,10 @@ class PageNodeCrawler
             $tables[$key] = [];
 
             foreach ($rows as $i => $row) {
-                $node->filter(".spreadsheet")->each(function (Crawler $n) use ($key, &$tables, $columns) {
+                $node->filter(".spreadsheet")->each(function (Crawler $n) use ($key, &$tables, $columns, $utils) {
                     $title = $n->filter('td:first-child')->text();
-                    $data = $n->filter('td:not(:first-child)')->each(function (Crawler $nn) use ($key, &$tables, $columns) {
-                        return Utilities::convertAbbreviationsToNumber($nn->text());
+                    $data = $n->filter('td:not(:first-child)')->each(function (Crawler $nn) use ($key, &$tables, $columns, $utils) {
+                        return $utils->convertAbbreviationsToNumber($nn->text());
                     });
                     $tables[$key][$title] = array_combine($columns, $data);
                 });
@@ -91,41 +106,58 @@ class PageNodeCrawler
 
     public function getDeveloper()
     {
-        return $this->getProfileInfo()['Developer'];
+        $profileInfo = $this->getProfileInfo();
+
+        return $profileInfo['Developer'] ?? null;
     }
 
     public function getPublisher()
     {
-        return $this->getProfileInfo()['Publisher'];
+        $profileInfo = $this->getProfileInfo();
+
+        return $profileInfo['Publisher'] ?? null;
     }
 
     public function getLastUpdate()
     {
-        return $this->getProfileInfo()['Updated'];
+        $profileInfo = $this->getProfileInfo();
+
+        return $profileInfo['Updated'] ?? null;
     }
 
     public function getPlayableOn()
     {
-        return $this->getProfileInfo()['Playable On'];
+        $profileInfo = $this->getProfileInfo();
+
+        return $profileInfo['Playable On'] ?? null;
     }
 
     public function getGenres()
     {
-        return $this->getProfileInfo()['Genre'];
+        $profileInfo = $this->getProfileInfo();
+
+        return $profileInfo['Genre'] ?? null;
+    }
+
+    public function getTitle()
+    {
+        return $this->node->filter('.profile_header')->text();
     }
 
     protected function getProfileInfo()
     {
+        $utils = $this->utilities;
+
         $labels = [
             'Developers' => 'Developer',
             'Publishers' => 'Publisher',
             'Genres' => 'Genre',
         ];
 
-        static $details = null;
+        static $details = [];
 
-        if (is_null($details)) {
-            $details = $this->node->filter('.profile_info')->each(function (Crawler $node) use ($labels) {
+        if (!isset($details[$this->id])) {
+            $details[$this->id] = $this->node->filter('.profile_info')->each(function (Crawler $node) use ($labels, $utils) {
                 $key = str_replace(':', '', $node->filter('strong')->text());
                 $key = isset($labels[$key]) ? $labels[$key] : $key;
                 return [
@@ -133,9 +165,14 @@ class PageNodeCrawler
                 ];
             });
 
-            $details = Utilities::flattenArray($details);
+            $details[$this->id] = $utils->flattenArray($details[$this->id]);
         }
 
-        return $details;
+        return $details[$this->id];
+    }
+
+    protected function getGameTimesAtIndex(Crawler $node, $index)
+    {
+        return $this->utilities->formatTime($node->filter("li:nth-child({$index}) div")->text());
     }
 }

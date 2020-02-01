@@ -10,7 +10,7 @@ class GetByIdSnapshotTest extends \PHPUnit\Framework\TestCase
     }
 
     /** @test */
-    public function it_gets_game_info_from_html_snapshot()
+    public function it_gets_game_info_from_html_snapshot_for_id_10270()
     {
         $client = Mockery::mock('Goutte\Client');
         $client->shouldReceive('request')
@@ -22,6 +22,7 @@ class GetByIdSnapshotTest extends \PHPUnit\Framework\TestCase
         $response = $hl2b->get(10270);
 
         $this->assertEquals(10270, $response['ID']);
+        $this->assertEquals('The Witcher 3: Wild Hunt', $response['Title']);
         $this->assertEquals('https://howlongtobeat.com/gameimages/256px-TW3_Wild_Hunt_logo.png', $response['Image']);
         $this->assertEquals('In The Witcher 3 an ancient evil stirs, awakening. An evil that sows terror and abducts the young. An evil whose name is spoken only in whispers: the Wild Hunt. Led by four wraith commanders, this ravenous band of phantoms is the ultimate predator and has been for centuries. Its quarry: humans.', $response['Description']);
         $this->assertEquals('CD Projekt RED', $response['Developer']);
@@ -128,5 +129,92 @@ class GetByIdSnapshotTest extends \PHPUnit\Framework\TestCase
                 'Longest' => '475h 52m',
             ],
         ], $response['Platform']);
+    }
+
+
+    /** @test */
+    public function it_gets_game_info_from_html_snapshot_for_id_21275()
+    {
+        $client = Mockery::mock('Goutte\Client');
+        $client->shouldReceive('request')
+            ->times(1)
+            ->andReturn(new Crawler(file_get_contents(__DIR__ . '/snapshots/21275.html')));
+
+        $hl2b = new ivankayzer\HowLongToBeat\HowLongToBeat($client);
+
+        $response = $hl2b->get(21275);
+
+        $this->assertEquals(21275, $response['ID']);
+        $this->assertEquals('Fable Legends', $response['Title']);
+        $this->assertEquals('https://howlongtobeat.com/gameimages/Fable_Legends.jpg', $response['Image']);
+        $this->assertEquals('Magic is rife and all manner of creatures and miscreants inhabit the world off the beaten track. Eyes watch the unwary from the shadowy canopy of the forest. Are you brave enough to venture outside the walls of Brightlodge? Will you leave the welcoming taverns and the even more welcoming arms of Betsy (or Brian) the barkeep and strike a new path into the unknown? There are quests and treasure aplenty awaiting you if you do.', $response['Description']);
+        $this->assertEquals('Lionhead Studios', $response['Developer']);
+        $this->assertEquals('Microsoft Studios', $response['Publisher']);
+        $this->assertEquals('1.5 Weeks Ago', $response['Last Update']);
+        $this->assertEquals('Third-Person, Role-Playing', $response['Genres']);
+        $this->assertEquals([
+            'Playing' => '1',
+            'Backlogs' => '6',
+            'Replays' => '0',
+            'Retired' => '14%',
+            'Rating' => 'NR',
+            'Beat' => '0',
+        ], $response['Statistics']);
+
+        $this->assertEquals([
+            [
+                'Main Story' => null,
+                'Main + Extras' => null,
+                'Completionist' => null,
+                'All Styles' => null,
+            ]
+        ], $response['Summary']);
+
+        $this->assertArrayNotHasKey('Single-Player', $response);
+        $this->assertArrayNotHasKey('Speedrun', $response);
+        $this->assertArrayNotHasKey('Platform', $response);
+    }
+
+    /** @test */
+    public function it_gets_game_info_from_html_snapshot_for_id_41753()
+    {
+        $client = Mockery::mock('Goutte\Client');
+        $client->shouldReceive('request')
+            ->times(1)
+            ->andReturn(new Crawler(file_get_contents(__DIR__ . '/snapshots/41753.html')));
+
+        $hl2b = new ivankayzer\HowLongToBeat\HowLongToBeat($client);
+
+        $response = $hl2b->get(41753);
+
+        $this->assertEquals(41753, $response['ID']);
+        $this->assertEquals('The Last of Us: Part II', $response['Title']);
+        $this->assertEquals('https://howlongtobeat.com/gameimages/41753_The_Last_of_Us_Part_II.jpg', $response['Image']);
+        $this->assertEquals('Five years after their dangerous journey across the post-pandemic United States, Ellie and Joel have settled down in Jackson, Wyoming. Living amongst a thriving community of survivors has allowed them peace and stability, despite the constant threat of the infected and other, more desperate survivors. When a violent event disrupts that peace, Ellie embarks on a relentless journey to carry out justice and find closure. As she hunts those responsible one by one, she is confronted with the devastating physical and emotional repercussions of her actions.', $response['Description']);
+        $this->assertEquals('Naughty Dog', $response['Developer']);
+        $this->assertEquals('Sony Interactive Entertainment', $response['Publisher']);
+        $this->assertEquals('1 Day Ago', $response['Last Update']);
+        $this->assertEquals('Third-Person, Action, Adventure, Horror, Shooter, Survival', $response['Genres']);
+        $this->assertEquals([
+            'Playing' => '2',
+            'Backlogs' => '218',
+            'Replays' => '2',
+            'Retired' => '0%',
+            'Rating' => 'NR',
+            'Beat' => '0',
+        ], $response['Statistics']);
+
+        $this->assertEquals([
+            [
+                'Main Story' => null,
+                'Main + Extras' => null,
+                'Completionist' => null,
+                'All Styles' => null,
+            ]
+        ], $response['Summary']);
+
+        $this->assertArrayNotHasKey('Single-Player', $response);
+        $this->assertArrayNotHasKey('Speedrun', $response);
+        $this->assertArrayNotHasKey('Platform', $response);
     }
 }

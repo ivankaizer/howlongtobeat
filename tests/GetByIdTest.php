@@ -19,6 +19,7 @@ class GetByIdTest extends \PHPUnit\Framework\TestCase
         $game = $this->hl2b->get(10270);
 
         $this->assertEquals(10270, $game['ID']);
+        $this->assertEquals('The Witcher 3: Wild Hunt', $game['Title']);
         $this->assertEquals('https://howlongtobeat.com/gameimages/256px-TW3_Wild_Hunt_logo.png', $game['Image']);
         $this->assertEquals('In The Witcher 3 an ancient evil stirs, awakening. An evil that sows terror and abducts the young. An evil whose name is spoken only in whispers: the Wild Hunt. Led by four wraith commanders, this ravenous band of phantoms is the ultimate predator and has been for centuries. Its quarry: humans.', $game['Description']);
         $this->assertEquals('CD Projekt RED', $game['Developer']);

@@ -44,10 +44,11 @@ class HowLongToBeat
     {
         $crawler = $this->client->request('GET', 'https://howlongtobeat.com/game?id=' . $id);
 
-        $node = new PageNodeCrawler($crawler);
+        $node = new PageNodeCrawler($crawler, $id);
 
         $gameInfo = [
             'ID' => $id,
+            'Title' => $node->getTitle(),
             'Image' => $node->getImage(),
             'Description' => $node->getDescription(),
             'Developer' => $node->getDeveloper(),

@@ -9,15 +9,22 @@ class ListNodeCrawler
     /**
      * @var Crawler
      */
-    private $node;
+    protected $node;
+
+    /**
+     * @var Utilities
+     */
+    protected $utilities;
 
     /**
      * ListNodeCrawler constructor.
      * @param Crawler $node
+     * @param Utilities|null $utilities
      */
-    public function __construct(Crawler $node)
+    public function __construct(Crawler $node, Utilities $utilities = null)
     {
         $this->node = $node;
+        $this->utilities = $utilities ?? new Utilities();
     }
 
     /**
@@ -49,7 +56,7 @@ class ListNodeCrawler
      */
     public function getMainStoryTime()
     {
-        return $this->formatTime($this->node->filter('.search_list_details_block .search_list_tidbit:nth-child(2)')->text());
+        return $this->utilities->formatTime($this->node->filter('.search_list_details_block .search_list_tidbit:nth-child(2)')->text());
     }
 
     /**
@@ -57,7 +64,7 @@ class ListNodeCrawler
      */
     public function getMainAndExtraTime()
     {
-        return $this->formatTime($this->node->filter('.search_list_details_block .search_list_tidbit:nth-child(4)')->text());
+        return $this->utilities->formatTime($this->node->filter('.search_list_details_block .search_list_tidbit:nth-child(4)')->text());
     }
 
     /**
@@ -65,7 +72,7 @@ class ListNodeCrawler
      */
     public function getCompletionistTime()
     {
-        return $this->formatTime($this->node->filter('.search_list_details_block .search_list_tidbit:nth-child(6)')->text());
+        return $this->utilities->formatTime($this->node->filter('.search_list_details_block .search_list_tidbit:nth-child(6)')->text());
     }
 
     /**
@@ -74,14 +81,5 @@ class ListNodeCrawler
     public function getImage()
     {
         return $this->node->filter('.search_list_image img')->attr('src');
-    }
-
-    /**
-     * @param string $time
-     * @return null|string
-     */
-    protected function formatTime($time)
-    {
-        return $time === '--' ? null : $time;
     }
 }
