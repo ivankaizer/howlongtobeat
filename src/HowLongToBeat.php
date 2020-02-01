@@ -10,10 +10,11 @@ class HowLongToBeat
 
     /**
      * HowLongToBeat constructor.
+     * @param Client|null $client
      */
-    public function __construct()
+    public function __construct(Client $client = null)
     {
-        $this->client = new Client();
+        $this->client = $client ?? new Client();
     }
 
     public function search($query)
