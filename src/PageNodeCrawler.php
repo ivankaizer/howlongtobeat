@@ -32,14 +32,6 @@ class PageNodeCrawler
     }
 
     /**
-     * @return Crawler
-     */
-    public function getNode()
-    {
-        return $this->node;
-    }
-
-    /**
      * @return string|null
      */
     public function getImage()

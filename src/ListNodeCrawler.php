@@ -28,14 +28,6 @@ class ListNodeCrawler
     }
 
     /**
-     * @return Crawler
-     */
-    public function getNode()
-    {
-        return $this->node;
-    }
-
-    /**
      * @return string
      */
     public function getId()
