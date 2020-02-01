@@ -1,4 +1,4 @@
-name: PHP Composer
+name: PHP Workflow
 
 on: [push]
 
@@ -15,6 +15,9 @@ jobs:
 
     - name: Install dependencies
       run: composer install --prefer-dist --no-progress --no-suggest
+      
+    - name: PHP Code Style Fixer (php-cs-fixer)
+      uses: StephaneBour/actions-php-cs-fixer@1.0
     
     - name: Run PHPUnit
       run: ./vendor/bin/phpunit tests
