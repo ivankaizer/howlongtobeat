@@ -1,1 +1,2 @@
-*.html  export-ignore
+tests/snapshots linguist-vendored
+tests/templates linguist-vendored
