@@ -16,4 +16,13 @@ class Utilities
 
         return $return;
     }
+
+    public static function convertAbbreviationsToNumber($input)
+    {
+        if (strpos($input, '.') === false && strpos($input, 'K') !== false) {
+            return str_replace('K', '000', $input);
+        }
+
+        return str_replace(['.', 'K'], ['', '00'], $input);
+    }
 }

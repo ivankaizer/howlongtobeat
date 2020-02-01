@@ -48,28 +48,28 @@ class GetByIdSnapshotTest extends \PHPUnit\Framework\TestCase
 
         $this->assertEquals([
             'Main Story' => [
-                'Polled' => '1.3K',
+                'Polled' => '1300',
                 'Average' => '52h 01m',
                 'Median' => '50h',
                 'Rushed' => '32h 25m',
                 'Leisure' => '86h 29m',
             ],
             'Main + Extras' => [
-                'Polled' => '3.2K',
+                'Polled' => '3200',
                 'Average' => '105h 41m',
                 'Median' => '100h',
                 'Rushed' => '61h 25m',
                 'Leisure' => '291h 25m',
             ],
             'Completionists' => [
-                'Polled' => '1.1K',
+                'Polled' => '1100',
                 'Average' => '181h 25m',
                 'Median' => '166h',
                 'Rushed' => '116h 51m',
                 'Leisure' => '469h 29m',
             ],
             'All PlayStyles' => [
-                'Polled' => '5.5K',
+                'Polled' => '5500',
                 'Average' => '107h 32m',
                 'Median' => '95h',
                 'Rushed' => '57h 33m',
@@ -104,7 +104,7 @@ class GetByIdSnapshotTest extends \PHPUnit\Framework\TestCase
                 'Longest' => '150h',
             ],
             'PC' => [
-                'Polled' => '3.6K',
+                'Polled' => '3600',
                 'Main' => '52h 08m',
                 'Main +' => '103h 28m',
                 '100%' => '179h 20m',
@@ -112,7 +112,7 @@ class GetByIdSnapshotTest extends \PHPUnit\Framework\TestCase
                 'Longest' => '752h',
             ],
             'PlayStation 4' => [
-                'Polled' => '1.4K',
+                'Polled' => '1400',
                 'Main' => '51h 36m',
                 'Main +' => '108h 01m',
                 '100%' => '189h 51m',

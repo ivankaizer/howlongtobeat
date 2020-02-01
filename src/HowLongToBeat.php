@@ -63,7 +63,7 @@ class HowLongToBeat
         $profileDetails = $crawler->filter('.profile_details ul li')->each(function ($node) {
             $text = explode(' ', $node->text());
             $key = $text[1];
-            $value = str_replace(['.', 'K'], ['', '00'], $text[0]);
+            $value = Utilities::convertAbbreviationsToNumber($text[0]);
             return [$key => $value];
         });
 
@@ -94,7 +94,7 @@ class HowLongToBeat
                 $node->filter(".spreadsheet")->each(function ($n) use ($key, &$tables, $columns) {
                     $title = $n->filter('td:first-child')->text();
                     $data = $n->filter('td:not(:first-child)')->each(function ($nn) use ($key, &$tables, $columns) {
-                        return $nn->text();
+                        return Utilities::convertAbbreviationsToNumber($nn->text());
                     });
                     $tables[$key][$title] = array_combine($columns, $data);
                 });
