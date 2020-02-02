@@ -1,6 +1,6 @@
 <?php
 
-use ivankayzer\HowLongToBeat\Utilities;
+use IvanKayzer\HowLongToBeat\Utilities;
 
 class UtilitiesTest extends \PHPUnit\Framework\TestCase
 {

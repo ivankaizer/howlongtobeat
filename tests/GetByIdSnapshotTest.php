@@ -17,7 +17,7 @@ class GetByIdSnapshotTest extends \PHPUnit\Framework\TestCase
             ->times(1)
             ->andReturn(new Crawler(file_get_contents(__DIR__ . '/snapshots/10270.html')));
 
-        $hl2b = new ivankayzer\HowLongToBeat\HowLongToBeat($client);
+        $hl2b = new IvanKayzer\HowLongToBeat\HowLongToBeat($client);
 
         $response = $hl2b->get(10270);
 
@@ -140,7 +140,7 @@ class GetByIdSnapshotTest extends \PHPUnit\Framework\TestCase
             ->times(1)
             ->andReturn(new Crawler(file_get_contents(__DIR__ . '/snapshots/21275.html')));
 
-        $hl2b = new ivankayzer\HowLongToBeat\HowLongToBeat($client);
+        $hl2b = new IvanKayzer\HowLongToBeat\HowLongToBeat($client);
 
         $response = $hl2b->get(21275);
 
@@ -183,7 +183,7 @@ class GetByIdSnapshotTest extends \PHPUnit\Framework\TestCase
             ->times(1)
             ->andReturn(new Crawler(file_get_contents(__DIR__ . '/snapshots/41753.html')));
 
-        $hl2b = new ivankayzer\HowLongToBeat\HowLongToBeat($client);
+        $hl2b = new IvanKayzer\HowLongToBeat\HowLongToBeat($client);
 
         $response = $hl2b->get(41753);
 
@@ -224,7 +224,7 @@ class GetByIdSnapshotTest extends \PHPUnit\Framework\TestCase
             ->times(1)
             ->andReturn(new Crawler(file_get_contents(__DIR__ . '/snapshots/1468.html')));
 
-        $hl2b = new ivankayzer\HowLongToBeat\HowLongToBeat($client);
+        $hl2b = new IvanKayzer\HowLongToBeat\HowLongToBeat($client);
 
         $response = $hl2b->get(1468);
 

@@ -1,6 +1,6 @@
 <?php
 
-use ivankayzer\HowLongToBeat\HowLongToBeat;
+use IvanKayzer\HowLongToBeat\HowLongToBeat;
 
 class PaginationTest extends \PHPUnit\Framework\TestCase
 {
