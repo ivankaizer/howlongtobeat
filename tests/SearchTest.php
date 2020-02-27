@@ -29,7 +29,7 @@ class SearchTest extends \PHPUnit\Framework\TestCase
 
         $this->assertEquals(30003, $results['Results'][0]['ID']);
         $this->assertEquals('The Witcher 3: Wild Hunt - Hearts of Stone', $results['Results'][0]['Title']);
-        $this->assertEquals('https://howlongtobeat.com/gameimages/The-Witcher-3-Wild-Hunt-Hearts-of-Stone-Expansion-Teaser.jpg', $results['Results'][0]['Image']);
+        $this->assertEquals('https://howlongtobeat.com/games/The-Witcher-3-Wild-Hunt-Hearts-of-Stone-Expansion-Teaser.jpg', $results['Results'][0]['Image']);
         $this->assertEquals('10 Hours', $results['Results'][0]['Time']['Main Story']);
         $this->assertEquals('14 Hours', $results['Results'][0]['Time']['Main + Extra']);
         $this->assertEquals('19 Hours', $results['Results'][0]['Time']['Completionist']);
