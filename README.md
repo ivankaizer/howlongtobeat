@@ -3,7 +3,14 @@
 ![](https://github.com/ivankayzer/howlongtobeat/workflows/PHP%20Workflow/badge.svg)
 ![](https://img.shields.io/codeclimate/maintainability-percentage/ivankayzer/howlongtobeat)
 
+## About
+howlongtobeat provides information and data about games and how long it will take to finish them.
+
+This library is a simple wrapper to fetch data from howlongtobeat.com. Please check their website and support them if you like what they are doing.
+
 ## Install
+
+Use the package manager [composer](https://getcomposer.org/download/) to install howlongtobeat.
 
 ```bash
 composer require ivankayzer/howlongtobeat
@@ -11,11 +18,10 @@ composer require ivankayzer/howlongtobeat
 
 ## Usage
 
-### Search
+#### Search
 
 ```php
 use IvanKayzer\HowLongToBeat\HowLongToBeat;
-
 
 $hl2b = new HowLongToBeat();
 $hl2b->search('Lego');
@@ -57,9 +63,7 @@ returns
         "Completionist": "35.5 Hours"
       }
     },
-    
   ...
-  
   ],
   "Pagination": {
     "Current Page": 1,
@@ -77,11 +81,10 @@ $hl2b->search('Lego', 2);
 <br>
 
 
-### Get by ID
+#### Get time entries by game ID
 
 ```php
 use IvanKayzer\HowLongToBeat\HowLongToBeat;
-
 
 $hl2b = new HowLongToBeat();
 $hl2b->search(5265);
@@ -134,7 +137,7 @@ returns
       "Rushed": "11h 23m",
       "Leisure": "27h 57m"
     },
-	...
+  ...
   },
   "Speedrun": {
     "Any%": {
@@ -163,7 +166,14 @@ returns
       "Fastest": "4h 52m",
       "Longest": "60h"
     },
- 	...
+  ...
   }
 }
 ```
+
+
+## Contributing
+Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
+
+## License
+[MIT](https://choosealicense.com/licenses/mit/)
