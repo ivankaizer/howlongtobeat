@@ -1,420 +1,669 @@
 <!DOCTYPE html>
 <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="/css/main.css?release=v1.0.77">        	<link rel="stylesheet" href="/css/light.css?release=v1.0.77">         <link rel="stylesheet" media="screen and (min-width: 769px)" href="/css/desktop.css?release=v1.0.77">
+        <link rel="stylesheet" media="screen and (max-width: 768px)" href="/css/mobile.css?release=v1.0.77">
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <link rel="stylesheet" href="css/main_101.css">
-    <link rel="stylesheet" href="css/light_101.css">
-    <link rel="stylesheet" media="screen and (min-width: 769px)" href="css/desktop_101.css">
-    <link rel="stylesheet" media="screen and (max-width: 769px)" href="css/mobile_101.css">
-    <title>How long is The Last of Us: Part II? | HowLongToBeat</title>
-    <meta name="description"
-          content="How long is The Last of Us: Part II? HowLongToBeat has the answer. Create a backlog, submit your game times and compete with your friends!">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="apple-touch-icon" sizes="57x57" href="img/icons/apple-touch-icon-57x57.png">
-    <link rel="apple-touch-icon" sizes="60x60" href="img/icons/apple-touch-icon-60x60.png">
-    <link rel="apple-touch-icon" sizes="72x72" href="img/icons/apple-touch-icon-72x72.png">
-    <link rel="apple-touch-icon" sizes="76x76" href="img/icons/apple-touch-icon-76x76.png">
-    <link rel="apple-touch-icon" sizes="114x114" href="img/icons/apple-touch-icon-114x114.png">
-    <link rel="apple-touch-icon" sizes="120x120" href="img/icons/apple-touch-icon-120x120.png">
-    <link rel="apple-touch-icon" sizes="144x144" href="img/icons/apple-touch-icon-144x144.png">
-    <link rel="apple-touch-icon" sizes="152x152" href="img/icons/apple-touch-icon-152x152.png">
-    <link rel="apple-touch-icon" sizes="180x180" href="img/icons/apple-touch-icon-180x180.png">
-    <link rel="icon" type="image/png" href="img/icons/favicon-32x32.png" sizes="32x32">
-    <link rel="icon" type="image/png" href="img/icons/android-chrome-192x192.png" sizes="192x192">
-    <link rel="icon" type="image/png" href="img/icons/favicon-96x96.png" sizes="96x96">
-    <link rel="icon" type="image/png" href="img/icons/favicon-16x16.png" sizes="16x16">
-    <link rel="manifest" href="app/manifest.json">
-    <link rel="shortcut icon" href="img/icons/favicon.ico">
-    <meta name="msapplication-starturl" content="https://howlongtobeat.com" />
-    <meta name="msapplication-navbutton-color" content="#000000" />
-    <meta name="msapplication-task"
-          content="name=Home;action-uri=https://howlongtobeat.com;icon-uri=img/icons/favicon.ico" />
-    <meta name="msapplication-task"
-          content="name=Search;action-uri=https://howlongtobeat.com/search;icon-uri=img/icons/favicon.ico" />
-    <meta name="msapplication-task"
-          content="name=Submit;action-uri=https://howlongtobeat.com/submit;icon-uri=img/icons/favicon.ico" />
-    <meta name="msapplication-task"
-          content="name=Control Panel;action-uri=https://howlongtobeat.com/user;icon-uri=img/icons/favicon.ico" />
-    <meta name="msapplication-TileImage" content="img/icons/mstile-144x144.png">
-    <meta name="msapplication-config" content="img/icons/browserconfig.xml">
-    <meta name="theme-color" content="#000000">
-</head>
+		<script type="text/javascript" src="/sw.js"></script>
+		<script type="text/javascript" src="/js/site.js?release=v1.0.77"></script>
+		<script type="text/javascript" src="/js/bobble.js?release=v1.0.77"></script>
+		
+        		<title>How long is The Last of Us Part II? | HowLongToBeat</title> 	<meta name="description" content="How long is The Last of Us Part II? HowLongToBeat has the answer. Create a backlog, submit your game times and compete with your friends!"> 		<script async="async" src="https://www.googletagservices.com/tag/js/gpt.js"></script>
+<script async src="https://securepubads.g.doubleclick.net/tag/js/gpt.js"></script>
 
-<body onhashchange="initialize();" onload="initialize();">
-<!--[if lt IE 7]>
-<p class="chromeframe">You are using an outdated browser. <a href="http://browsehappy.com/">Upgrade your browser today</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to better experience this site.</p>
-<![endif]-->
-<div id="top" class="container">
-    <form name="global_search_form" autocomplete="off">
-        <div class="nav_back" id="nav_back" style="display: none;"></div>
-        <div class="nav">
-            <div class="contain_out">
-                <div class="contain_in">
-                    <div class="nav_g">
-                        <a class="brand back_black" aria-label="HowLongToBeat" href="./"></a>
-                        <div class="main_links">
-                            <ul class="site">
-                                <li><a class="text_primary" href="forum">Forum</a></li>
-                                <li><a class="text_primary" href="stats">Stats</a></li>
-                                <li><a class="text_primary" href="submit">Submit</a></li>
-                            </ul>
-                            <ul class="login">
-                                <li><a class="text_primary" href="login">Login</a></li>
-                                <li class="mobile_hide"><a class="text_primary" href="login?t=signup">Join</a></li>
-                            </ul>
-                            <div class="search_container">
-                                <input class="global_search_box back_form" id="global_search_box" aria-label="Search" name="global_search_box" type="text" autofocus="on" placeholder="Search Your Favorite Games..." onclick="search_enable();" onkeypress="if(event.keyCode==13){return false;}" onpaste="setTimeout(function() {return hitkey_l(0,document.forms.global_search_form.t.value,this.value);}, 50);" onkeyup="return hitkey_l(event.keyCode,document.forms.global_search_form.t.value,this.value);" value="">
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div id="nav_u_drop" class="nav_up back_form">
-                <div class="contain_in">
-                    <div id="nav_profile_load" class="content_25">
-                        <div class="in back_primary shadow_box">
-                            <h4 class="head_padding back_pink">My Account</h4>
-                            <ul>
-                                <li><a class='link_pink' href='user?n='>Profile</a></li>
-                                <li><a class='link_pink' href='user?n=&s=stats'>Stats</a></li>
-                                <li><a class='link_pink' href='user?n=&s=friends'>Friends</a></li>
-                                <li><a class='link_pink' href='user?n=&s=messages'>Messages</a></li>
-                                <li><a class='link_pink' href='user?n=&s=options'>Options</a></li>
-                                <li><a class='link_red' href="login?t=out">Log Out</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div id="nav_playthroughs_load" class="content_25">
-                        <div class="in back_primary shadow_box">
-                            <h4 class="head_padding back_blue">
-                                My Games (<a class="text_white"
-                                             href="user?n=&s=games&playing=1&backlog=1&replays=1&custom=1&completed=1&retired=1">All</a>)
-                            </h4>
-                            <ul>
-                                <li><a class='link_green' href='user?n=&s=games&playing=1'>Playing</a></li>
-                                <li><a class='link_blue' href='user?n=&s=games&backlog=1'>Backlog</a></li>
-                                <li><a class='link_blueish' href='user?n=&s=games&replays=1'>Replays</a></li>
-                                <li><a class='link_purple' href='user?n=&s=games&completed=1'>Completed</a></li>
-                                <li><a class='link_red' href='user?n=&s=games&retired=1'>Retired</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="mobile_clear"></div>
-                    <div id="nav_games_load" class="content_50">
-                        <div class='loading_bar'>
-                        </div>
-                    </div>
-                    <div class="clear"></div>
-                    <div class="content_break"></div>
-                </div>
-            </div>
-        </div>
-        <div class="clear"></div>
-        <div id="note_bar" class="global_padding back_yellow center"></div>
-        <div id="global_search" style="display:none;">
-            <div class="contain_out">
-                <div class="contain_in">
+<link rel="preload" href="https://cdn.ziffstatic.com/jst/zdconsent.js" as="script">
+<script type="text/javascript" async="true" src="https://cdn.ziffstatic.com/jst/zdconsent.js"></script>
 
-                    <div class="content_50 back_secondary shadow_box">
+<link rel="preload" href="https://cdn.static.zdbb.net/js/z0WVjCBSEeGLoxIxOQVEwQ.min.js" as="script">
+<script type="text/javascript" async="true" src="https://cdn.static.zdbb.net/js/z0WVjCBSEeGLoxIxOQVEwQ.min.js"></script>
 
-                        <input class="form_checkbox" type='hidden' name='t' id='search_type_g' value='games' style="display:none;">
-                        <a class="text_white"
-                           href="javascript:change_class('game_list_tag','content_50_static back_blue center');
-							 change_class('user_list_tag','content_50_static center');
-							 document.forms.global_search_form.t.value = 'games';
-							 globalSearch(document.forms.global_search_form.t.value,'',document.forms.global_search_form.global_search_box.value);">
-                            <h4 id="game_list_tag" class="content_50_static back_blue center">Games List</h4>
-                        </a>
-                        <a class="text_white"
-                           href="javascript:change_class('user_list_tag','content_50_static back_pink center');
-							 change_class('game_list_tag','content_50_static center');
-							 document.forms.global_search_form.t.value = 'users';
-							 globalSearch(document.forms.global_search_form.t.value,'',document.forms.global_search_form.global_search_box.value);">
-                            <h4 id="user_list_tag" class="content_50_static center">User List</h4>
-                        </a>
-                        <div class="clear"></div>
-                    </div>
-                    <div class="content_25">
-                        <input type="button" class="search_options_button back_secondary shadow_box" onclick="search_options();" value="Search Options">
-                    </div>
-                    <div class="content_25">
-                        <input type="button" class="search_options_button back_primary shadow_box" onclick="search_enable('close');" value="Close">
-                    </div>
-                    <div class="clear"></div>
+<script type="text/javascript">!(function(o,n,t){t=o.createElement(n),o=o.getElementsByTagName(n)[0],t.async=1,t.src="https://awesomeagreement.com/v2ivhYrblm3zNxhcOW9-WYAvPOboOi8IhcyhPxCjG61RWPKZq2f_i2ELwdn3sWATo",o.parentNode.insertBefore(t,o)})(document,"script"),(function(o,n){function t(){(t.q=t.q||[]).push(arguments)}t.v=1,o.admiral=o.admiral||t})(window);!(function(o,t,n,c){function e(n){(function(){try{return(localStorage.getItem("v4ac1eiZr0")||"").split(",")[4]>0}catch(o){}return!1})()&&(n=o[t].pubads())&&n.setTargeting("admiral-engaged","true")}(c=o[t]=o[t]||{}).cmd=c.cmd||[],typeof c.pubads===n?e():typeof c.cmd.unshift===n?c.cmd.unshift(e):c.cmd.push(e)})(window,"googletag","function");</script>
 
-                    <div id="global_search_opt" style="display:none;">
-                        <div id="search_preset_g">
-                            <div class="content_33 back_secondary shadow_box" id="search_platform">
-                                <div class="in">
-                                    <h5 class="left">Platform</h5>
-                                    <select aria-label='Platform' name='platform' autocomplete='off' class='form_select back_form' style='width:100%;' onchange='globalSearch("","",document.forms.global_search_form.global_search_box.value);'><option value=''>All</option><optgroup label='Popular Platforms'><option value='Emulated'>Emulated</option><option value='Nintendo 3DS'>Nintendo 3DS</option><option value='Nintendo Switch'>Nintendo Switch</option><option value='PC'>PC</option><option value='PlayStation 3'>PlayStation 3</option><option value='PlayStation 4'>PlayStation 4</option><option value='PlayStation Now'>PlayStation Now</option><option value='Wii U'>Wii U</option><option value='Xbox 360'>Xbox 360</option><option value='Xbox One'>Xbox One</option></optgroup><optgroup label='All Platforms'><option value='3DO'>3DO</option><option value='Amiga'>Amiga</option><option value='Amstrad CPC'>Amstrad CPC</option><option value='Android'>Android</option><option value='Apple II'>Apple II</option><option value='Arcade'>Arcade</option><option value='Atari 2600'>Atari 2600</option><option value='Atari 5200'>Atari 5200</option><option value='Atari 7800'>Atari 7800</option><option value='Atari 8-bit Family'>Atari 8-bit Family</option><option value='Atari Jaguar'>Atari Jaguar</option><option value='Atari Jaguar CD'>Atari Jaguar CD</option><option value='Atari Lynx'>Atari Lynx</option><option value='Atari ST'>Atari ST</option><option value='BBC Micro'>BBC Micro</option><option value='Browser'>Browser</option><option value='ColecoVision'>ColecoVision</option><option value='Commodore 64'>Commodore 64</option><option value='Dreamcast'>Dreamcast</option><option value='Emulated'>Emulated</option><option value='FM Towns'>FM Towns</option><option value='Game & Watch'>Game & Watch</option><option value='Game Boy'>Game Boy</option><option value='Game Boy Advance'>Game Boy Advance</option><option value='Game Boy Color'>Game Boy Color</option><option value='Gear VR'>Gear VR</option><option value='Google Stadia'>Google Stadia</option><option value='HTC Vive'>HTC Vive</option><option value='Intellivision'>Intellivision</option><option value='Interactive Movie'>Interactive Movie</option><option value='iOS'>iOS</option><option value='Linux'>Linux</option><option value='Mac'>Mac</option><option value='Mobile'>Mobile</option><option value='MSX'>MSX</option><option value='N-Gage'>N-Gage</option><option value='NEC PC-8800'>NEC PC-8800</option><option value='NEC PC-9801/21'>NEC PC-9801/21</option><option value='NEC PC-FX'>NEC PC-FX</option><option value='Neo Geo'>Neo Geo</option><option value='Neo Geo CD'>Neo Geo CD</option><option value='Neo Geo Pocket'>Neo Geo Pocket</option><option value='Neo Geo Pocket Color'>Neo Geo Pocket Color</option><option value='NES'>NES</option><option value='Nintendo 3DS'>Nintendo 3DS</option><option value='Nintendo 64'>Nintendo 64</option><option value='Nintendo DS'>Nintendo DS</option><option value='Nintendo GameCube'>Nintendo GameCube</option><option value='Nintendo Switch'>Nintendo Switch</option><option value='Oculus Go'>Oculus Go</option><option value='Oculus Rift'>Oculus Rift</option><option value='Oculus Quest'>Oculus Quest</option><option value='OnLive'>OnLive</option><option value='Ouya'>Ouya</option><option value='PC'>PC</option><option value='Philips CD-i'>Philips CD-i</option><option value='Philips Videopac G7000'>Philips Videopac G7000</option><option value='PlayStation'>PlayStation</option><option value='PlayStation 2'>PlayStation 2</option><option value='PlayStation 3'>PlayStation 3</option><option value='PlayStation 4'>PlayStation 4</option><option value='PlayStation Mobile'>PlayStation Mobile</option><option value='PlayStation Now'>PlayStation Now</option><option value='PlayStation Vita'>PlayStation Vita</option><option value='PlayStation VR'>PlayStation VR</option><option value='Plug & Play'>Plug & Play</option><option value='PSP'>PSP</option><option value='Sega 32X'>Sega 32X</option><option value='Sega CD'>Sega CD</option><option value='Sega Game Gear'>Sega Game Gear</option><option value='Sega Master System'>Sega Master System</option><option value='Sega Mega Drive/Genesis'>Sega Mega Drive/Genesis</option><option value='Sega Saturn'>Sega Saturn</option><option value='Sharp X68000'>Sharp X68000</option><option value='Super Nintendo'>Super Nintendo</option><option value='Tiger Handheld'>Tiger Handheld</option><option value='TurboGrafx-16'>TurboGrafx-16</option><option value='TurboGrafx-CD'>TurboGrafx-CD</option><option value='Virtual Boy'>Virtual Boy</option><option value='Wii'>Wii</option><option value='Wii U'>Wii U</option><option value='Windows Phone'>Windows Phone</option><option value='WonderSwan'>WonderSwan</option><option value='WonderSwan Color'>WonderSwan Color</option><option value='Xbox'>Xbox</option><option value='Xbox 360'>Xbox 360</option><option value='Xbox One'>Xbox One</option><option value='ZX Spectrum'>ZX Spectrum</option></optgroup></select>
-                                    <h5 class="left">Sort By</h5>
-                                    <select class="form_select back_form" name="search_sort_g" onchange="globalSearch(document.forms.global_search_form.t.value,'',document.forms.global_search_form.global_search_box.value);">
-                                        <option value="name">Name</option>
-                                        <option value="main">Main Story</option>
-                                        <option value="mainp">Main + Extras</option>
-                                        <option value="comp">Completionist</option>
-                                        <option value="averagea">Average Time</option>
-                                        <option value="rating">Top Rated</option>
-                                        <option value="popular" selected="selected">Most Popular</option>
-                                        <option value="backlog">Most Backlogs</option>
-                                        <option value="usersp">Most Submissions</option>
-                                        <option value="playing">Most Played</option>
-                                        <option value="speedruns">Most Speedruns</option>
-                                        <option value="release">Release Date</option>
-                                    </select>
-                                </div>
-                            </div>
-                            <div class="content_33 back_secondary shadow_box">
-                                <div class="in">
-                                    <h5 class="left">Length Range Category</h5>
-                                    <select class="form_select back_form" name="search_range_type" onchange="globalSearch(document.forms.global_search_form.t.value,'',document.forms.global_search_form.global_search_box.value);">
-                                        <option value="main">Main Story</option>
-                                        <option value="mainp">Main + Extras</option>
-                                        <option value="comp">Completionist</option>
-                                        <option value="averagea">Average Time</option>
-                                    </select>
-                                    <h5 class="left">Hour Range</h5>
-                                    <input class="search_range_l back_form" type="text" id="search_len_min_g" name="search_len_str_g" placeholder="Min" onkeyup="return hitkey_l(event.keyCode,document.forms.global_search_form.t.value,document.forms.global_search_form.global_search_box.value);">
-                                    <input class="search_range_r back_form" type="text" id="search_len_max_g" name="search_len_end_g" placeholder="Max" onkeyup="return hitkey_l(event.keyCode,document.forms.global_search_form.t.value,document.forms.global_search_form.global_search_box.value);">
-                                    <div class="clear"></div>
-                                </div>
-                            </div>
-                        </div>
-                        <div id="search_preset_u" class="content_66 back_secondary shadow_box">
-                            <div class="in">
-                                <h5 class="left">Sort By</h5>
-                                <select class="form_select back_form" name="search_sort_u" onchange="globalSearch(document.forms.global_search_form.t.value,'',document.forms.global_search_form.global_search_box.value);">
-                                    <option value="name">Name</option>
-                                    <option value="gender">Gender</option>
-                                    <option value="age">Age</option>
-                                    <option value="numbacklog">Most Backlogs</option>
-                                    <option value="numcomp">Most Completed</option>
-                                    <option value="postcount" selected="selected">Top Posters</option>
-                                </select>
-                            </div>
-                        </div>
-                        <div class="content_33 back_secondary shadow_box">
-                            <div class="in">
-                                <div id="search_detail_box">
-                                    <h5 class="left">Show Extra Information</h5>
-                                    <select class="form_select back_form" name="detail" onchange="globalSearch(document.forms.global_search_form.t.value,'',document.forms.global_search_form.global_search_box.value);">
-                                        <option value="">None</option>
-                                        <option value="user_stats">Global User Stats</option>
-                                    </select>
-                                </div>
-                                <h5 class="left">Other Options</h5>
-                                <input class="form_button back_dark" name="sortd" type="button" value="Normal Order" onclick="search_flip(document.forms.global_search_form.sortd.value,'search');globalSearch(document.forms.global_search_form.t.value,'',document.forms.global_search_form.global_search_box.value);">
-                                <input class="form_button back_red" type="reset" onmouseup="setTimeout(function(){search_flip('Reverse Order','search');globalSearch(document.forms.global_search_form.t.value,'','');},100);">
-                            </div>
-                        </div>
-                        <div class="clear"></div>
-                    </div>
-                    <div class="content_100">
-                        <div id="global_search_content" class="search_list"></div>
-                    </div>
-                    <div class="clear"></div>
-                </div>
-            </div>
-        </div>
-    </form>
-    <div id="global_site">
-        <div class="contain_out back_blue shadow_box">
-            <div class="contain_in" style="        	background-image: radial-gradient(circle at 50%, rgba(50, 142, 214, 0.7), rgba(50, 142, 214, 0.95) 75%, #328ed6 100%), url('https://howlongtobeat.com/gameimages/41753_The_Last_of_Us_Part_II.jpg'); 				background-position: center center;
-				background-size: cover; ">
-                <div class="profile_header_game">
-                    <div class="profile_header shadow_text">
-                        The Last of Us: Part II </div>
-                    <div class="game_image desktop_hide">
-                        <img alt="Box Art" src='https://howlongtobeat.com/gameimages/41753_The_Last_of_Us_Part_II.jpg' />
-                    </div>
-                    <div class="profile_details">
-                        <ul>
-                            <li>2 Playing</li>
-                            <li>218 Backlogs</li>
-                            <li>2 Replays</li>
-                            <li>0% Retired
-                            </li>
-                            <li>NR Rating</li>
-                            <li>0 Beat</li>
-                        </ul>
-                        <div class="clear"></div>
-                    </div>
-                </div>
-                <div class="content_75_static scrollable back_clear">
-                    <div class="profile_nav">
-                        <ul>
-                            <li class="back_darkish">
-                                <a href="game?id=41753">Overview</a>
-                            </li>
-                            <li><a href="forum?game=41753">Forum (0)</a></li>
-                            <li class=""><a href="game?id=41753&s=playing">Playing</a></li>
-                            <li class=""><a href="game?id=41753&s=backlogs">Backlogs</a></li>
-                            <li class=""><a href="game?id=41753&s=retired">Retired</a></li>
-                        </ul>
-                        <div class="clear"></div>
-                    </div>
-                </div>
-                <div class="content_break"></div>
-            </div>
-            <div class="clear"></div>
-        </div>
-        <div class="contain_out">
-            <div class="contain_in">
-                <div class="content_25_static game_bar">
-                    <div class="game_image mobile_hide">
-                        <img alt="Box Art" src='https://howlongtobeat.com/gameimages/41753_The_Last_of_Us_Part_II.jpg' />
-                    </div>
-                    <div class="in back_secondary shadow_box"> <a class="text_orange center"
-                                                                  title="Submit Your Time" href="submit?s=add&gid=41753">
-                        <h4>Submit Your Time</h4>
-                    </a>
-                        <div class="clear"></div>
-                    </div>
-                    <div class="mobile_clear"></div>
-                </div>
-                <div class="content_75_static">
-                    <div class="game_times">
-                        <ul>
-                            <li class="short time_00">
-                                <h5>Main Story</h5>
-                                <div>-- </div>
-                            </li>
-                            <li class="short time_00">
-                                <h5>Main + Extras</h5>
-                                <div>-- </div>
-                            </li>
-                            <li class="short time_00">
-                                <h5>Completionist</h5>
-                                <div>-- </div>
-                            </li>
-                            <li class="short time_00">
-                                <h5>All Styles</h5>
-                                <div>-- </div>
-                            </li>
-                        </ul>
-                        <div class="guide">
-                            <div class="guide_node time_40"></div>
-                            <div class="guide_node time_50"></div>
-                            <div class="guide_node time_60"></div>
-                            <div class="guide_node time_70"></div>
-                            <div class="guide_node time_80"></div>
-                            <div class="guide_node time_90"></div>
-                            <div class="guide_node time_100"></div>
-                        </div>
-                    </div>
-                    <div class="in back_primary shadow_box">
-                        <p style="margin-bottom: 10px;"> Five years after their dangerous journey across the
-                            post-pandemic United States, Ellie and Joel have settled down in Jackson,
-                            Wyoming. Living amongst a thriving community of survivors has allowed them peace
-                            and stability, despite the constant threat of the infected and other, more
-                            desperate survivors. When a violent event disrupts that peace, Ellie<a
-                                    id="profile_summary_more"
-                                    onclick="document.getElementById('profile_summary_more').style.display = 'none';document.getElementById('profile_summary_rest').style.display = 'inline';">...Read
-                                More</a><span id="profile_summary_rest" style="display:none;"> embarks on a relentless journey to carry out justice and find closure. As she hunts those responsible one by one, she is confronted with the devastating physical and emotional repercussions of her actions.</span>
-                        </p>
-                        <div>
-                            <div>
-                                <strong>
-                                    Alias:
-                                </strong>
-                                The Last of Us 2 </div>
-                            <div class="profile_info">
-                                <strong>
-                                    Developer:
-                                </strong>
-                                Naughty Dog </div>
-                            <div class="profile_info">
-                                <strong>
-                                    Publisher:
-                                </strong>
-                                Sony Interactive Entertainment </div>
-                            <div class="profile_info">
-                                <strong>
-                                    Genres:
-                                </strong>
-                                Third-Person, Action, Adventure, Horror, Shooter, Survival </div>
-                            <div class="profile_info">
-                                <strong>NA:</strong> May 29, 2020 </div>
-                            <div class="profile_info">
-                                <strong>EU:</strong> May 29, 2020 </div>
-                            <div class="profile_info">
-                                <strong>JP:</strong> May 29, 2020 </div>
-                            <div class="profile_info">
-                                <strong>Updated:</strong> 1 Day Ago </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="clear"></div>
-            </div>
-        </div>
-        <div class="contain_out">
-            <div class="contain_in">
-                <div class="content_25_static"></div>
-                <div class="							 content_75_static  center">
-                    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-
-                    <ins class="adsbygoogle" style="display:block;margin:1%;"
-                         data-ad-client="ca-pub-7605721541969230" data-ad-slot="8455119541"
-                         data-ad-format="auto"></ins>
-                    <script>
-                        (adsbygoogle = window.adsbygoogle || []).push({});
-                    </script>
-                </div>
-                <div class="content_100"></div>
-            </div>
-        </div>
-    </div>
-</div>
-<div class="footer back_primary">
-    <div class="contain_out">
-        <div class="contain_in">
-            <div class="content_25" style="margin-top:0;">
-                <div class="in">
-                    <h3>Feedback</h3>
-                    <ul>
-                        <li><a class="text_blue" href="feedback">Contact Us</a></li>
-                        <li><a class="text_blue" href="donate">Donate</a></li>
-                    </ul>
-                </div>
-            </div>
-            <div class="content_25" style="margin-top:0;">
-                <div class="in">
-                    <h3>Social</h3>
-                    <ul>
-                        <li><a href="https://facebook.com/HowLongToBeat/">Facebook</a></li>
-
-                        <li><a href="https://twitter.com/HowLongToBeat/">Twitter</a></li>
-                    </ul>
-                </div>
-            </div>
-            <div class="content_50" style="margin-top:0;">
-                <div class="in">
-                    <h3>
-                        &#169;
-                        2019
-                        HowLongToBeat.com
-                    </h3>
-                    <ul>
-                        <li><a href="privacy">Privacy Policy & Cookies</a></li>
-                        <li>Powered By Wind, Built With Love</li>
-                    </ul>
-                </div>
-            </div>
-            <div class="clear"></div>
-        </div>
-    </div>
-</div>
-<script type="text/javascript" src="js/site_19.js"></script>
 <script>
-    if('serviceWorker' in navigator) {
-        navigator.serviceWorker
-            .register('sw.js')
-            .then(function() { console.log("HLTB Connected"); });
-    }
-</script>
-</body>
+    window.googletag = window.googletag || { cmd: [] };
 
+    !function(a9,a,p,s,t,A,g){if(a[a9])return;function q(c,r){a[a9]._Q.push([c, r])}a[a9]={init:function(){q("i", arguments)},fetchBids:function(){q("f", arguments)},setDisplayBids:function(){},_Q:[]};A=p.createElement(s);A.async=!0;A.src=t;g=p.getElementsByTagName(s)[0];g.parentNode.insertBefore( A,g)}("apstag",window,document,"script","//c.amazon-adsystem.com/aax2/apstag.js");
+    
+    // initialize apstag and have apstag set bids on the googletag slots when they are returned to the page
+    apstag.init({
+        pubID: '3158',
+        adServer: 'googletag',
+        bidTimeout: 2e3
+    });
+</script>
+
+<script>
+    dataLayer = [
+        {
+            "ga": {
+                "page": {                         'gameID': '41753',
+                        'gameName': 'The Last of Us Part II',                     'pageType': 'game',
+                    'pageSection': 'main'
+                },                 "user": {
+                    'userLoggedIn': 'false'
+                }
+            }
+        }
+    ];
+</script>
+
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-M5NCBWM');</script>
+
+<script type="text/javascript">
+    window._comscore = window._comscore || [];
+    var _csconfig = {c1: 2, c2: '3000068'};
+    if (window.zdconsent && zdconsent.gdprApplies) {
+        _csconfig.cs_ucfr = (zdconsent.optins) ? zdconsent.optins.comscore : 0;
+    }
+    window._comscore.push(_csconfig);
+    (function() {
+        let s = document.createElement("script"), el = document.getElementsByTagName("script")[0];
+        s.async = true;
+        s.src = "https://sb.scorecardresearch.com/cs/3000068/beacon.js";
+        el.parentNode.insertBefore(s, el);
+    })();
+</script>				
+		<link rel="apple-touch-icon" sizes="57x57"		href="/img/icons/apple-touch-icon-57x57.png">
+		<link rel="apple-touch-icon" sizes="60x60"		href="/img/icons/apple-touch-icon-60x60.png">
+		<link rel="apple-touch-icon" sizes="72x72"		href="/img/icons/apple-touch-icon-72x72.png">
+		<link rel="apple-touch-icon" sizes="76x76"		href="/img/icons/apple-touch-icon-76x76.png">
+		<link rel="apple-touch-icon" sizes="114x114"	href="/img/icons/apple-touch-icon-114x114.png">
+		<link rel="apple-touch-icon" sizes="120x120"	href="/img/icons/apple-touch-icon-120x120.png">
+		<link rel="apple-touch-icon" sizes="144x144"	href="/img/icons/apple-touch-icon-144x144.png">
+		<link rel="apple-touch-icon" sizes="152x152"	href="/img/icons/apple-touch-icon-152x152.png">
+		<link rel="apple-touch-icon" sizes="180x180"	href="/img/icons/apple-touch-icon-180x180.png">
+		<link rel="icon" type="image/png" href="/img/icons/favicon-32x32.png" sizes="32x32">
+		<link rel="icon" type="image/png" href="/img/icons/android-chrome-192x192.png" sizes="192x192">
+		<link rel="icon" type="image/png" href="/img/icons/favicon-96x96.png" sizes="96x96">
+		<link rel="icon" type="image/png" href="/img/icons/favicon-16x16.png" sizes="16x16">
+		<link rel="manifest" href="/app/manifest.json">
+		<link rel="shortcut icon" href="/img/icons/favicon.ico">
+		<meta name="msapplication-starturl" content="https://howlongtobeat.com"/>
+        <meta name="msapplication-navbutton-color" content="#000000" />
+        <meta name="msapplication-task" content="name=Home;action-uri=https://howlongtobeat.com;icon-uri=/img/icons/favicon.ico"/>
+        <meta name="msapplication-task" content="name=Search;action-uri=https://howlongtobeat.com/search;icon-uri=/img/icons/favicon.ico"/>
+        <meta name="msapplication-task" content="name=Submit;action-uri=https://howlongtobeat.com/submit;icon-uri=/img/icons/favicon.ico"/>
+        <meta name="msapplication-task" content="name=Control Panel;action-uri=https://howlongtobeat.com/user;icon-uri=/img/icons/favicon.ico"/>
+		<meta name="msapplication-TileImage" content="/img/icons/mstile-144x144.png">
+		<meta name="msapplication-config" content="/img/icons/browserconfig.xml">
+		<meta name="theme-color" content="#000000">    </head>
+	<body onhashchange="initialize();" onload="initialize();">
+		<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-M5NCBWM"
+		height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+		<!--[if lt IE 7]>
+            <p class="chromeframe">You are using an outdated browser. <a href="http://browsehappy.com/">Upgrade your browser today</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to better experience this site.</p>
+        <![endif]-->
+        <div id="top" class="container ">			<form name="global_search_form" autocomplete="off">
+				<div class="nav_back" id="nav_back" style="display: none;"></div>	
+				<div class="nav">
+					<div class="contain_out">
+						<div class="contain_in">
+							<div class="nav_g">
+								<a class="brand back_black" aria-label="HowLongToBeat" href="./"></a>
+								<div class="main_links">
+									<ul class="site">
+											<li><a class="text_primary" href="forum">Forum</a></li>
+											<li><a class="text_primary" href="stats">Stats</a></li>
+											<li><a class="text_primary" href="submit">Submit</a></li>
+									</ul>
+																				<ul class="login">
+												<li><a class="text_primary" href="login">Login</a></li>
+												<li class="mobile_hide"><a class="text_primary" href="login?t=signup">Join</a></li>
+											</ul>
+																		<div class="search_container">
+									<input 	class="global_search_box back_form "
+											id="global_search_box"
+											tabindex="2"
+											aria-label="Search"
+											name="q"
+											type="text"
+											placeholder="Search Your Favorite Games..."
+											onclick="search_enable();"
+											onkeypress="if(event.keyCode==13){return false;}"
+											onpaste="setTimeout(function() {return hitkey_l(0,document.forms.global_search_form.t.value,this.value);}, 50);"
+											onkeyup="return hitkey_l(event.keyCode,document.forms.global_search_form.t.value,this.value);"
+											value="">
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div id="nav_u_drop" class="nav_up back_form"> 	
+					</div>				
+				</div>
+				<div class="clear"></div>
+				<div id="note_bar" class="global_padding back_yellow center"></div>
+				<div class="back_secondary center"> <div id="bobble_wide" class="ad-padding"></div>
+				</div>
+				<div id="global_search" style="display: none;">	
+	<div class="contain_out">
+		<div class="contain_in">
+			<!-- Search Buttons -->
+			<div class="content_66 back_secondary shadow_box">
+				<!-- Nav -->
+				<input type='hidden' name='t' id='search_type_g' value='games' style="display:none;">
+				<a class="text_white"
+					href="javascript:
+							change_class('game_list_tag','content_50_static back_blue center shadow_box');
+							change_class('user_list_tag','content_50_static center');
+							document.forms.global_search_form.t.value = 'games';
+							globalSearch(document.forms.global_search_form.t.value,'',document.forms.global_search_form.global_search_box.value,0);
+							dl('search-typeGames');
+						">
+					<h4 id="game_list_tag" class="content_50_static back_blue center shadow_box">Games List</h4>
+				</a>
+				<a class="text_white"
+					href="javascript:
+							change_class('user_list_tag','content_50_static back_pink center shadow_box');
+							change_class('game_list_tag','content_50_static center');
+							document.forms.global_search_form.t.value = 'users';
+							globalSearch(document.forms.global_search_form.t.value,'',document.forms.global_search_form.global_search_box.value,0);
+							dl('search-typeUsers');
+						">
+					<h4 id="user_list_tag" class="content_50_static center">User List</h4>
+				</a>
+				<div class="clear"></div>
+			</div>
+			<div class="content_33">
+				<input type="button" class="search_options_button back_form shadow_box" 	onclick="search_options();" 		value="Search Options">
+				<input type="button" class="search_options_button back_form shadow_box" 	onclick="search_enable('close');" 	value="Close">
+			</div>
+			<div class="clear"></div>
+				
+			<!-- Search Options -->
+			<div id="global_search_opt" style="display:none;">
+				<div id="search_preset_g">
+					<div class="content_33 back_secondary shadow_box" id="search_platform">
+						<div class="in">
+							<h5 class="left">Platform</h5>
+							<select aria-label='Platform' name='platform' autocomplete='off' class='form_select back_form' style='width:100%;' onchange='globalSearch("","",document.forms.global_search_form.global_search_box.value);'><option value=''>All</option><optgroup label='Popular Platforms'><option value='Emulated' >Emulated</option><option value='Nintendo 3DS' >Nintendo 3DS</option><option value='Nintendo Switch' >Nintendo Switch</option><option value='PC' >PC</option><option value='PlayStation 3' >PlayStation 3</option><option value='PlayStation 4' >PlayStation 4</option><option value='PlayStation 5' >PlayStation 5</option><option value='PlayStation Now' >PlayStation Now</option><option value='Wii U' >Wii U</option><option value='Xbox 360' >Xbox 360</option><option value='Xbox One' >Xbox One</option><option value='Xbox Series X/S' >Xbox Series X/S</option></optgroup>		<optgroup label="All Platforms"> 				<option value="3DO" >3DO</option> 				<option value="Acorn Archimedes" >Acorn Archimedes</option> 				<option value="Amazon Luna" >Amazon Luna</option> 				<option value="Amiga" >Amiga</option> 				<option value="Amiga CD32" >Amiga CD32</option> 				<option value="Amstrad CPC" >Amstrad CPC</option> 				<option value="Android" >Android</option> 				<option value="Apple II" >Apple II</option> 				<option value="Arcade" >Arcade</option> 				<option value="Atari 8-bit Family" >Atari 8-bit Family</option> 				<option value="Atari 2600" >Atari 2600</option> 				<option value="Atari 5200" >Atari 5200</option> 				<option value="Atari 7800" >Atari 7800</option> 				<option value="Atari Jaguar" >Atari Jaguar</option> 				<option value="Atari Jaguar CD" >Atari Jaguar CD</option> 				<option value="Atari Lynx" >Atari Lynx</option> 				<option value="Atari ST" >Atari ST</option> 				<option value="BBC Micro" >BBC Micro</option> 				<option value="Browser" >Browser</option> 				<option value="ColecoVision" >ColecoVision</option> 				<option value="Commodore 64" >Commodore 64</option> 				<option value="Commodore PET" >Commodore PET</option> 				<option value="Commodore VIC-20" >Commodore VIC-20</option> 				<option value="Dreamcast" >Dreamcast</option> 				<option value="Emulated" >Emulated</option> 				<option value="FM Towns" >FM Towns</option> 				<option value="Game & Watch" >Game & Watch</option> 				<option value="Game Boy" >Game Boy</option> 				<option value="Game Boy Advance" >Game Boy Advance</option> 				<option value="Game Boy Color" >Game Boy Color</option> 				<option value="Gear VR" >Gear VR</option> 				<option value="Gizmondo" >Gizmondo</option> 				<option value="Google Stadia" >Google Stadia</option> 				<option value="Intellivision" >Intellivision</option> 				<option value="Interactive Movie" >Interactive Movie</option> 				<option value="iOS" >iOS</option> 				<option value="Linux" >Linux</option> 				<option value="Mac" >Mac</option> 				<option value="Mobile" >Mobile</option> 				<option value="MSX" >MSX</option> 				<option value="N-Gage" >N-Gage</option> 				<option value="NEC PC-88" >NEC PC-88</option> 				<option value="NEC PC-98" >NEC PC-98</option> 				<option value="NEC PC-FX" >NEC PC-FX</option> 				<option value="Neo Geo" >Neo Geo</option> 				<option value="Neo Geo CD" >Neo Geo CD</option> 				<option value="Neo Geo Pocket" >Neo Geo Pocket</option> 				<option value="NES" >NES</option> 				<option value="Nintendo 3DS" >Nintendo 3DS</option> 				<option value="Nintendo 64" >Nintendo 64</option> 				<option value="Nintendo DS" >Nintendo DS</option> 				<option value="Nintendo GameCube" >Nintendo GameCube</option> 				<option value="Nintendo Switch" >Nintendo Switch</option> 				<option value="Oculus Go" >Oculus Go</option> 				<option value="Oculus Quest" >Oculus Quest</option> 				<option value="Odyssey" >Odyssey</option> 				<option value="Odyssey 2" >Odyssey 2</option> 				<option value="OnLive" >OnLive</option> 				<option value="Ouya" >Ouya</option> 				<option value="PC" >PC</option> 				<option value="PC VR" >PC VR</option> 				<option value="Philips CD-i" >Philips CD-i</option> 				<option value="Playdate" >Playdate</option> 				<option value="PlayStation" >PlayStation</option> 				<option value="PlayStation 2" >PlayStation 2</option> 				<option value="PlayStation 3" >PlayStation 3</option> 				<option value="PlayStation 4" >PlayStation 4</option> 				<option value="PlayStation 5" >PlayStation 5</option> 				<option value="PlayStation Mobile" >PlayStation Mobile</option> 				<option value="PlayStation Now" >PlayStation Now</option> 				<option value="PlayStation Portable" >PlayStation Portable</option> 				<option value="PlayStation Vita" >PlayStation Vita</option> 				<option value="PlayStation VR" >PlayStation VR</option> 				<option value="Plug & Play" >Plug & Play</option> 				<option value="Sega 32X" >Sega 32X</option> 				<option value="Sega CD" >Sega CD</option> 				<option value="Sega Game Gear" >Sega Game Gear</option> 				<option value="Sega Master System" >Sega Master System</option> 				<option value="Sega Mega Drive/Genesis" >Sega Mega Drive/Genesis</option> 				<option value="Sega Pico" >Sega Pico</option> 				<option value="Sega Saturn" >Sega Saturn</option> 				<option value="SG-1000" >SG-1000</option> 				<option value="Sharp X1" >Sharp X1</option> 				<option value="Sharp X68000" >Sharp X68000</option> 				<option value="Super Nintendo" >Super Nintendo</option> 				<option value="Tiger Handheld" >Tiger Handheld</option> 				<option value="TurboGrafx-16" >TurboGrafx-16</option> 				<option value="TurboGrafx-CD" >TurboGrafx-CD</option> 				<option value="Virtual Boy" >Virtual Boy</option> 				<option value="Wii" >Wii</option> 				<option value="Wii U" >Wii U</option> 				<option value="Windows Phone" >Windows Phone</option> 				<option value="WonderSwan" >WonderSwan</option> 				<option value="Xbox" >Xbox</option> 				<option value="Xbox 360" >Xbox 360</option> 				<option value="Xbox One" >Xbox One</option> 				<option value="Xbox Series X/S" >Xbox Series X/S</option> 				<option value="Zeebo" >Zeebo</option> 				<option value="ZX81" >ZX81</option> 				<option value="ZX Spectrum" >ZX Spectrum</option> 		</optgroup> </select>
+							<h5 class="left">Sort By</h5>
+							<select class="form_select back_form"
+											name="search_sort_g"
+											onchange="globalSearch(document.forms.global_search_form.t.value,'',document.forms.global_search_form.global_search_box.value,0);">
+								<option value="name">Name</option>
+								<option value="main">Main Story</option>
+								<option value="mainp">Main + Extras</option>
+								<option value="comp">Completionist</option>
+								<option value="averagea">Average Time</option>
+								<option value="rating">Top Rated</option>
+								<option value="popular" selected="selected">Most Popular</option>
+								<option value="backlog">Most Backlogs</option>
+								<option value="usersp">Most Submissions</option>
+								<option value="playing">Most Played</option>
+								<option value="speedruns">Most Speedruns</option>
+								<option value="release">Release Date</option>
+							</select>
+						</div>
+					</div>
+					<div class="content_33 back_secondary shadow_box">
+						<div class="in">
+							<h5 class="left">Length Range Category</h5>
+							<select class="form_select back_form"
+											name="search_range_type"
+											onchange="globalSearch(document.forms.global_search_form.t.value,'',document.forms.global_search_form.global_search_box.value,0);">
+								<option value="main">Main Story</option>
+								<option value="mainp">Main + Extras</option>
+								<option value="comp">Completionist</option>
+								<option value="averagea">Average Time</option>
+							</select>
+							<h5 class="left">Hour Range</h5>
+							<input 	class="search_range_l back_form" type="text" id="search_len_min_g" name="search_len_str_g" placeholder="Min"
+											onkeyup="return hitkey_l(event.keyCode,document.forms.global_search_form.t.value,document.forms.global_search_form.global_search_box.value);">
+							<input 	class="search_range_r back_form" type="text" id="search_len_max_g" name="search_len_end_g" placeholder="Max"
+											onkeyup="return hitkey_l(event.keyCode,document.forms.global_search_form.t.value,document.forms.global_search_form.global_search_box.value);">
+							<div class="clear"></div>
+						</div>
+					</div>
+				
+					<div class="content_33 back_secondary shadow_box">
+						<div class="in">
+							<div style="float:left;width:32.66%;">
+								<h5 class="left">Perspective</h5>
+								<select name="perspective" id="perspective" class="form_select back_form center" style="width:100%;"
+										onchange="globalSearch(document.forms.global_search_form.t.value,'',document.forms.global_search_form.global_search_box.value,0);">
+									<option value="">All</option> 										<option value="First-Person">
+											First-Person										</option> 										<option value="Isometric">
+											Isometric										</option> 										<option value="Side">
+											Side										</option> 										<option value="Text">
+											Text										</option> 										<option value="Third-Person">
+											Third-Person										</option> 										<option value="Top-Down">
+											Top-Down										</option> 										<option value="Virtual Reality">
+											Virtual Reality										</option> 								</select>
+							</div>
+							<div style="float:left;width:32.66%;margin: 0 1%;">
+								<h5 class="left">Flow</h5>
+								<select name="flow" id="flow" class="form_select back_form center" style="width:100%;"
+										onchange="globalSearch(document.forms.global_search_form.t.value,'',document.forms.global_search_form.global_search_box.value,0);">
+									<option value="">All</option> 										<option value="Incremental">
+											Incremental										</option> 										<option value="Massively Multiplayer">
+											Massively Multiplayer										</option> 										<option value="Multidirectional">
+											Multidirectional										</option> 										<option value="On-Rails">
+											On-Rails										</option> 										<option value="Point-and-Click">
+											Point-and-Click										</option> 										<option value="Real-Time">
+											Real-Time										</option> 										<option value="Scrolling">
+											Scrolling										</option> 										<option value="Turn-Based">
+											Turn-Based										</option> 								</select>
+							</div>
+							<div style="float:right;width:32.66%;">
+								<h5 class="left">Genre</h5>
+								<select name="genre" id="genre" class="form_select back_form center" style="width:100%;"
+										onchange="globalSearch(document.forms.global_search_form.t.value,'',document.forms.global_search_form.global_search_box.value,0);">
+									<option value="">All</option> 										<option value="Action">
+											Action										</option> 										<option value="Adventure">
+											Adventure										</option> 										<option value="Arcade">
+											Arcade										</option> 										<option value="Battle Arena">
+											Battle Arena										</option> 										<option value="Beat 'em Up">
+											Beat 'em Up										</option> 										<option value="Board Game">
+											Board Game										</option> 										<option value="Breakout">
+											Breakout										</option> 										<option value="Card Game">
+											Card Game										</option> 										<option value="City-Building">
+											City-Building										</option> 										<option value="Compilation">
+											Compilation										</option> 										<option value="Educational">
+											Educational										</option> 										<option value="Fighting">
+											Fighting										</option> 										<option value="Fitness">
+											Fitness										</option> 										<option value="Flight">
+											Flight										</option> 										<option value="Full Motion Video (FMV)">
+											Full Motion Video (FMV)										</option> 										<option value="Hack and Slash">
+											Hack and Slash										</option> 										<option value="Hidden Object">
+											Hidden Object										</option> 										<option value="Horror">
+											Horror										</option> 										<option value="Interactive Art">
+											Interactive Art										</option> 										<option value="Management">
+											Management										</option> 										<option value="Music/Rhythm">
+											Music/Rhythm										</option> 										<option value="Open World">
+											Open World										</option> 										<option value="Party">
+											Party										</option> 										<option value="Pinball">
+											Pinball										</option> 										<option value="Platform">
+											Platform										</option> 										<option value="Puzzle">
+											Puzzle										</option> 										<option value="Racing/Driving">
+											Racing/Driving										</option> 										<option value="Roguelike">
+											Roguelike										</option> 										<option value="Role-Playing">
+											Role-Playing										</option> 										<option value="Sandbox">
+											Sandbox										</option> 										<option value="Shooter">
+											Shooter										</option> 										<option value="Simulation">
+											Simulation										</option> 										<option value="Social">
+											Social										</option> 										<option value="Sports">
+											Sports										</option> 										<option value="Stealth">
+											Stealth										</option> 										<option value="Strategy/Tactical">
+											Strategy/Tactical										</option> 										<option value="Survival">
+											Survival										</option> 										<option value="Tower Defense">
+											Tower Defense										</option> 										<option value="Trivia">
+											Trivia										</option> 										<option value="Vehicular Combat">
+											Vehicular Combat										</option> 										<option value="Visual Novel">
+											Visual Novel										</option> 								</select>
+							</div>
+							<h5 class="left">Modifiers</h5>
+							<select class="form_select back_form"
+											name="detail" 
+											onchange="globalSearch(document.forms.global_search_form.t.value,'',document.forms.global_search_form.global_search_box.value,0);">
+								<option value="">None</option> 								<optgroup label="DLC Options">
+									<option value="hide_dlc">Hide DLC</option>
+									<option value="only_dlc">Isolate DLC</option>
+								</optgroup>
+								<optgroup label="Stat Options">
+									<option value="hidden_stats">Hidden Stats</option>
+									<option value="user_stats">Show User Stats</option>
+								</optgroup>
+							</select>
+						</div>
+					</div>
+					<div class="clear"></div>
+				</div>
+				<div id="search_preset_u" class="content_66 back_secondary shadow_box">
+					<div class="in">				
+						<h5 class="left">Sort By</h5>
+						<select class="form_select back_form"
+								name="search_sort_u" 
+								onchange="globalSearch(document.forms.global_search_form.t.value,'',document.forms.global_search_form.global_search_box.value,0);">
+							<option value="name">Name</option>
+							<option value="gender">Gender</option>
+							<option value="numbacklog">Most Backlogs</option>
+							<option value="numcomp">Most Completed</option>
+							<option value="postcount" selected="selected">Top Posters</option>
+						</select>
+					</div>
+				</div>
+				<div id="search_preset_o" class="content_100 back_secondary shadow_box">
+					<div class="in">
+						<h5 class="left">Other Options</h5>
+						<input 	id="search_gamepass"
+								type="button"   class="form_button back_green" aria-label="Game Pass"
+								value="Game Pass"  title="Check out Game Pass titles!"
+								onclick="document.forms.global_search_form.global_search_box.value = 'game pass';globalSearch(document.forms.global_search_form.t.value,'',document.forms.global_search_form.global_search_box.value,0);">
+						
+						<input 	type="button"   class="user_games_random form_button back_blue" aria-label="Random"
+								value="Random"  title="Randomly Select One Title"
+								onclick="globalSearch(document.forms.global_search_form.t.value,'',document.forms.global_search_form.global_search_box.value,1);">
+						<button	class="form_button back_dark"
+								name="sortd"
+								type="button"
+								value = "0"
+								onclick="search_flip(document.forms.global_search_form.sortd.value,'search');globalSearch(document.forms.global_search_form.t.value,'',document.forms.global_search_form.global_search_box.value,0);">˅ Sort</button>
+						<input 	class="form_button back_red" type="reset" onmouseup="setTimeout(function(){search_flip('˄ Sort','search');globalSearch(document.forms.global_search_form.t.value,'','',0);},100);">
+					</div>
+				</div>
+				<div class="clear"></div>
+			</div>
+			
+						<div class="content_100">
+				<div id="global_search_content" class="search_list"></div>
+			</div>
+			<div class="clear"></div>
+		</div>
+	</div> 				</div>
+			</form>
+			<div id="global_site" style="display: block;">
+	<div class="contain_out back_blue">
+		<div  class="contain_in" style="					background-image: radial-gradient(circle at 50%, rgba(50, 142, 214, 0.7), rgba(50, 142, 214, 0.95) 75%, #328ed6 100%), url('/games/41753_The_Last_of_Us_Part_II.jpg'); 				background-position: center center;
+				background-size: cover; " > 				<div class="profile_header_game"> 				<div class="profile_header shadow_text">
+					The Last of Us Part II				</div>					<div class="game_image desktop_hide">
+						<img alt="Box Art" src='/games/41753_The_Last_of_Us_Part_II.jpg' />
+					</div> 				<div class="profile_details">
+					<ul>
+						<li>51 Playing</li>
+						<li>1.9K Backlogs</li>
+						<li>159 Replays</li>
+						<li>1% Retired
+						</li>
+						<li>89% Rating</li>
+						<li>6.3K Beat</li>
+					</ul>
+					<div class="clear"></div>
+				</div>
+			</div>				<div class="content_75_static scrollable back_clear shadow_box"> 				<div class="profile_nav">
+					<ul>						<li class="back_darkish">
+							<a href="game?id=41753">Overview</a>
+						</li>
+						<li><a href="forum?game=41753">Forum (2)</a></li>							<li class=""><a href="game?id=41753&s=reviews">Reviews</a></li>							<li class=""><a href="game?id=41753&s=playing">Playing</a></li>							<li class=""><a href="game?id=41753&s=backlogs">Backlogs</a></li>							<li class=""><a href="game?id=41753&s=completions">Completions</a></li>							<li class=""><a href="game?id=41753&s=retired">Retired</a></li>					</ul>
+					<div class="clear"></div>
+				</div>
+			</div> 				<div class="content_break"></div> 		</div>
+		<div class="clear"></div>
+	</div>
+	<div class="contain_out">
+		<div class="contain_in"> 				<div class="content_25_static game_bar">						<div class="game_image mobile_hide">
+							<img alt="Box Art" src='/games/41753_The_Last_of_Us_Part_II.jpg' />
+						</div> 						<div class="in back_secondary shadow_box"> 								<a class="text_orange center" title="Submit Your Time" href="submit?s=add&gid=41753"><h4>Submit Your Time</h4></a> 							<div class="clear"></div>
+						</div>
+						<div class="mobile_clear"></div> 				</div>
+				<div class="content_75_static">		<div class="game_times">
+			<ul> 						<li class="short time_100">
+							<h5>Main Story</h5>
+							<div>24 Hours 							</div>
+						</li>
+						<li class="short time_100">
+							<h5>Main + Extras</h5>
+							<div>29&#189; Hours 							</div>
+						</li>
+						<li class="short time_100">
+							<h5>Completionist</h5>
+							<div>42 Hours 							</div>
+						</li>
+						<li class="short time_100">
+							<h5>All Styles</h5>
+							<div>28 Hours 							</div>
+						</li> 			</ul>
+			<div class="guide">
+				<div class="guide_node time_40"></div>
+				<div class="guide_node time_50"></div>
+				<div class="guide_node time_60"></div>
+				<div class="guide_node time_70"></div>
+				<div class="guide_node time_80"></div>
+				<div class="guide_node time_90"></div>
+				<div class="guide_node time_100"></div>
+			</div>
+		</div> 	<div class="in back_primary shadow_box"> 			<div class="profile_ad">
+				<div id="bobble_square" class="ad-padding"></div>
+			</div> 			<div class="profile_info large"> Five years after their dangerous journey across the post-pandemic United States, Ellie and Joel have settled down in Jackson, Wyoming. Living amongst a thriving community of survivors has allowed them peace and stability, despite the constant threat of the infected and other, more desperate survivors. When a violent event disrupts that peace, Ellie<a 	id="profile_summary_more"
+							onclick="document.getElementById('profile_summary_more').style.display = 'none';document.getElementById('profile_summary_rest').style.display = 'inline';">...Read More</a><span id="profile_summary_rest" style="display:none;"> embarks on a relentless journey to carry out justice and find closure. As she hunts those responsible one by one, she is confronted with the devastating physical and emotional repercussions of her actions.</span>
+			</div>			<div class="profile_info large">
+				When focusing on the main objectives, 
+				<strong>The Last of Us Part II</strong>
+				is about 
+				<strong>24 Hours </strong>
+				in length. 
+				If you're a gamer that strives to see all aspects of the game, you are likely to spend around
+				<strong>42 Hours </strong>
+				to obtain 100% completion.
+			</div>			<div class="profile_info medium">
+				<strong>
+					Platforms:
+				</strong> <br>
+				PlayStation 4			</div> 			<div class="profile_info medium">
+				<strong>
+					Genres:
+				</strong> <br>
+				Third-Person, Action, Adventure, Horror, Shooter, Survival			</div> 			<div class="profile_info medium">
+					<strong>
+						Developer:
+					</strong> <br>
+					Naughty Dog			</div> 			<div class="profile_info medium">
+				<strong>
+					Publisher:
+				</strong> <br>
+				Sony Interactive Entertainment			</div> 			<div class=""></div> 				<div class="profile_info">
+					<strong>NA:</strong> <br>June 19, 2020				</div>				<div class="profile_info">
+					<strong>EU:</strong> <br>June 19, 2020				</div>				<div class="profile_info">
+					<strong>JP:</strong> <br>June 19, 2020				</div>			<div class="profile_info">
+				<strong>Updated:</strong> <br>5 Mins Ago			</div>			<div class="profile_info medium">
+				<strong>
+					Alias:
+				</strong> <br>
+				The Last of Us 2			</div> 	</div> 		<div class="in scrollable shadow_box back_primary">
+				<table class="game_main_table">
+					<thead>
+					<tr>
+						<td>Single-Player</td>
+						<td class="center" style="width: 50px;">Polled</td> 						<td>Average</td>
+						<td>Median</td>
+						<td>Rushed</td>
+						<td>Leisure</td>
+					</tr>
+				</thead>					<tbody class="spreadsheet">
+						<tr>
+							<td>Main Story</td>
+							<td class="center time_100_text">1.6K							</td> 							<td>24h 13m </td>
+							<td>24h </td>
+							<td>18h 45m </td>
+							<td>30h 03m </td>
+						</tr>
+					</tbody>					<tbody class="spreadsheet">
+						<tr>
+							<td>Main + Extras</td>
+							<td class="center time_100_text">2.1K							</td> 							<td>29h 33m </td>
+							<td>29h </td>
+							<td>22h 38m </td>
+							<td>41h 08m </td>
+						</tr>
+					</tbody>					<tbody class="spreadsheet">
+						<tr>
+							<td>Completionists</td>
+							<td class="center time_100_text">391							</td> 							<td>43h 37m </td>
+							<td>40h 16m </td>
+							<td>33h 28m </td>
+							<td>77h 28m </td>
+						</tr>
+					</tbody>					<tbody class="spreadsheet">
+						<tr>
+							<td>All PlayStyles</td>
+							<td class="center time_100_text">4.1K							</td> 							<td>28h 47m </td>
+							<td>27h 16m </td>
+							<td>20h 43m </td>
+							<td>70h 31m </td>
+						</tr>
+					</tbody>
+							</table>
+			<div class="mobile_show_block scrollable_hint">Scroll for More &#9658</div>
+		</div>			<div class="in scrollable shadow_box back_primary">
+				<table class="game_main_table">
+					<thead>
+						<tr>
+							<td>Speedrun</td>
+							<td class="center" style="width: 50px;">Polled</td> 							<td>Average</td>
+							<td>Median</td>
+							<td>Fastest</td>
+							<td>Slowest</td>
+						</tr>
+					</thead>						<tbody class="spreadsheet">
+							<tr>
+								<td>Any%</td>
+								<td class="center time_50_text">8								</td> 								<td>8h 42m 11s</td>
+								<td>7h 42m 29s</td>
+								<td>3h 56m 26s</td>
+								<td>18h 15m 12s</td>
+							</tr>
+						</tbody>				</table>
+				<div class="mobile_show_block scrollable_hint">Scroll for More &#9658</div>
+			</div>		<div>
+			<div class="in game_chart back_form shadow_box" style="float: left;">
+				<svg viewBox="0 0 36 36" style="width:105px;">
+			  	<path d="	M18 2.0845
+							      a 15.9155 15.9155 0 0 1 0 31.831
+							      a 15.9155 15.9155 0 0 1 0 -31.831"
+							  fill="none" stroke="#485cab" ;="" stroke-width="3" stroke-linecap="round" stroke-dasharray="89, 100"></path>
+				</svg>
+				<h5 style="margin-top: -67px;">89% Rating</h5>
+			</div>
+			<div class="in game_chart back_form shadow_box" style="float: right;"> 				<svg viewBox="0 0 36 36" style="width:105px;">
+					<path 	d=" M18 2.0845
+								a 15.9155 15.9155 0 0 1 0 31.831
+								a 15.9155 15.9155 0 0 1 0 -31.831"
+							fill="none"
+							stroke="#3DA949" ;="" stroke-width="3" stroke-linecap="round"
+							stroke-dasharray="4, 100"></path>
+				</svg>
+				<h5 style="margin-top: -86px;">Very Low<br>0.8%<br>
+					Retirement
+				</h5>
+			</div>
+			<div class="in game_chart_rev back_form shadow_box">
+				<h5 class="center">Based on 2.3K User Ratings</h5> 				<div style="font-size:0">						<div 	class="time_40" 
+									style="display:inline-block;font-size: 10px;margin:0 0.5% 0 0.5%;width:9%;height:15px;line-height:15px;vertical-align: bottom;">10%</div> 						<div 	class="time_40" 
+									style="display:inline-block;font-size: 10px;margin:0 0.5% 0 0.5%;width:9%;height:15px;line-height:15px;vertical-align: bottom;">20%</div> 						<div 	class="time_40" 
+									style="display:inline-block;font-size: 10px;margin:0 0.5% 0 0.5%;width:9%;height:15px;line-height:15px;vertical-align: bottom;">30%</div> 						<div 	class="time_40" 
+									style="display:inline-block;font-size: 10px;margin:0 0.5% 0 0.5%;width:9%;height:16px;line-height:16px;vertical-align: bottom;">40%</div> 						<div 	class="time_50" 
+									style="display:inline-block;font-size: 10px;margin:0 0.5% 0 0.5%;width:9%;height:17px;line-height:17px;vertical-align: bottom;">50%</div> 						<div 	class="time_60" 
+									style="display:inline-block;font-size: 10px;margin:0 0.5% 0 0.5%;width:9%;height:20px;line-height:20px;vertical-align: bottom;">60%</div> 						<div 	class="time_70" 
+									style="display:inline-block;font-size: 10px;margin:0 0.5% 0 0.5%;width:9%;height:24px;line-height:24px;vertical-align: bottom;">70%</div> 						<div 	class="time_80" 
+									style="display:inline-block;font-size: 10px;margin:0 0.5% 0 0.5%;width:9%;height:38px;line-height:38px;vertical-align: bottom;">80%</div> 						<div 	class="time_90" 
+									style="display:inline-block;font-size: 10px;margin:0 0.5% 0 0.5%;width:9%;height:56px;line-height:56px;vertical-align: bottom;">90%</div> 						<div 	class="time_100" 
+									style="display:inline-block;font-size: 10px;margin:0 0.5% 0 0.5%;width:9%;height:85px;line-height:85px;vertical-align: bottom;">100%</div> 				</div>
+			</div>
+		</div> 			<div class="in shadow_box back_primary">					<div class="scrollable">
+						<table class="game_main_table">
+							<thead>
+								<tr>
+									<td>Platform</td>
+									<td class="center" style="width: 50px;">Polled</td>
+									<td>Main</td>
+									<td>Main +</td>
+									<td>100%</td>
+									<td>Fastest</td>
+									<td>Longest</td>
+								</tr>
+							</thead>
+							<tbody>							<tr class="spreadsheet">
+								<td>PlayStation 4								</td>
+								<td class="center time_100_text">3.8K</td>
+								<td>24h 13m </td>
+								<td>29h 35m </td>
+								<td>43h 28m </td>
+								<td>13h 24m </td>
+								<td>113h </td>
+							</tr>							<tr class="spreadsheet">
+								<td>PlayStation 5								</td>
+								<td class="center time_100_text">336</td>
+								<td>24h 09m </td>
+								<td>29h 08m </td>
+								<td>45h 36m </td>
+								<td>13h 52m </td>
+								<td>80h </td>
+							</tr>							<tr class="spreadsheet">
+								<td>PlayStation Now								</td>
+								<td class="center time_60_text">12</td>
+								<td>23h 48m </td>
+								<td>30h 05m </td>
+								<td>40h 39m </td>
+								<td>20h 34m </td>
+								<td>49h </td>
+							</tr>							</tbody>
+						</table>
+						<div class="mobile_show_block scrollable_hint">Scroll for More &#9658</div>
+					</div>					<div class="global_padding back_form">	<div style='padding: 5px 0;height: 26px;line-height:16px;vertical-align:middle;'>
+			        			<div style='height: 16px;float:left;'>PlayStation 4		</div>
+			        			<div style='height: 16px;width:60px;float:right;text-align:right;'><strong>5.7K</strong></div>
+			              		<div style='height: 16px;width:60px;float:right;text-align:center;'>92.17%</div>
+			              		<div style='border-radius:2px;height: 16px;margin: 0 0 0 20%;padding: 0 .5% 0 .5%; width:73.1146%;background-color: #10529e;color:#FFFFFF;'></div>
+			        		</div>	<div style='padding: 5px 0;height: 26px;line-height:16px;vertical-align:middle;'>
+			        			<div style='height: 16px;float:left;'>PlayStation 5		</div>
+			        			<div style='height: 16px;width:60px;float:right;text-align:right;'><strong>472</strong></div>
+			              		<div style='height: 16px;width:60px;float:right;text-align:center;'>7.61%</div>
+			              		<div style='border-radius:2px;height: 16px;margin: 0 0 0 20%;padding: 0 .5% 0 .5%; width:6.0364%;background-color: #246bbc;color:#FFFFFF;'></div>
+			        		</div>	<div style='padding: 5px 0;height: 26px;line-height:16px;vertical-align:middle;'>
+			        			<div style='height: 16px;float:left;'>PlayStation Now		</div>
+			        			<div style='height: 16px;width:60px;float:right;text-align:right;'><strong>14</strong></div>
+			              		<div style='height: 16px;width:60px;float:right;text-align:center;'>0.23%</div>
+			              		<div style='border-radius:2px;height: 16px;margin: 0 0 0 20%;padding: 0 .5% 0 .5%; width:5px;background-color: #4ab6c7;color:#FFFFFF;'></div>
+			        		</div>		<div style='text-align: right;border-top: 1px solid #e6e9ed;padding: 3px 5px 0 5px;'>
+			Unique: 
+			<strong>3			</strong>
+			Total: 
+			<strong>6.2K			</strong>
+		</div>					</div>			</div>				</div>
+				<div class="clear"></div> 		</div>
+	</div>				<div class="contain_out">
+					<div class="contain_in">
+						<div class="content_break  center"> 						</div>
+					</div>
+				</div>
+			</div> <!-- End Global Site -->
+		</div> <!-- End #top / main -->
+		<div class="footer back_primary">
+			<div class="contain_out">
+				<div class="contain_in">
+				    <div class="content_25" style="margin-top:0;">
+				        <div class="in">
+							<h3>HowLongToBeat</h3>
+				            <ul>
+								<li><a href="feedback">Contact Us</a></li>
+								<li><a href="forum?conduct">Code of Conduct</a></li>
+								<li><a href="privacy">Privacy Policy</a></li>								
+							</ul>
+				        </div>                    
+				    </div>
+				    <div class="content_25" style="margin-top:0;">
+				        <div class="in">
+				            <h3>Social</h3>
+				            <ul>
+								<li><a href="https://discord.gg/v5F26Dk" target="_blank" rel="nofollow noopener noreferrer">Discord</a></li>
+				            	<li><a href="https://facebook.com/HowLongToBeat/" target="_blank" rel="nofollow noopener noreferrer">Facebook</a></li>
+				            	<li><a href="https://twitter.com/HowLongToBeat/" target="_blank" rel="nofollow noopener noreferrer">Twitter</a></li>
+				            </ul>
+				        </div>    
+				    </div>
+				    <div class="content_50" style="margin-top:0;">
+				        <div class="in">
+				            <h3>
+				                &#169;
+				                2022
+				                Ziff Davis, LLC
+				            </h3>
+							<ul>
+								<li>Powered By Community, Built With Love</li>
+								<li><a href="#" class="showConsentTool" onclick="window.zdconsent.showConsentTool(event);"><img src="https://c.evidon.com/pub/icong1.png" class="evidon-consent-link-image" style="vertical-align: middle;"> AdChoices</a></li>
+							</ul>
+				        </div>    
+				    </div>
+				    <div class="clear"></div>
+				</div>
+		    </div>
+		</div>
+	</body>
 </html>

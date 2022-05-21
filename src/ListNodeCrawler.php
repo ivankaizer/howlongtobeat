@@ -48,7 +48,7 @@ class ListNodeCrawler
      */
     public function getImage()
     {
-        return $this->node->filter('.search_list_image img')->attr('src');
+        return 'https://howlongtobeat.com' . $this->node->filter('.search_list_image img')->attr('src');
     }
 
     /**

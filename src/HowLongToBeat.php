@@ -14,7 +14,7 @@ class HowLongToBeat
      */
     public function __construct(Client $client = null)
     {
-        $this->client = $client ?? new Client();
+        $this->client = $client ?? HttpClientCreator::create();
     }
 
     /**
