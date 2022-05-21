@@ -36,7 +36,7 @@ class PageNodeCrawler
      */
     public function getImage()
     {
-        return $this->node->filter('.game_image img')->attr('src');
+        return 'https://howlongtobeat.com' . $this->node->filter('.game_image img')->attr('src');
     }
 
     /**
@@ -44,7 +44,7 @@ class PageNodeCrawler
      */
     public function getDescription()
     {
-        return str_replace('...Read More', '', $this->node->filter('.in.back_primary > p')->text());
+        return str_replace('...Read More', '', $this->node->filter('.in.back_primary .profile_info.large')->text());
     }
 
     /**
@@ -154,7 +154,7 @@ class PageNodeCrawler
     {
         $profileInfo = $this->getProfileInfo();
 
-        return $profileInfo['Playable On'] ?? null;
+        return $profileInfo['Platforms'] ?? null;
     }
 
     /**
@@ -192,8 +192,17 @@ class PageNodeCrawler
 
         if (!isset($details[$this->id])) {
             $details[$this->id] = $this->node->filter('.profile_info')->each(function (Crawler $node) use ($labels, $utils) {
+                if (!$node->filter('strong')->count()) {
+                    return null;
+                }
+
                 $key = str_replace(':', '', $node->filter('strong')->text());
                 $key = isset($labels[$key]) ? $labels[$key] : $key;
+
+                if (count(explode(': ', $node->text())) < 2) {
+                    return null;
+                }
+
                 return [
                     $key => explode(': ', $node->text())[1]
                 ];

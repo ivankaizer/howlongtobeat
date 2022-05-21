@@ -17,7 +17,7 @@ class SearchTest extends \PHPUnit\Framework\TestCase
 
         $results = $hl2b->search('The Witcher 3');
 
-        $this->assertCount(4, $results['Results']);
+        $this->assertCount(9, $results['Results']);
     }
 
     /** @test */
@@ -32,7 +32,7 @@ class SearchTest extends \PHPUnit\Framework\TestCase
         $this->assertEquals('https://howlongtobeat.com/games/The-Witcher-3-Wild-Hunt-Hearts-of-Stone-Expansion-Teaser.jpg', $results['Results'][0]['Image']);
         $this->assertEquals('10 Hours', $results['Results'][0]['Time']['Main Story']);
         $this->assertEquals('14 Hours', $results['Results'][0]['Time']['Main + Extra']);
-        $this->assertEquals('19 Hours', $results['Results'][0]['Time']['Completionist']);
+        $this->assertEquals('18.5 Hours', $results['Results'][0]['Time']['Completionist']);
     }
 
     /** @test */
@@ -62,12 +62,12 @@ class SearchTest extends \PHPUnit\Framework\TestCase
 
         $this->assertEquals([
             'ID' => '5256',
-            'Image' => 'https://howlongtobeat.com/gameimages/Lego_Pirates_of_the_Caribbean.jpg',
-            'Title' => 'Lego Pirates of the Caribbean: The Video Game',
+            'Image' => 'https://howlongtobeat.com/games/Lego_Pirates_of_the_Caribbean.jpg',
+            'Title' => 'LEGO Pirates of the Caribbean: The Video Game',
             'Time' => [
                 'Main Story' => '8.5 Hours',
-                'Main + Extra' => '15.5 Hours',
-                'Completionist' => '25.5 Hours',
+                'Main + Extra' => '15 Hours',
+                'Completionist' => '24.5 Hours',
             ]
         ], $result['Results'][0]);
     }
@@ -86,11 +86,11 @@ class SearchTest extends \PHPUnit\Framework\TestCase
 
         $this->assertEquals([
             'ID' => '47803',
-            'Image' => 'https://howlongtobeat.com/gameimages/47803_Lego_Harry_Potter_Collection.jpg',
-            'Title' => 'Lego Harry Potter Collection',
+            'Image' => 'https://howlongtobeat.com/games/47803_Lego_Harry_Potter_Collection.jpg',
+            'Title' => 'LEGO Harry Potter Collection',
             'Time' => [
-                'Solo' => '42 Hours',
-                'Co-Op' => null,
+                'Solo' => '41 Hours',
+                'Co-Op' => '55 Hours',
                 'Vs.' => null,
             ]
         ], $result['Results'][0]);

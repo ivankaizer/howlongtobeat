@@ -1,683 +1,750 @@
 <!DOCTYPE html>
 <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="/css/main.css?release=v1.0.77">        	<link rel="stylesheet" href="/css/light.css?release=v1.0.77">         <link rel="stylesheet" media="screen and (min-width: 769px)" href="/css/desktop.css?release=v1.0.77">
+        <link rel="stylesheet" media="screen and (max-width: 768px)" href="/css/mobile.css?release=v1.0.77">
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <link rel="stylesheet" href="css/main_101.css">
-    <link rel="stylesheet" href="css/light_101.css">
-    <link rel="stylesheet" media="screen and (min-width: 769px)" href="css/desktop_101.css">
-    <link rel="stylesheet" media="screen and (max-width: 769px)" href="css/mobile_101.css">
-    <title>How long is Call of Duty 4: Modern Warfare? | HowLongToBeat</title>
-    <meta name="description"
-          content="How long is Call of Duty 4: Modern Warfare? HowLongToBeat has the answer. Create a backlog, submit your game times and compete with your friends!">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="apple-touch-icon" sizes="57x57" href="img/icons/apple-touch-icon-57x57.png">
-    <link rel="apple-touch-icon" sizes="60x60" href="img/icons/apple-touch-icon-60x60.png">
-    <link rel="apple-touch-icon" sizes="72x72" href="img/icons/apple-touch-icon-72x72.png">
-    <link rel="apple-touch-icon" sizes="76x76" href="img/icons/apple-touch-icon-76x76.png">
-    <link rel="apple-touch-icon" sizes="114x114" href="img/icons/apple-touch-icon-114x114.png">
-    <link rel="apple-touch-icon" sizes="120x120" href="img/icons/apple-touch-icon-120x120.png">
-    <link rel="apple-touch-icon" sizes="144x144" href="img/icons/apple-touch-icon-144x144.png">
-    <link rel="apple-touch-icon" sizes="152x152" href="img/icons/apple-touch-icon-152x152.png">
-    <link rel="apple-touch-icon" sizes="180x180" href="img/icons/apple-touch-icon-180x180.png">
-    <link rel="icon" type="image/png" href="img/icons/favicon-32x32.png" sizes="32x32">
-    <link rel="icon" type="image/png" href="img/icons/android-chrome-192x192.png" sizes="192x192">
-    <link rel="icon" type="image/png" href="img/icons/favicon-96x96.png" sizes="96x96">
-    <link rel="icon" type="image/png" href="img/icons/favicon-16x16.png" sizes="16x16">
-    <link rel="manifest" href="app/manifest.json">
-    <link rel="shortcut icon" href="img/icons/favicon.ico">
-    <meta name="msapplication-starturl" content="https://howlongtobeat.com" />
-    <meta name="msapplication-navbutton-color" content="#000000" />
-    <meta name="msapplication-task"
-          content="name=Home;action-uri=https://howlongtobeat.com;icon-uri=img/icons/favicon.ico" />
-    <meta name="msapplication-task"
-          content="name=Search;action-uri=https://howlongtobeat.com/search;icon-uri=img/icons/favicon.ico" />
-    <meta name="msapplication-task"
-          content="name=Submit;action-uri=https://howlongtobeat.com/submit;icon-uri=img/icons/favicon.ico" />
-    <meta name="msapplication-task"
-          content="name=Control Panel;action-uri=https://howlongtobeat.com/user;icon-uri=img/icons/favicon.ico" />
-    <meta name="msapplication-TileImage" content="img/icons/mstile-144x144.png">
-    <meta name="msapplication-config" content="img/icons/browserconfig.xml">
-    <meta name="theme-color" content="#000000">
-</head>
+		<script type="text/javascript" src="/sw.js"></script>
+		<script type="text/javascript" src="/js/site.js?release=v1.0.77"></script>
+		<script type="text/javascript" src="/js/bobble.js?release=v1.0.77"></script>
+		
+        		<title>How long is Call of Duty 4: Modern Warfare? | HowLongToBeat</title> 	<meta name="description" content="How long is Call of Duty 4: Modern Warfare? HowLongToBeat has the answer. Create a backlog, submit your game times and compete with your friends!"> 		<script async="async" src="https://www.googletagservices.com/tag/js/gpt.js"></script>
+<script async src="https://securepubads.g.doubleclick.net/tag/js/gpt.js"></script>
 
-<body onhashchange="initialize();" onload="initialize();">
-<!--[if lt IE 7]>
-<p class="chromeframe">You are using an outdated browser. <a href="http://browsehappy.com/">Upgrade your browser today</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to better experience this site.</p>
-<![endif]-->
-<div id="top" class="container">
-    <form name="global_search_form" autocomplete="off">
-        <div class="nav_back" id="nav_back" style="display: none;"></div>
-        <div class="nav">
-            <div class="contain_out">
-                <div class="contain_in">
-                    <div class="nav_g">
-                        <a class="brand back_black" aria-label="HowLongToBeat" href="./"></a>
-                        <div class="main_links">
-                            <ul class="site">
-                                <li><a class="text_primary" href="forum">Forum</a></li>
-                                <li><a class="text_primary" href="stats">Stats</a></li>
-                                <li><a class="text_primary" href="submit">Submit</a></li>
-                            </ul>
-                            <ul class="login">
-                                <li><a class="text_primary" href="login">Login</a></li>
-                                <li class="mobile_hide"><a class="text_primary" href="login?t=signup">Join</a></li>
-                            </ul>
-                            <div class="search_container">
-                                <input class="global_search_box back_form" id="global_search_box" aria-label="Search" name="global_search_box" type="text" autofocus="on" placeholder="Search Your Favorite Games..." onclick="search_enable();" onkeypress="if(event.keyCode==13){return false;}" onpaste="setTimeout(function() {return hitkey_l(0,document.forms.global_search_form.t.value,this.value);}, 50);" onkeyup="return hitkey_l(event.keyCode,document.forms.global_search_form.t.value,this.value);" value="">
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div id="nav_u_drop" class="nav_up back_form">
-                <div class="contain_in">
-                    <div id="nav_profile_load" class="content_25">
-                        <div class="in back_primary shadow_box">
-                            <h4 class="head_padding back_pink">My Account</h4>
-                            <ul>
-                                <li><a class='link_pink' href='user?n='>Profile</a></li>
-                                <li><a class='link_pink' href='user?n=&s=stats'>Stats</a></li>
-                                <li><a class='link_pink' href='user?n=&s=friends'>Friends</a></li>
-                                <li><a class='link_pink' href='user?n=&s=messages'>Messages</a></li>
-                                <li><a class='link_pink' href='user?n=&s=options'>Options</a></li>
-                                <li><a class='link_red' href="login?t=out">Log Out</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div id="nav_playthroughs_load" class="content_25">
-                        <div class="in back_primary shadow_box">
-                            <h4 class="head_padding back_blue">
-                                My Games (<a class="text_white"
-                                             href="user?n=&s=games&playing=1&backlog=1&replays=1&custom=1&completed=1&retired=1">All</a>)
-                            </h4>
-                            <ul>
-                                <li><a class='link_green' href='user?n=&s=games&playing=1'>Playing</a></li>
-                                <li><a class='link_blue' href='user?n=&s=games&backlog=1'>Backlog</a></li>
-                                <li><a class='link_blueish' href='user?n=&s=games&replays=1'>Replays</a></li>
-                                <li><a class='link_purple' href='user?n=&s=games&completed=1'>Completed</a></li>
-                                <li><a class='link_red' href='user?n=&s=games&retired=1'>Retired</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="mobile_clear"></div>
-                    <div id="nav_games_load" class="content_50">
-                        <div class='loading_bar'>
-                        </div>
-                    </div>
-                    <div class="clear"></div>
-                    <div class="content_break"></div>
-                </div>
-            </div>
-        </div>
-        <div class="clear"></div>
-        <div id="note_bar" class="global_padding back_yellow center"></div>
-        <div id="global_search" style="display:none;">
-            <div class="contain_out">
-                <div class="contain_in">
+<link rel="preload" href="https://cdn.ziffstatic.com/jst/zdconsent.js" as="script">
+<script type="text/javascript" async="true" src="https://cdn.ziffstatic.com/jst/zdconsent.js"></script>
 
-                    <div class="content_50 back_secondary shadow_box">
+<link rel="preload" href="https://cdn.static.zdbb.net/js/z0WVjCBSEeGLoxIxOQVEwQ.min.js" as="script">
+<script type="text/javascript" async="true" src="https://cdn.static.zdbb.net/js/z0WVjCBSEeGLoxIxOQVEwQ.min.js"></script>
 
-                        <input class="form_checkbox" type='hidden' name='t' id='search_type_g' value='games' style="display:none;">
-                        <a class="text_white"
-                           href="javascript:change_class('game_list_tag','content_50_static back_blue center');
-							 change_class('user_list_tag','content_50_static center');
-							 document.forms.global_search_form.t.value = 'games';
-							 globalSearch(document.forms.global_search_form.t.value,'',document.forms.global_search_form.global_search_box.value);">
-                            <h4 id="game_list_tag" class="content_50_static back_blue center">Games List</h4>
-                        </a>
-                        <a class="text_white"
-                           href="javascript:change_class('user_list_tag','content_50_static back_pink center');
-							 change_class('game_list_tag','content_50_static center');
-							 document.forms.global_search_form.t.value = 'users';
-							 globalSearch(document.forms.global_search_form.t.value,'',document.forms.global_search_form.global_search_box.value);">
-                            <h4 id="user_list_tag" class="content_50_static center">User List</h4>
-                        </a>
-                        <div class="clear"></div>
-                    </div>
-                    <div class="content_25">
-                        <input type="button" class="search_options_button back_secondary shadow_box" onclick="search_options();" value="Search Options">
-                    </div>
-                    <div class="content_25">
-                        <input type="button" class="search_options_button back_primary shadow_box" onclick="search_enable('close');" value="Close">
-                    </div>
-                    <div class="clear"></div>
+<script type="text/javascript">!(function(o,n,t){t=o.createElement(n),o=o.getElementsByTagName(n)[0],t.async=1,t.src="https://awesomeagreement.com/v2ivhYrblm3zNxhcOW9-WYAvPOboOi8IhcyhPxCjG61RWPKZq2f_i2ELwdn3sWATo",o.parentNode.insertBefore(t,o)})(document,"script"),(function(o,n){function t(){(t.q=t.q||[]).push(arguments)}t.v=1,o.admiral=o.admiral||t})(window);!(function(o,t,n,c){function e(n){(function(){try{return(localStorage.getItem("v4ac1eiZr0")||"").split(",")[4]>0}catch(o){}return!1})()&&(n=o[t].pubads())&&n.setTargeting("admiral-engaged","true")}(c=o[t]=o[t]||{}).cmd=c.cmd||[],typeof c.pubads===n?e():typeof c.cmd.unshift===n?c.cmd.unshift(e):c.cmd.push(e)})(window,"googletag","function");</script>
 
-                    <div id="global_search_opt" style="display:none;">
-                        <div id="search_preset_g">
-                            <div class="content_33 back_secondary shadow_box" id="search_platform">
-                                <div class="in">
-                                    <h5 class="left">Platform</h5>
-                                    <select aria-label='Platform' name='platform' autocomplete='off' class='form_select back_form' style='width:100%;' onchange='globalSearch("","",document.forms.global_search_form.global_search_box.value);'><option value=''>All</option><optgroup label='Popular Platforms'><option value='Emulated'>Emulated</option><option value='Nintendo 3DS'>Nintendo 3DS</option><option value='Nintendo Switch'>Nintendo Switch</option><option value='PC'>PC</option><option value='PlayStation 3'>PlayStation 3</option><option value='PlayStation 4'>PlayStation 4</option><option value='PlayStation Now'>PlayStation Now</option><option value='Wii U'>Wii U</option><option value='Xbox 360'>Xbox 360</option><option value='Xbox One'>Xbox One</option></optgroup><optgroup label='All Platforms'><option value='3DO'>3DO</option><option value='Amiga'>Amiga</option><option value='Amstrad CPC'>Amstrad CPC</option><option value='Android'>Android</option><option value='Apple II'>Apple II</option><option value='Arcade'>Arcade</option><option value='Atari 2600'>Atari 2600</option><option value='Atari 5200'>Atari 5200</option><option value='Atari 7800'>Atari 7800</option><option value='Atari 8-bit Family'>Atari 8-bit Family</option><option value='Atari Jaguar'>Atari Jaguar</option><option value='Atari Jaguar CD'>Atari Jaguar CD</option><option value='Atari Lynx'>Atari Lynx</option><option value='Atari ST'>Atari ST</option><option value='BBC Micro'>BBC Micro</option><option value='Browser'>Browser</option><option value='ColecoVision'>ColecoVision</option><option value='Commodore 64'>Commodore 64</option><option value='Dreamcast'>Dreamcast</option><option value='Emulated'>Emulated</option><option value='FM Towns'>FM Towns</option><option value='Game & Watch'>Game & Watch</option><option value='Game Boy'>Game Boy</option><option value='Game Boy Advance'>Game Boy Advance</option><option value='Game Boy Color'>Game Boy Color</option><option value='Gear VR'>Gear VR</option><option value='Google Stadia'>Google Stadia</option><option value='HTC Vive'>HTC Vive</option><option value='Intellivision'>Intellivision</option><option value='Interactive Movie'>Interactive Movie</option><option value='iOS'>iOS</option><option value='Linux'>Linux</option><option value='Mac'>Mac</option><option value='Mobile'>Mobile</option><option value='MSX'>MSX</option><option value='N-Gage'>N-Gage</option><option value='NEC PC-8800'>NEC PC-8800</option><option value='NEC PC-9801/21'>NEC PC-9801/21</option><option value='NEC PC-FX'>NEC PC-FX</option><option value='Neo Geo'>Neo Geo</option><option value='Neo Geo CD'>Neo Geo CD</option><option value='Neo Geo Pocket'>Neo Geo Pocket</option><option value='Neo Geo Pocket Color'>Neo Geo Pocket Color</option><option value='NES'>NES</option><option value='Nintendo 3DS'>Nintendo 3DS</option><option value='Nintendo 64'>Nintendo 64</option><option value='Nintendo DS'>Nintendo DS</option><option value='Nintendo GameCube'>Nintendo GameCube</option><option value='Nintendo Switch'>Nintendo Switch</option><option value='Oculus Go'>Oculus Go</option><option value='Oculus Rift'>Oculus Rift</option><option value='Oculus Quest'>Oculus Quest</option><option value='OnLive'>OnLive</option><option value='Ouya'>Ouya</option><option value='PC'>PC</option><option value='Philips CD-i'>Philips CD-i</option><option value='Philips Videopac G7000'>Philips Videopac G7000</option><option value='PlayStation'>PlayStation</option><option value='PlayStation 2'>PlayStation 2</option><option value='PlayStation 3'>PlayStation 3</option><option value='PlayStation 4'>PlayStation 4</option><option value='PlayStation Mobile'>PlayStation Mobile</option><option value='PlayStation Now'>PlayStation Now</option><option value='PlayStation Vita'>PlayStation Vita</option><option value='PlayStation VR'>PlayStation VR</option><option value='Plug & Play'>Plug & Play</option><option value='PSP'>PSP</option><option value='Sega 32X'>Sega 32X</option><option value='Sega CD'>Sega CD</option><option value='Sega Game Gear'>Sega Game Gear</option><option value='Sega Master System'>Sega Master System</option><option value='Sega Mega Drive/Genesis'>Sega Mega Drive/Genesis</option><option value='Sega Saturn'>Sega Saturn</option><option value='Sharp X68000'>Sharp X68000</option><option value='Super Nintendo'>Super Nintendo</option><option value='Tiger Handheld'>Tiger Handheld</option><option value='TurboGrafx-16'>TurboGrafx-16</option><option value='TurboGrafx-CD'>TurboGrafx-CD</option><option value='Virtual Boy'>Virtual Boy</option><option value='Wii'>Wii</option><option value='Wii U'>Wii U</option><option value='Windows Phone'>Windows Phone</option><option value='WonderSwan'>WonderSwan</option><option value='WonderSwan Color'>WonderSwan Color</option><option value='Xbox'>Xbox</option><option value='Xbox 360'>Xbox 360</option><option value='Xbox One'>Xbox One</option><option value='ZX Spectrum'>ZX Spectrum</option></optgroup></select>
-                                    <h5 class="left">Sort By</h5>
-                                    <select class="form_select back_form" name="search_sort_g" onchange="globalSearch(document.forms.global_search_form.t.value,'',document.forms.global_search_form.global_search_box.value);">
-                                        <option value="name">Name</option>
-                                        <option value="main">Main Story</option>
-                                        <option value="mainp">Main + Extras</option>
-                                        <option value="comp">Completionist</option>
-                                        <option value="averagea">Average Time</option>
-                                        <option value="rating">Top Rated</option>
-                                        <option value="popular" selected="selected">Most Popular</option>
-                                        <option value="backlog">Most Backlogs</option>
-                                        <option value="usersp">Most Submissions</option>
-                                        <option value="playing">Most Played</option>
-                                        <option value="speedruns">Most Speedruns</option>
-                                        <option value="release">Release Date</option>
-                                    </select>
-                                </div>
-                            </div>
-                            <div class="content_33 back_secondary shadow_box">
-                                <div class="in">
-                                    <h5 class="left">Length Range Category</h5>
-                                    <select class="form_select back_form" name="search_range_type" onchange="globalSearch(document.forms.global_search_form.t.value,'',document.forms.global_search_form.global_search_box.value);">
-                                        <option value="main">Main Story</option>
-                                        <option value="mainp">Main + Extras</option>
-                                        <option value="comp">Completionist</option>
-                                        <option value="averagea">Average Time</option>
-                                    </select>
-                                    <h5 class="left">Hour Range</h5>
-                                    <input class="search_range_l back_form" type="text" id="search_len_min_g" name="search_len_str_g" placeholder="Min" onkeyup="return hitkey_l(event.keyCode,document.forms.global_search_form.t.value,document.forms.global_search_form.global_search_box.value);">
-                                    <input class="search_range_r back_form" type="text" id="search_len_max_g" name="search_len_end_g" placeholder="Max" onkeyup="return hitkey_l(event.keyCode,document.forms.global_search_form.t.value,document.forms.global_search_form.global_search_box.value);">
-                                    <div class="clear"></div>
-                                </div>
-                            </div>
-                        </div>
-                        <div id="search_preset_u" class="content_66 back_secondary shadow_box">
-                            <div class="in">
-                                <h5 class="left">Sort By</h5>
-                                <select class="form_select back_form" name="search_sort_u" onchange="globalSearch(document.forms.global_search_form.t.value,'',document.forms.global_search_form.global_search_box.value);">
-                                    <option value="name">Name</option>
-                                    <option value="gender">Gender</option>
-                                    <option value="age">Age</option>
-                                    <option value="numbacklog">Most Backlogs</option>
-                                    <option value="numcomp">Most Completed</option>
-                                    <option value="postcount" selected="selected">Top Posters</option>
-                                </select>
-                            </div>
-                        </div>
-                        <div class="content_33 back_secondary shadow_box">
-                            <div class="in">
-                                <div id="search_detail_box">
-                                    <h5 class="left">Show Extra Information</h5>
-                                    <select class="form_select back_form" name="detail" onchange="globalSearch(document.forms.global_search_form.t.value,'',document.forms.global_search_form.global_search_box.value);">
-                                        <option value="">None</option>
-                                        <option value="user_stats">Global User Stats</option>
-                                    </select>
-                                </div>
-                                <h5 class="left">Other Options</h5>
-                                <input class="form_button back_dark" name="sortd" type="button" value="Normal Order" onclick="search_flip(document.forms.global_search_form.sortd.value,'search');globalSearch(document.forms.global_search_form.t.value,'',document.forms.global_search_form.global_search_box.value);">
-                                <input class="form_button back_red" type="reset" onmouseup="setTimeout(function(){search_flip('Reverse Order','search');globalSearch(document.forms.global_search_form.t.value,'','');},100);">
-                            </div>
-                        </div>
-                        <div class="clear"></div>
-                    </div>
-                    <div class="content_100">
-                        <div id="global_search_content" class="search_list"></div>
-                    </div>
-                    <div class="clear"></div>
-                </div>
-            </div>
-        </div>
-    </form>
-    <div id="global_site">
-        <div class="contain_out back_blue shadow_box">
-            <div class="contain_in" style="        	background-image: radial-gradient(circle at 50%, rgba(50, 142, 214, 0.7), rgba(50, 142, 214, 0.95) 75%, #328ed6 100%), url('https://howlongtobeat.com/gameimages/Call_of_Duty_4_Modern_Warfare.jpg'); 				background-position: center center;
-				background-size: cover; ">
-                <div class="profile_header_game">
-                    <div class="profile_header shadow_text">
-                        Call of Duty 4: Modern Warfare </div>
-                    <div class="game_image desktop_hide">
-                        <img alt="Box Art" src='https://howlongtobeat.com/gameimages/Call_of_Duty_4_Modern_Warfare.jpg' />
-                    </div>
-                    <div class="profile_details">
-                        <ul>
-                            <li>122 Playing</li>
-                            <li>866 Backlogs</li>
-                            <li>135 Replays</li>
-                            <li>5% Retired
-                            </li>
-                            <li>82% Rating</li>
-                            <li>3.4K Beat</li>
-                        </ul>
-                        <div class="clear"></div>
-                    </div>
-                </div>
-                <div class="content_75_static scrollable back_clear">
-                    <div class="profile_nav">
-                        <ul>
-                            <li class="back_darkish">
-                                <a href="game?id=1468">Overview</a>
-                            </li>
-                            <li><a href="forum?game=1468">Forum (0)</a></li>
-                            <li class=""><a href="game?id=1468&s=reviews">Reviews</a></li>
-                            <li class=""><a href="game?id=1468&s=playing">Playing</a></li>
-                            <li class=""><a href="game?id=1468&s=backlogs">Backlogs</a></li>
-                            <li class=""><a href="game?id=1468&s=completions">Completions</a></li>
-                            <li class=""><a href="game?id=1468&s=retired">Retired</a></li>
-                        </ul>
-                        <div class="clear"></div>
-                    </div>
-                </div>
-                <div class="content_break"></div>
-            </div>
-            <div class="clear"></div>
-        </div>
-        <div class="contain_out">
-            <div class="contain_in">
-                <div class="content_25_static game_bar">
-                    <div class="game_image mobile_hide">
-                        <img alt="Box Art" src='https://howlongtobeat.com/gameimages/Call_of_Duty_4_Modern_Warfare.jpg' />
-                    </div>
-                    <div class="in back_secondary shadow_box"> <a class="text_orange center"
-                                                                  title="Submit Your Time" href="submit?s=add&gid=1468">
-                        <h4>Submit Your Time</h4>
-                    </a>
-                        <div class="clear"></div>
-                    </div>
-                    <div class="mobile_clear"></div>
-                </div>
-                <div class="content_75_static">
-                    <div class="game_times time_50">
-                        <h2>Nintendo DS</h2>
-                        <li class="short">
-                            <h5>Main Story</h5>
-                            <div>4h </div>
-                        </li>
-                        <li class="short">
-                            <h5>Main + Extras</h5>
-                            <div>5h </div>
-                        </li>
-                        <li class="short">
-                            <h5>Completionist</h5>
-                            <div>7h </div>
-                        </li>
-                        <li class="short">
-                            <h5>All Styles</h5>
-                            <div>4h </div>
-                        </li>
-                    </div>
-                    <div class="game_times time_100">
-                        <h2>PC, PlayStation 3, Xbox 360</h2>
-                        <li class="short">
-                            <h5>Main Story</h5>
-                            <div>7h </div>
-                        </li>
-                        <li class="short">
-                            <h5>Main + Extras</h5>
-                            <div>10h </div>
-                        </li>
-                        <li class="short">
-                            <h5>Completionist</h5>
-                            <div>15h </div>
-                        </li>
-                        <li class="short">
-                            <h5>All Styles</h5>
-                            <div>8h </div>
-                        </li>
-                    </div>
-                    <div class="in back_primary shadow_box">
-                        <p style="margin-bottom: 10px;"> Call of Duty 4: Modern Warfare, the new action
-                            thriller from the award-winning team at Infinity Ward, the creators of the Call
-                            of Duty series, delivers the most intense and cinematic action experience ever.
-                            Armed with an arsenal of advanced and powerful modern-day firepower, players are
-                            transported to treacherous hotspots around the globe to take o<a
-                                    id="profile_summary_more"
-                                    onclick="document.getElementById('profile_summary_more').style.display = 'none';document.getElementById('profile_summary_rest').style.display = 'inline';">...Read
-                                More</a><span id="profile_summary_rest" style="display:none;">n a rogue enemy group threatening the world. As both a U.S. Marine and British S.A.S. soldier fighting through an unfolding story full of twists and turns, players use sophisticated technology, superior firepower, and coordinated land and air strikes on a battlefield where speed, accuracy, and communication are essential to victory. The epic title also delivers an added depth of multiplayer action providing online fans an all-new community of persistence, addictive, and customizable gameplay.</span>
-                        </p>
-                        <div>
-                            <div class="profile_info">
-                                <strong>
-                                    Developer:
-                                </strong>
-                                Infinity Ward </div>
-                            <div class="profile_info">
-                                <strong>
-                                    Publisher:
-                                </strong>
-                                Activision </div>
-                            <div class="profile_info">
-                                <strong>
-                                    Playable On:
-                                </strong>
-                                PC, Nintendo DS, PlayStation 3, Xbox 360, Xbox One </div>
-                            <div class="profile_info">
-                                <strong>
-                                    Genres:
-                                </strong>
-                                First-Person, Action, Shooter </div>
-                            <div class="profile_info">
-                                <strong>NA:</strong> November 05, 2007 </div>
-                            <div class="profile_info">
-                                <strong>Updated:</strong> 3.5 Hours Ago </div>
-                        </div>
-                    </div>
-                    <div class="center">
-                        <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js">
-                        </script>
-
-                        <ins class="adsbygoogle" style="display:block;margin-bottom:1%;"
-                             data-ad-client="ca-pub-7605721541969230" data-ad-slot="2275813392"
-                             data-ad-format="auto" data-full-width-responsive="true"></ins>
-                        <script>
-                            (adsbygoogle = window.adsbygoogle || []).push({});
-                        </script>
-                    </div>
-                    <div class="in scrollable shadow_box back_primary">
-                        <table class="game_main_table">
-                            <thead>
-                            <tr>
-                                <td>Single-Player</td>
-                                <td class="center" style="width: 50px;">Polled</td>
-                                <td>Average</td>
-                                <td>Median</td>
-                                <td>Rushed</td>
-                                <td>Leisure</td>
-                            </tr>
-                            </thead>
-                            <tbody class="spreadsheet">
-                            <tr>
-                                <td>Main Story</td>
-                                <td class="center time_100_text">721 </td>
-                                <td>6h 44m </td>
-                                <td>7h </td>
-                                <td>3h 43m </td>
-                                <td>13h 26m </td>
-                            </tr>
-                            </tbody>
-                            <tbody class="spreadsheet">
-                            <tr>
-                                <td>Main + Extras</td>
-                                <td class="center time_100_text">153 </td>
-                                <td>9h 39m </td>
-                                <td>9h </td>
-                                <td>6h 30m </td>
-                                <td>29h 39m </td>
-                            </tr>
-                            </tbody>
-                            <tbody class="spreadsheet">
-                            <tr>
-                                <td>Completionists</td>
-                                <td class="center time_100_text">78 </td>
-                                <td>16h 14m </td>
-                                <td>15h </td>
-                                <td>11h 13m </td>
-                                <td>32h 48m </td>
-                            </tr>
-                            </tbody>
-                            <tbody class="spreadsheet">
-                            <tr>
-                                <td>All PlayStyles</td>
-                                <td class="center time_100_text">952 </td>
-                                <td>7h 58m </td>
-                                <td>7h </td>
-                                <td>4h 02m </td>
-                                <td>28h 44m </td>
-                            </tr>
-                            </tbody>
-                        </table>
-                        <div class="mobile_show_block scrollable_hint">Scroll for More &#9658</div>
-                    </div>
-                    <div class="in scrollable shadow_box back_primary">
-                        <table class="game_main_table">
-                            <thead>
-                            <tr>
-                                <td>Speedrun</td>
-                                <td class="center" style="width: 50px;">Polled</td>
-                                <td>Average</td>
-                                <td>Median</td>
-                                <td>Fastest</td>
-                                <td>Slowest</td>
-                            </tr>
-                            </thead>
-                            <tbody class="spreadsheet">
-                            <tr>
-                                <td>Any%</td>
-                                <td class="center time_50_text">5 </td>
-                                <td>2h 41m 22s</td>
-                                <td>2h 32m </td>
-                                <td>1h 27m 34s</td>
-                                <td>5h 14m </td>
-                            </tr>
-                            </tbody>
-                            <tbody class="spreadsheet">
-                            <tr>
-                                <td>100%</td>
-                                <td class="center time_40_text">3 </td>
-                                <td>13h 39m 05s</td>
-                                <td>2h 15m </td>
-                                <td>1h 20m 14s</td>
-                                <td>37h 22m </td>
-                            </tr>
-                            </tbody>
-                        </table>
-                        <div class="mobile_show_block scrollable_hint">Scroll for More &#9658</div>
-                    </div>
-                    <div class="in scrollable shadow_box back_primary">
-                        <table class="game_main_table">
-                            <thead>
-                            <tr>
-                                <td>Multi-Player</td>
-                                <td class="center" style="width: 50px;">Polled</td>
-                                <td>Average</td>
-                                <td>Median</td>
-                                <td>Least</td>
-                                <td>Most</td>
-                            </tr>
-                            </thead>
-                            <tbody class="spreadsheet">
-                            <tr>
-                                <td>Co-Op
-                    </div>
-                    <td class="center time_50_text">6 </td>
-                    <td>174h 50m </td>
-                    <td>111h 30m </td>
-                    <td>76h 35m </td>
-                    <td>283h 35m </td>
-                    </tr>
-                    </tbody>
-                    <tbody class="spreadsheet">
-                    <tr>
-                        <td>Competitive</td>
-                        <td class="center time_100_text">81 </td>
-                        <td>150h 44m </td>
-                        <td>50h </td>
-                        <td>51h 11m </td>
-                        <td>575h 11m </td>
-                    </tr>
-                    </tbody>
-                    </table>
-                    <div class="mobile_show_block scrollable_hint">Scroll for More &#9658</div>
-                </div>
-                <div class="in shadow_box back_primary">
-                    <div class="scrollable">
-                        <table class="game_main_table">
-                            <thead>
-                            <tr>
-                                <td>Platform</td>
-                                <td class="center" style="width: 50px;">Polled</td>
-                                <td>Main</td>
-                                <td>Main +</td>
-                                <td>100%</td>
-                                <td>Fastest</td>
-                                <td>Longest</td>
-                            </tr>
-                            </thead>
-                            <tbody>
-                            <tr class="spreadsheet">
-                                <td>Nintendo DS </td>
-                                <td class="center time_50_text">9</td>
-                                <td>4h 02m </td>
-                                <td>4h 47m </td>
-                                <td>6h 50m </td>
-                                <td>3h </td>
-                                <td>6h 50m </td>
-                            </tr>
-                            <tr class="spreadsheet">
-                                <td>PC </td>
-                                <td class="center time_100_text">538</td>
-                                <td>6h 34m </td>
-                                <td>8h 57m </td>
-                                <td>15h 14m </td>
-                                <td>2h 03m </td>
-                                <td>50h </td>
-                            </tr>
-                            <tr class="spreadsheet">
-                                <td>PlayStation 3 </td>
-                                <td class="center time_100_text">115</td>
-                                <td>6h 57m </td>
-                                <td>11h 02m </td>
-                                <td>11h 48m </td>
-                                <td>2h </td>
-                                <td>36h 34m </td>
-                            </tr>
-                            <tr class="spreadsheet">
-                                <td>Xbox 360 </td>
-                                <td class="center time_100_text">247</td>
-                                <td>7h 11m </td>
-                                <td>10h 57m </td>
-                                <td>17h 41m </td>
-                                <td>3h 08m </td>
-                                <td>46h 27m </td>
-                            </tr>
-                            <tr class="spreadsheet">
-                                <td>Xbox One </td>
-                                <td class="center time_40_text">4</td>
-                                <td>6h 14m </td>
-                                <td>5h 30m </td>
-                                <td>20h </td>
-                                <td>5h 30m </td>
-                                <td>20h </td>
-                            </tr>
-                            </tbody>
-                        </table>
-                        <div class="mobile_show_block scrollable_hint">Scroll for More &#9658</div>
-                    </div>
-                    <div class="global_padding back_form">
-                        <div style='padding: 5px 0;height: 26px;line-height:16px;vertical-align:middle;'>
-                            <div style='height: 16px;float:left;'>Nintendo DS </div>
-                            <div style='height: 16px;width:60px;float:right;text-align:right;'>
-                                <strong>15</strong></div>
-                            <div style='height: 16px;width:60px;float:right;text-align:center;'>0.45%</div>
-                            <div
-                                    style='height: 16px;margin: 0 0 0 20%;padding: 0 .5% 0 .5%; width:5px;background-color: #959595;color:#FFFFFF;'>
-                            </div>
-                        </div>
-                        <div style='padding: 5px 0;height: 26px;line-height:16px;vertical-align:middle;'>
-                            <div style='height: 16px;float:left;'>PC </div>
-                            <div style='height: 16px;width:60px;float:right;text-align:right;'>
-                                <strong>2K</strong></div>
-                            <div style='height: 16px;width:60px;float:right;text-align:center;'>59.13%</div>
-                            <div
-                                    style='height: 16px;margin: 0 0 0 20%;padding: 0 .5% 0 .5%; width:46.9073%;background-color: #FFC200;color:#000000;'>
-                            </div>
-                        </div>
-                        <div style='padding: 5px 0;height: 26px;line-height:16px;vertical-align:middle;'>
-                            <div style='height: 16px;float:left;'>PlayStation 3 </div>
-                            <div style='height: 16px;width:60px;float:right;text-align:right;'>
-                                <strong>419</strong></div>
-                            <div style='height: 16px;width:60px;float:right;text-align:center;'>12.67%</div>
-                            <div
-                                    style='height: 16px;margin: 0 0 0 20%;padding: 0 .5% 0 .5%; width:10.0481%;background-color: #0a3246;color:#FFFFFF;'>
-                            </div>
-                        </div>
-                        <div style='padding: 5px 0;height: 26px;line-height:16px;vertical-align:middle;'>
-                            <div style='height: 16px;float:left;'>Xbox 360 </div>
-                            <div style='height: 16px;width:60px;float:right;text-align:right;'>
-                                <strong>908</strong></div>
-                            <div style='height: 16px;width:60px;float:right;text-align:center;'>27.45%</div>
-                            <div
-                                    style='height: 16px;margin: 0 0 0 20%;padding: 0 .5% 0 .5%; width:21.775%;background-color: #a4cd3c;color:#000000;'>
-                            </div>
-                        </div>
-                        <div style='padding: 5px 0;height: 26px;line-height:16px;vertical-align:middle;'>
-                            <div style='height: 16px;float:left;'>Xbox One </div>
-                            <div style='height: 16px;width:60px;float:right;text-align:right;'>
-                                <strong>10</strong></div>
-                            <div style='height: 16px;width:60px;float:right;text-align:center;'>0.3%</div>
-                            <div
-                                    style='height: 16px;margin: 0 0 0 20%;padding: 0 .5% 0 .5%; width:5px;background-color: #0f7a0f;color:#000000;'>
-                            </div>
-                        </div>
-                        <div
-                                style='text-align: right;border-top: 1px solid #e6e9ed;padding: 3px 5px 0 5px;'>
-                            Unique:
-                            <strong>5 </strong>
-                            Total:
-                            <strong>3.3K </strong>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="clear"></div>
-        </div>
-    </div>
-    <div class="contain_out">
-        <div class="contain_in">
-            <div class="content_25_static"></div>
-            <div class="							 content_75_static  center">
-                <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-
-                <ins class="adsbygoogle" style="display:block;margin:1%;"
-                     data-ad-client="ca-pub-7605721541969230" data-ad-slot="8455119541"
-                     data-ad-format="auto"></ins>
-                <script>
-                    (adsbygoogle = window.adsbygoogle || []).push({});
-                </script>
-            </div>
-            <div class="content_100"></div>
-        </div>
-    </div>
-</div>
-</div>
-<div class="footer back_primary">
-    <div class="contain_out">
-        <div class="contain_in">
-            <div class="content_25" style="margin-top:0;">
-                <div class="in">
-                    <h3>Feedback</h3>
-                    <ul>
-                        <li><a class="text_blue" href="feedback">Contact Us</a></li>
-                        <li><a class="text_blue" href="donate">Donate</a></li>
-                    </ul>
-                </div>
-            </div>
-            <div class="content_25" style="margin-top:0;">
-                <div class="in">
-                    <h3>Social</h3>
-                    <ul>
-                        <li><a href="https://facebook.com/HowLongToBeat/">Facebook</a></li>
-
-                        <li><a href="https://twitter.com/HowLongToBeat/">Twitter</a></li>
-                    </ul>
-                </div>
-            </div>
-            <div class="content_50" style="margin-top:0;">
-                <div class="in">
-                    <h3>
-                        &#169;
-                        2019
-                        HowLongToBeat.com
-                    </h3>
-                    <ul>
-                        <li><a href="privacy">Privacy Policy & Cookies</a></li>
-                        <li>Powered By Wind, Built With Love</li>
-                    </ul>
-                </div>
-            </div>
-            <div class="clear"></div>
-        </div>
-    </div>
-</div>
-<script type="text/javascript" src="js/site_19.js"></script>
 <script>
-    if('serviceWorker' in navigator) {
-        navigator.serviceWorker
-            .register('sw.js')
-            .then(function() { console.log("HLTB Connected"); });
-    }
-</script>
-</body>
+    window.googletag = window.googletag || { cmd: [] };
 
+    !function(a9,a,p,s,t,A,g){if(a[a9])return;function q(c,r){a[a9]._Q.push([c, r])}a[a9]={init:function(){q("i", arguments)},fetchBids:function(){q("f", arguments)},setDisplayBids:function(){},_Q:[]};A=p.createElement(s);A.async=!0;A.src=t;g=p.getElementsByTagName(s)[0];g.parentNode.insertBefore( A,g)}("apstag",window,document,"script","//c.amazon-adsystem.com/aax2/apstag.js");
+    
+    // initialize apstag and have apstag set bids on the googletag slots when they are returned to the page
+    apstag.init({
+        pubID: '3158',
+        adServer: 'googletag',
+        bidTimeout: 2e3
+    });
+</script>
+
+<script>
+    dataLayer = [
+        {
+            "ga": {
+                "page": {                         'gameID': '1468',
+                        'gameName': 'Call of Duty 4: Modern Warfare',                     'pageType': 'game',
+                    'pageSection': 'main'
+                },                 "user": {
+                    'userLoggedIn': 'false'
+                }
+            }
+        }
+    ];
+</script>
+
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-M5NCBWM');</script>
+
+<script type="text/javascript">
+    window._comscore = window._comscore || [];
+    var _csconfig = {c1: 2, c2: '3000068'};
+    if (window.zdconsent && zdconsent.gdprApplies) {
+        _csconfig.cs_ucfr = (zdconsent.optins) ? zdconsent.optins.comscore : 0;
+    }
+    window._comscore.push(_csconfig);
+    (function() {
+        let s = document.createElement("script"), el = document.getElementsByTagName("script")[0];
+        s.async = true;
+        s.src = "https://sb.scorecardresearch.com/cs/3000068/beacon.js";
+        el.parentNode.insertBefore(s, el);
+    })();
+</script>				
+		<link rel="apple-touch-icon" sizes="57x57"		href="/img/icons/apple-touch-icon-57x57.png">
+		<link rel="apple-touch-icon" sizes="60x60"		href="/img/icons/apple-touch-icon-60x60.png">
+		<link rel="apple-touch-icon" sizes="72x72"		href="/img/icons/apple-touch-icon-72x72.png">
+		<link rel="apple-touch-icon" sizes="76x76"		href="/img/icons/apple-touch-icon-76x76.png">
+		<link rel="apple-touch-icon" sizes="114x114"	href="/img/icons/apple-touch-icon-114x114.png">
+		<link rel="apple-touch-icon" sizes="120x120"	href="/img/icons/apple-touch-icon-120x120.png">
+		<link rel="apple-touch-icon" sizes="144x144"	href="/img/icons/apple-touch-icon-144x144.png">
+		<link rel="apple-touch-icon" sizes="152x152"	href="/img/icons/apple-touch-icon-152x152.png">
+		<link rel="apple-touch-icon" sizes="180x180"	href="/img/icons/apple-touch-icon-180x180.png">
+		<link rel="icon" type="image/png" href="/img/icons/favicon-32x32.png" sizes="32x32">
+		<link rel="icon" type="image/png" href="/img/icons/android-chrome-192x192.png" sizes="192x192">
+		<link rel="icon" type="image/png" href="/img/icons/favicon-96x96.png" sizes="96x96">
+		<link rel="icon" type="image/png" href="/img/icons/favicon-16x16.png" sizes="16x16">
+		<link rel="manifest" href="/app/manifest.json">
+		<link rel="shortcut icon" href="/img/icons/favicon.ico">
+		<meta name="msapplication-starturl" content="https://howlongtobeat.com"/>
+        <meta name="msapplication-navbutton-color" content="#000000" />
+        <meta name="msapplication-task" content="name=Home;action-uri=https://howlongtobeat.com;icon-uri=/img/icons/favicon.ico"/>
+        <meta name="msapplication-task" content="name=Search;action-uri=https://howlongtobeat.com/search;icon-uri=/img/icons/favicon.ico"/>
+        <meta name="msapplication-task" content="name=Submit;action-uri=https://howlongtobeat.com/submit;icon-uri=/img/icons/favicon.ico"/>
+        <meta name="msapplication-task" content="name=Control Panel;action-uri=https://howlongtobeat.com/user;icon-uri=/img/icons/favicon.ico"/>
+		<meta name="msapplication-TileImage" content="/img/icons/mstile-144x144.png">
+		<meta name="msapplication-config" content="/img/icons/browserconfig.xml">
+		<meta name="theme-color" content="#000000">    </head>
+	<body onhashchange="initialize();" onload="initialize();">
+		<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-M5NCBWM"
+		height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+		<!--[if lt IE 7]>
+            <p class="chromeframe">You are using an outdated browser. <a href="http://browsehappy.com/">Upgrade your browser today</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to better experience this site.</p>
+        <![endif]-->
+        <div id="top" class="container ">			<form name="global_search_form" autocomplete="off">
+				<div class="nav_back" id="nav_back" style="display: none;"></div>	
+				<div class="nav">
+					<div class="contain_out">
+						<div class="contain_in">
+							<div class="nav_g">
+								<a class="brand back_black" aria-label="HowLongToBeat" href="./"></a>
+								<div class="main_links">
+									<ul class="site">
+											<li><a class="text_primary" href="forum">Forum</a></li>
+											<li><a class="text_primary" href="stats">Stats</a></li>
+											<li><a class="text_primary" href="submit">Submit</a></li>
+									</ul>
+																				<ul class="login">
+												<li><a class="text_primary" href="login">Login</a></li>
+												<li class="mobile_hide"><a class="text_primary" href="login?t=signup">Join</a></li>
+											</ul>
+																		<div class="search_container">
+									<input 	class="global_search_box back_form "
+											id="global_search_box"
+											tabindex="2"
+											aria-label="Search"
+											name="q"
+											type="text"
+											placeholder="Search Your Favorite Games..."
+											onclick="search_enable();"
+											onkeypress="if(event.keyCode==13){return false;}"
+											onpaste="setTimeout(function() {return hitkey_l(0,document.forms.global_search_form.t.value,this.value);}, 50);"
+											onkeyup="return hitkey_l(event.keyCode,document.forms.global_search_form.t.value,this.value);"
+											value="">
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div id="nav_u_drop" class="nav_up back_form"> 	
+					</div>				
+				</div>
+				<div class="clear"></div>
+				<div id="note_bar" class="global_padding back_yellow center"></div>
+				<div class="back_secondary center"> <div id="bobble_wide" class="ad-padding"></div>
+				</div>
+				<div id="global_search" style="display: none;">	
+	<div class="contain_out">
+		<div class="contain_in">
+			<!-- Search Buttons -->
+			<div class="content_66 back_secondary shadow_box">
+				<!-- Nav -->
+				<input type='hidden' name='t' id='search_type_g' value='games' style="display:none;">
+				<a class="text_white"
+					href="javascript:
+							change_class('game_list_tag','content_50_static back_blue center shadow_box');
+							change_class('user_list_tag','content_50_static center');
+							document.forms.global_search_form.t.value = 'games';
+							globalSearch(document.forms.global_search_form.t.value,'',document.forms.global_search_form.global_search_box.value,0);
+							dl('search-typeGames');
+						">
+					<h4 id="game_list_tag" class="content_50_static back_blue center shadow_box">Games List</h4>
+				</a>
+				<a class="text_white"
+					href="javascript:
+							change_class('user_list_tag','content_50_static back_pink center shadow_box');
+							change_class('game_list_tag','content_50_static center');
+							document.forms.global_search_form.t.value = 'users';
+							globalSearch(document.forms.global_search_form.t.value,'',document.forms.global_search_form.global_search_box.value,0);
+							dl('search-typeUsers');
+						">
+					<h4 id="user_list_tag" class="content_50_static center">User List</h4>
+				</a>
+				<div class="clear"></div>
+			</div>
+			<div class="content_33">
+				<input type="button" class="search_options_button back_form shadow_box" 	onclick="search_options();" 		value="Search Options">
+				<input type="button" class="search_options_button back_form shadow_box" 	onclick="search_enable('close');" 	value="Close">
+			</div>
+			<div class="clear"></div>
+				
+			<!-- Search Options -->
+			<div id="global_search_opt" style="display:none;">
+				<div id="search_preset_g">
+					<div class="content_33 back_secondary shadow_box" id="search_platform">
+						<div class="in">
+							<h5 class="left">Platform</h5>
+							<select aria-label='Platform' name='platform' autocomplete='off' class='form_select back_form' style='width:100%;' onchange='globalSearch("","",document.forms.global_search_form.global_search_box.value);'><option value=''>All</option><optgroup label='Popular Platforms'><option value='Emulated' >Emulated</option><option value='Nintendo 3DS' >Nintendo 3DS</option><option value='Nintendo Switch' >Nintendo Switch</option><option value='PC' >PC</option><option value='PlayStation 3' >PlayStation 3</option><option value='PlayStation 4' >PlayStation 4</option><option value='PlayStation 5' >PlayStation 5</option><option value='PlayStation Now' >PlayStation Now</option><option value='Wii U' >Wii U</option><option value='Xbox 360' >Xbox 360</option><option value='Xbox One' >Xbox One</option><option value='Xbox Series X/S' >Xbox Series X/S</option></optgroup>		<optgroup label="All Platforms"> 				<option value="3DO" >3DO</option> 				<option value="Acorn Archimedes" >Acorn Archimedes</option> 				<option value="Amazon Luna" >Amazon Luna</option> 				<option value="Amiga" >Amiga</option> 				<option value="Amiga CD32" >Amiga CD32</option> 				<option value="Amstrad CPC" >Amstrad CPC</option> 				<option value="Android" >Android</option> 				<option value="Apple II" >Apple II</option> 				<option value="Arcade" >Arcade</option> 				<option value="Atari 8-bit Family" >Atari 8-bit Family</option> 				<option value="Atari 2600" >Atari 2600</option> 				<option value="Atari 5200" >Atari 5200</option> 				<option value="Atari 7800" >Atari 7800</option> 				<option value="Atari Jaguar" >Atari Jaguar</option> 				<option value="Atari Jaguar CD" >Atari Jaguar CD</option> 				<option value="Atari Lynx" >Atari Lynx</option> 				<option value="Atari ST" >Atari ST</option> 				<option value="BBC Micro" >BBC Micro</option> 				<option value="Browser" >Browser</option> 				<option value="ColecoVision" >ColecoVision</option> 				<option value="Commodore 64" >Commodore 64</option> 				<option value="Commodore PET" >Commodore PET</option> 				<option value="Commodore VIC-20" >Commodore VIC-20</option> 				<option value="Dreamcast" >Dreamcast</option> 				<option value="Emulated" >Emulated</option> 				<option value="FM Towns" >FM Towns</option> 				<option value="Game & Watch" >Game & Watch</option> 				<option value="Game Boy" >Game Boy</option> 				<option value="Game Boy Advance" >Game Boy Advance</option> 				<option value="Game Boy Color" >Game Boy Color</option> 				<option value="Gear VR" >Gear VR</option> 				<option value="Gizmondo" >Gizmondo</option> 				<option value="Google Stadia" >Google Stadia</option> 				<option value="Intellivision" >Intellivision</option> 				<option value="Interactive Movie" >Interactive Movie</option> 				<option value="iOS" >iOS</option> 				<option value="Linux" >Linux</option> 				<option value="Mac" >Mac</option> 				<option value="Mobile" >Mobile</option> 				<option value="MSX" >MSX</option> 				<option value="N-Gage" >N-Gage</option> 				<option value="NEC PC-88" >NEC PC-88</option> 				<option value="NEC PC-98" >NEC PC-98</option> 				<option value="NEC PC-FX" >NEC PC-FX</option> 				<option value="Neo Geo" >Neo Geo</option> 				<option value="Neo Geo CD" >Neo Geo CD</option> 				<option value="Neo Geo Pocket" >Neo Geo Pocket</option> 				<option value="NES" >NES</option> 				<option value="Nintendo 3DS" >Nintendo 3DS</option> 				<option value="Nintendo 64" >Nintendo 64</option> 				<option value="Nintendo DS" >Nintendo DS</option> 				<option value="Nintendo GameCube" >Nintendo GameCube</option> 				<option value="Nintendo Switch" >Nintendo Switch</option> 				<option value="Oculus Go" >Oculus Go</option> 				<option value="Oculus Quest" >Oculus Quest</option> 				<option value="Odyssey" >Odyssey</option> 				<option value="Odyssey 2" >Odyssey 2</option> 				<option value="OnLive" >OnLive</option> 				<option value="Ouya" >Ouya</option> 				<option value="PC" >PC</option> 				<option value="PC VR" >PC VR</option> 				<option value="Philips CD-i" >Philips CD-i</option> 				<option value="Playdate" >Playdate</option> 				<option value="PlayStation" >PlayStation</option> 				<option value="PlayStation 2" >PlayStation 2</option> 				<option value="PlayStation 3" >PlayStation 3</option> 				<option value="PlayStation 4" >PlayStation 4</option> 				<option value="PlayStation 5" >PlayStation 5</option> 				<option value="PlayStation Mobile" >PlayStation Mobile</option> 				<option value="PlayStation Now" >PlayStation Now</option> 				<option value="PlayStation Portable" >PlayStation Portable</option> 				<option value="PlayStation Vita" >PlayStation Vita</option> 				<option value="PlayStation VR" >PlayStation VR</option> 				<option value="Plug & Play" >Plug & Play</option> 				<option value="Sega 32X" >Sega 32X</option> 				<option value="Sega CD" >Sega CD</option> 				<option value="Sega Game Gear" >Sega Game Gear</option> 				<option value="Sega Master System" >Sega Master System</option> 				<option value="Sega Mega Drive/Genesis" >Sega Mega Drive/Genesis</option> 				<option value="Sega Pico" >Sega Pico</option> 				<option value="Sega Saturn" >Sega Saturn</option> 				<option value="SG-1000" >SG-1000</option> 				<option value="Sharp X1" >Sharp X1</option> 				<option value="Sharp X68000" >Sharp X68000</option> 				<option value="Super Nintendo" >Super Nintendo</option> 				<option value="Tiger Handheld" >Tiger Handheld</option> 				<option value="TurboGrafx-16" >TurboGrafx-16</option> 				<option value="TurboGrafx-CD" >TurboGrafx-CD</option> 				<option value="Virtual Boy" >Virtual Boy</option> 				<option value="Wii" >Wii</option> 				<option value="Wii U" >Wii U</option> 				<option value="Windows Phone" >Windows Phone</option> 				<option value="WonderSwan" >WonderSwan</option> 				<option value="Xbox" >Xbox</option> 				<option value="Xbox 360" >Xbox 360</option> 				<option value="Xbox One" >Xbox One</option> 				<option value="Xbox Series X/S" >Xbox Series X/S</option> 				<option value="Zeebo" >Zeebo</option> 				<option value="ZX81" >ZX81</option> 				<option value="ZX Spectrum" >ZX Spectrum</option> 		</optgroup> </select>
+							<h5 class="left">Sort By</h5>
+							<select class="form_select back_form"
+											name="search_sort_g"
+											onchange="globalSearch(document.forms.global_search_form.t.value,'',document.forms.global_search_form.global_search_box.value,0);">
+								<option value="name">Name</option>
+								<option value="main">Main Story</option>
+								<option value="mainp">Main + Extras</option>
+								<option value="comp">Completionist</option>
+								<option value="averagea">Average Time</option>
+								<option value="rating">Top Rated</option>
+								<option value="popular" selected="selected">Most Popular</option>
+								<option value="backlog">Most Backlogs</option>
+								<option value="usersp">Most Submissions</option>
+								<option value="playing">Most Played</option>
+								<option value="speedruns">Most Speedruns</option>
+								<option value="release">Release Date</option>
+							</select>
+						</div>
+					</div>
+					<div class="content_33 back_secondary shadow_box">
+						<div class="in">
+							<h5 class="left">Length Range Category</h5>
+							<select class="form_select back_form"
+											name="search_range_type"
+											onchange="globalSearch(document.forms.global_search_form.t.value,'',document.forms.global_search_form.global_search_box.value,0);">
+								<option value="main">Main Story</option>
+								<option value="mainp">Main + Extras</option>
+								<option value="comp">Completionist</option>
+								<option value="averagea">Average Time</option>
+							</select>
+							<h5 class="left">Hour Range</h5>
+							<input 	class="search_range_l back_form" type="text" id="search_len_min_g" name="search_len_str_g" placeholder="Min"
+											onkeyup="return hitkey_l(event.keyCode,document.forms.global_search_form.t.value,document.forms.global_search_form.global_search_box.value);">
+							<input 	class="search_range_r back_form" type="text" id="search_len_max_g" name="search_len_end_g" placeholder="Max"
+											onkeyup="return hitkey_l(event.keyCode,document.forms.global_search_form.t.value,document.forms.global_search_form.global_search_box.value);">
+							<div class="clear"></div>
+						</div>
+					</div>
+				
+					<div class="content_33 back_secondary shadow_box">
+						<div class="in">
+							<div style="float:left;width:32.66%;">
+								<h5 class="left">Perspective</h5>
+								<select name="perspective" id="perspective" class="form_select back_form center" style="width:100%;"
+										onchange="globalSearch(document.forms.global_search_form.t.value,'',document.forms.global_search_form.global_search_box.value,0);">
+									<option value="">All</option> 										<option value="First-Person">
+											First-Person										</option> 										<option value="Isometric">
+											Isometric										</option> 										<option value="Side">
+											Side										</option> 										<option value="Text">
+											Text										</option> 										<option value="Third-Person">
+											Third-Person										</option> 										<option value="Top-Down">
+											Top-Down										</option> 										<option value="Virtual Reality">
+											Virtual Reality										</option> 								</select>
+							</div>
+							<div style="float:left;width:32.66%;margin: 0 1%;">
+								<h5 class="left">Flow</h5>
+								<select name="flow" id="flow" class="form_select back_form center" style="width:100%;"
+										onchange="globalSearch(document.forms.global_search_form.t.value,'',document.forms.global_search_form.global_search_box.value,0);">
+									<option value="">All</option> 										<option value="Incremental">
+											Incremental										</option> 										<option value="Massively Multiplayer">
+											Massively Multiplayer										</option> 										<option value="Multidirectional">
+											Multidirectional										</option> 										<option value="On-Rails">
+											On-Rails										</option> 										<option value="Point-and-Click">
+											Point-and-Click										</option> 										<option value="Real-Time">
+											Real-Time										</option> 										<option value="Scrolling">
+											Scrolling										</option> 										<option value="Turn-Based">
+											Turn-Based										</option> 								</select>
+							</div>
+							<div style="float:right;width:32.66%;">
+								<h5 class="left">Genre</h5>
+								<select name="genre" id="genre" class="form_select back_form center" style="width:100%;"
+										onchange="globalSearch(document.forms.global_search_form.t.value,'',document.forms.global_search_form.global_search_box.value,0);">
+									<option value="">All</option> 										<option value="Action">
+											Action										</option> 										<option value="Adventure">
+											Adventure										</option> 										<option value="Arcade">
+											Arcade										</option> 										<option value="Battle Arena">
+											Battle Arena										</option> 										<option value="Beat 'em Up">
+											Beat 'em Up										</option> 										<option value="Board Game">
+											Board Game										</option> 										<option value="Breakout">
+											Breakout										</option> 										<option value="Card Game">
+											Card Game										</option> 										<option value="City-Building">
+											City-Building										</option> 										<option value="Compilation">
+											Compilation										</option> 										<option value="Educational">
+											Educational										</option> 										<option value="Fighting">
+											Fighting										</option> 										<option value="Fitness">
+											Fitness										</option> 										<option value="Flight">
+											Flight										</option> 										<option value="Full Motion Video (FMV)">
+											Full Motion Video (FMV)										</option> 										<option value="Hack and Slash">
+											Hack and Slash										</option> 										<option value="Hidden Object">
+											Hidden Object										</option> 										<option value="Horror">
+											Horror										</option> 										<option value="Interactive Art">
+											Interactive Art										</option> 										<option value="Management">
+											Management										</option> 										<option value="Music/Rhythm">
+											Music/Rhythm										</option> 										<option value="Open World">
+											Open World										</option> 										<option value="Party">
+											Party										</option> 										<option value="Pinball">
+											Pinball										</option> 										<option value="Platform">
+											Platform										</option> 										<option value="Puzzle">
+											Puzzle										</option> 										<option value="Racing/Driving">
+											Racing/Driving										</option> 										<option value="Roguelike">
+											Roguelike										</option> 										<option value="Role-Playing">
+											Role-Playing										</option> 										<option value="Sandbox">
+											Sandbox										</option> 										<option value="Shooter">
+											Shooter										</option> 										<option value="Simulation">
+											Simulation										</option> 										<option value="Social">
+											Social										</option> 										<option value="Sports">
+											Sports										</option> 										<option value="Stealth">
+											Stealth										</option> 										<option value="Strategy/Tactical">
+											Strategy/Tactical										</option> 										<option value="Survival">
+											Survival										</option> 										<option value="Tower Defense">
+											Tower Defense										</option> 										<option value="Trivia">
+											Trivia										</option> 										<option value="Vehicular Combat">
+											Vehicular Combat										</option> 										<option value="Visual Novel">
+											Visual Novel										</option> 								</select>
+							</div>
+							<h5 class="left">Modifiers</h5>
+							<select class="form_select back_form"
+											name="detail" 
+											onchange="globalSearch(document.forms.global_search_form.t.value,'',document.forms.global_search_form.global_search_box.value,0);">
+								<option value="">None</option> 								<optgroup label="DLC Options">
+									<option value="hide_dlc">Hide DLC</option>
+									<option value="only_dlc">Isolate DLC</option>
+								</optgroup>
+								<optgroup label="Stat Options">
+									<option value="hidden_stats">Hidden Stats</option>
+									<option value="user_stats">Show User Stats</option>
+								</optgroup>
+							</select>
+						</div>
+					</div>
+					<div class="clear"></div>
+				</div>
+				<div id="search_preset_u" class="content_66 back_secondary shadow_box">
+					<div class="in">				
+						<h5 class="left">Sort By</h5>
+						<select class="form_select back_form"
+								name="search_sort_u" 
+								onchange="globalSearch(document.forms.global_search_form.t.value,'',document.forms.global_search_form.global_search_box.value,0);">
+							<option value="name">Name</option>
+							<option value="gender">Gender</option>
+							<option value="numbacklog">Most Backlogs</option>
+							<option value="numcomp">Most Completed</option>
+							<option value="postcount" selected="selected">Top Posters</option>
+						</select>
+					</div>
+				</div>
+				<div id="search_preset_o" class="content_100 back_secondary shadow_box">
+					<div class="in">
+						<h5 class="left">Other Options</h5>
+						<input 	id="search_gamepass"
+								type="button"   class="form_button back_green" aria-label="Game Pass"
+								value="Game Pass"  title="Check out Game Pass titles!"
+								onclick="document.forms.global_search_form.global_search_box.value = 'game pass';globalSearch(document.forms.global_search_form.t.value,'',document.forms.global_search_form.global_search_box.value,0);">
+						
+						<input 	type="button"   class="user_games_random form_button back_blue" aria-label="Random"
+								value="Random"  title="Randomly Select One Title"
+								onclick="globalSearch(document.forms.global_search_form.t.value,'',document.forms.global_search_form.global_search_box.value,1);">
+						<button	class="form_button back_dark"
+								name="sortd"
+								type="button"
+								value = "0"
+								onclick="search_flip(document.forms.global_search_form.sortd.value,'search');globalSearch(document.forms.global_search_form.t.value,'',document.forms.global_search_form.global_search_box.value,0);">˅ Sort</button>
+						<input 	class="form_button back_red" type="reset" onmouseup="setTimeout(function(){search_flip('˄ Sort','search');globalSearch(document.forms.global_search_form.t.value,'','',0);},100);">
+					</div>
+				</div>
+				<div class="clear"></div>
+			</div>
+			
+						<div class="content_100">
+				<div id="global_search_content" class="search_list"></div>
+			</div>
+			<div class="clear"></div>
+		</div>
+	</div> 				</div>
+			</form>
+			<div id="global_site" style="display: block;">
+	<div class="contain_out back_blue">
+		<div  class="contain_in" style="					background-image: radial-gradient(circle at 50%, rgba(50, 142, 214, 0.7), rgba(50, 142, 214, 0.95) 75%, #328ed6 100%), url('/games/Call_of_Duty_4_Modern_Warfare.jpg'); 				background-position: center center;
+				background-size: cover; " > 				<div class="profile_header_game"> 				<div class="profile_header shadow_text">
+					Call of Duty 4: Modern Warfare				</div>					<div class="game_image desktop_hide">
+						<img alt="Box Art" src='/games/Call_of_Duty_4_Modern_Warfare.jpg' />
+					</div> 				<div class="profile_details">
+					<ul>
+						<li>20 Playing</li>
+						<li>1.3K Backlogs</li>
+						<li>176 Replays</li>
+						<li>4% Retired
+						</li>
+						<li>81% Rating</li>
+						<li>5.2K Beat</li>
+					</ul>
+					<div class="clear"></div>
+				</div>
+			</div>				<div class="content_75_static scrollable back_clear shadow_box"> 				<div class="profile_nav">
+					<ul>						<li class="back_darkish">
+							<a href="game?id=1468">Overview</a>
+						</li>
+						<li><a href="forum?game=1468">Forum (0)</a></li>							<li class=""><a href="game?id=1468&s=reviews">Reviews</a></li>							<li class=""><a href="game?id=1468&s=playing">Playing</a></li>							<li class=""><a href="game?id=1468&s=backlogs">Backlogs</a></li>							<li class=""><a href="game?id=1468&s=completions">Completions</a></li>							<li class=""><a href="game?id=1468&s=retired">Retired</a></li>					</ul>
+					<div class="clear"></div>
+				</div>
+			</div> 				<div class="content_break"></div> 		</div>
+		<div class="clear"></div>
+	</div>
+	<div class="contain_out">
+		<div class="contain_in"> 				<div class="content_25_static game_bar">						<div class="game_image mobile_hide">
+							<img alt="Box Art" src='/games/Call_of_Duty_4_Modern_Warfare.jpg' />
+						</div> 						<div class="in back_secondary shadow_box"> 								<a class="text_orange center" title="Submit Your Time" href="submit?s=add&gid=1468"><h4>Submit Your Time</h4></a> 							<div class="clear"></div>
+						</div>
+						<div class="mobile_clear"></div> 				</div>
+				<div class="content_75_static">				<div class="game_times time_80">
+					<h2>Nintendo DS, Xbox One</h2>
+					<li class="short">
+						<h5>Main Story</h5>
+						<div>5h 						</div>
+					</li>
+					<li class="short">
+						<h5>Main + Extras</h5>
+						<div>5h 						</div>
+					</li>
+					<li class="short">
+						<h5>Completionist</h5>
+						<div>13h 						</div>
+					</li>
+					<li class="short">
+						<h5>All Styles</h5>
+						<div>5h 						</div>
+					</li>
+				</div>				<div class="game_times time_100">
+					<h2>PC, PlayStation 3, Xbox 360</h2>
+					<li class="short">
+						<h5>Main Story</h5>
+						<div>7h 						</div>
+					</li>
+					<li class="short">
+						<h5>Main + Extras</h5>
+						<div>10h 						</div>
+					</li>
+					<li class="short">
+						<h5>Completionist</h5>
+						<div>15h 						</div>
+					</li>
+					<li class="short">
+						<h5>All Styles</h5>
+						<div>8h 						</div>
+					</li>
+				</div>	<div class="in back_primary shadow_box"> 			<div class="profile_ad">
+				<div id="bobble_square" class="ad-padding"></div>
+			</div> 			<div class="profile_info large"> Call of Duty 4: Modern Warfare, the new action thriller from the award-winning team at Infinity Ward, the creators of the Call of Duty series, delivers the most intense and cinematic action experience ever. Armed with an arsenal of advanced and powerful modern-day firepower, players are transported to treacherous hotspots around the globe to take o<a 	id="profile_summary_more"
+							onclick="document.getElementById('profile_summary_more').style.display = 'none';document.getElementById('profile_summary_rest').style.display = 'inline';">...Read More</a><span id="profile_summary_rest" style="display:none;">n a rogue enemy group threatening the world. As both a U.S. Marine and British S.A.S. soldier fighting through an unfolding story full of twists and turns, players use sophisticated technology, superior firepower, and coordinated land and air strikes on a battlefield where speed, accuracy, and communication are essential to victory. The epic title also delivers an added depth of multiplayer action providing online fans an all-new community of persistence, addictive, and customizable gameplay.</span>
+			</div>			<div class="profile_info large">
+				When focusing on the main objectives, 
+				<strong>Call of Duty 4: Modern Warfare</strong>
+				is about 
+				<strong>7 Hours </strong>
+				in length. 
+				If you're a gamer that strives to see all aspects of the game, you are likely to spend around
+				<strong>16 Hours </strong>
+				to obtain 100% completion.
+			</div>			<div class="profile_info medium">
+				<strong>
+					Platforms:
+				</strong> <br>
+				Nintendo DS, PC, PlayStation 3, Xbox 360			</div> 			<div class="profile_info medium">
+				<strong>
+					Genres:
+				</strong> <br>
+				First-Person, Shooter			</div> 			<div class="profile_info medium">
+					<strong>
+						Developer:
+					</strong> <br>
+					Infinity Ward			</div> 			<div class="profile_info medium">
+				<strong>
+					Publisher:
+				</strong> <br>
+				Activision			</div> 			<div class=""></div> 				<div class="profile_info">
+					<strong>NA:</strong> <br>November 05, 2007				</div>			<div class="profile_info">
+				<strong>Updated:</strong> <br>53 Mins Ago			</div>			<div class="profile_info">
+				<strong><a class="text_red" href="http://store.steampowered.com/app/7950/" rel="noopener" target="_blank">Steam</a></strong>
+			</div> 	</div> 		<div class="in scrollable shadow_box back_primary">
+				<table class="game_main_table">
+					<thead>
+					<tr>
+						<td>Single-Player</td>
+						<td class="center" style="width: 50px;">Polled</td> 						<td>Average</td>
+						<td>Median</td>
+						<td>Rushed</td>
+						<td>Leisure</td>
+					</tr>
+				</thead>					<tbody class="spreadsheet">
+						<tr>
+							<td>Main Story</td>
+							<td class="center time_100_text">958							</td> 							<td>6h 48m </td>
+							<td>7h </td>
+							<td>3h 44m </td>
+							<td>13h 27m </td>
+						</tr>
+					</tbody>					<tbody class="spreadsheet">
+						<tr>
+							<td>Main + Extras</td>
+							<td class="center time_100_text">218							</td> 							<td>9h 46m </td>
+							<td>9h </td>
+							<td>6h 32m </td>
+							<td>29h 41m </td>
+						</tr>
+					</tbody>					<tbody class="spreadsheet">
+						<tr>
+							<td>Completionists</td>
+							<td class="center time_100_text">98							</td> 							<td>16h 34m </td>
+							<td>15h </td>
+							<td>11h 18m </td>
+							<td>32h 53m </td>
+						</tr>
+					</tbody>					<tbody class="spreadsheet">
+						<tr>
+							<td>All PlayStyles</td>
+							<td class="center time_100_text">1.3K							</td> 							<td>8h 03m </td>
+							<td>7h </td>
+							<td>4h 03m </td>
+							<td>28h 45m </td>
+						</tr>
+					</tbody>
+							</table>
+			<div class="mobile_show_block scrollable_hint">Scroll for More &#9658</div>
+		</div>			<div class="in scrollable shadow_box back_primary">
+				<table class="game_main_table">
+					<thead>
+						<tr>
+							<td>Speedrun</td>
+							<td class="center" style="width: 50px;">Polled</td> 							<td>Average</td>
+							<td>Median</td>
+							<td>Fastest</td>
+							<td>Slowest</td>
+						</tr>
+					</thead>						<tbody class="spreadsheet">
+							<tr>
+								<td>Any%</td>
+								<td class="center time_50_text">5								</td> 								<td>2h 41m 36s</td>
+								<td>2h 33m 12s</td>
+								<td>1h 27m 34s</td>
+								<td>5h 14m </td>
+							</tr>
+						</tbody>						<tbody class="spreadsheet">
+							<tr>
+								<td>100%</td>
+								<td class="center time_40_text">3							</td> 								<td>13h 39m 05s</td>
+								<td>2h 15m </td>
+								<td>1h 20m 14s</td>
+								<td>37h 22m </td>
+							</tr>
+						</tbody>				</table>
+				<div class="mobile_show_block scrollable_hint">Scroll for More &#9658</div>
+			</div>		<div>
+			<div class="in game_chart back_form shadow_box" style="float: left;">
+				<svg viewBox="0 0 36 36" style="width:105px;">
+			  	<path d="	M18 2.0845
+							      a 15.9155 15.9155 0 0 1 0 31.831
+							      a 15.9155 15.9155 0 0 1 0 -31.831"
+							  fill="none" stroke="#485cab" ;="" stroke-width="3" stroke-linecap="round" stroke-dasharray="81, 100"></path>
+				</svg>
+				<h5 style="margin-top: -67px;">81% Rating</h5>
+			</div>
+			<div class="in game_chart back_form shadow_box" style="float: right;"> 				<svg viewBox="0 0 36 36" style="width:105px;">
+					<path 	d=" M18 2.0845
+								a 15.9155 15.9155 0 0 1 0 31.831
+								a 15.9155 15.9155 0 0 1 0 -31.831"
+							fill="none"
+							stroke="#3DA949" ;="" stroke-width="3" stroke-linecap="round"
+							stroke-dasharray="21, 100"></path>
+				</svg>
+				<h5 style="margin-top: -86px;">Low<br>4.25%<br>
+					Retirement
+				</h5>
+			</div>
+			<div class="in game_chart_rev back_form shadow_box">
+				<h5 class="center">Based on 1.5K User Ratings</h5> 				<div style="font-size:0">						<div 	class="time_40" 
+									style="display:inline-block;font-size: 10px;margin:0 0.5% 0 0.5%;width:9%;height:15px;line-height:15px;vertical-align: bottom;">10%</div> 						<div 	class="time_40" 
+									style="display:inline-block;font-size: 10px;margin:0 0.5% 0 0.5%;width:9%;height:15px;line-height:15px;vertical-align: bottom;">20%</div> 						<div 	class="time_40" 
+									style="display:inline-block;font-size: 10px;margin:0 0.5% 0 0.5%;width:9%;height:15px;line-height:15px;vertical-align: bottom;">30%</div> 						<div 	class="time_40" 
+									style="display:inline-block;font-size: 10px;margin:0 0.5% 0 0.5%;width:9%;height:16px;line-height:16px;vertical-align: bottom;">40%</div> 						<div 	class="time_50" 
+									style="display:inline-block;font-size: 10px;margin:0 0.5% 0 0.5%;width:9%;height:18px;line-height:18px;vertical-align: bottom;">50%</div> 						<div 	class="time_60" 
+									style="display:inline-block;font-size: 10px;margin:0 0.5% 0 0.5%;width:9%;height:30px;line-height:30px;vertical-align: bottom;">60%</div> 						<div 	class="time_70" 
+									style="display:inline-block;font-size: 10px;margin:0 0.5% 0 0.5%;width:9%;height:52px;line-height:52px;vertical-align: bottom;">70%</div> 						<div 	class="time_80" 
+									style="display:inline-block;font-size: 10px;margin:0 0.5% 0 0.5%;width:9%;height:85px;line-height:85px;vertical-align: bottom;">80%</div> 						<div 	class="time_90" 
+									style="display:inline-block;font-size: 10px;margin:0 0.5% 0 0.5%;width:9%;height:70px;line-height:70px;vertical-align: bottom;">90%</div> 						<div 	class="time_100" 
+									style="display:inline-block;font-size: 10px;margin:0 0.5% 0 0.5%;width:9%;height:46px;line-height:46px;vertical-align: bottom;">100%</div> 				</div>
+			</div>
+		</div> 		<div class="in scrollable shadow_box back_primary">
+				<table class="game_main_table">
+				<thead>
+					<tr>
+						<td>Multi-Player</td>
+						<td class="center" style="width: 50px;">Polled</td> 						<td>Average</td>
+						<td>Median</td>
+						<td>Least</td>
+						<td>Most</td>
+					</tr>
+				</thead>					<tbody class="spreadsheet">
+						<tr>
+							<td>Co-Op</div>
+							<td class="center time_60_text">12							</td> 							<td>140h 20m </td>
+							<td>49h </td>
+							<td>47h 20m </td>
+							<td>297h 20m </td>
+						</tr>
+					</tbody>					<tbody class="spreadsheet">
+						<tr>
+							<td>Competitive</td>
+							<td class="center time_100_text">120							</td> 							<td>210h 52m </td>
+							<td>60h </td>
+							<td>68h 43m </td>
+							<td>1817h 43m </td>
+						</tr>
+					</tbody>			</table>
+			<div class="mobile_show_block scrollable_hint">Scroll for More &#9658</div>
+		</div>			<div class="in shadow_box back_primary">					<div class="scrollable">
+						<table class="game_main_table">
+							<thead>
+								<tr>
+									<td>Platform</td>
+									<td class="center" style="width: 50px;">Polled</td>
+									<td>Main</td>
+									<td>Main +</td>
+									<td>100%</td>
+									<td>Fastest</td>
+									<td>Longest</td>
+								</tr>
+							</thead>
+							<tbody>							<tr class="spreadsheet">
+								<td>Nintendo DS								</td>
+								<td class="center time_60_text">11</td>
+								<td>3h 51m </td>
+								<td>--</td>
+								<td>6h 50m </td>
+								<td>2h 55m </td>
+								<td>6h 50m </td>
+							</tr>							<tr class="spreadsheet">
+								<td>PC								</td>
+								<td class="center time_100_text">750</td>
+								<td>6h 41m </td>
+								<td>9h 22m </td>
+								<td>15h 47m </td>
+								<td>2h 03m </td>
+								<td>50h </td>
+							</tr>							<tr class="spreadsheet">
+								<td>PlayStation 3								</td>
+								<td class="center time_100_text">148</td>
+								<td>6h 59m </td>
+								<td>10h 46m </td>
+								<td>12h 45m </td>
+								<td>2h </td>
+								<td>36h 34m </td>
+							</tr>							<tr class="spreadsheet">
+								<td>Xbox 360								</td>
+								<td class="center time_100_text">313</td>
+								<td>7h 14m </td>
+								<td>10h 35m </td>
+								<td>17h 57m </td>
+								<td>3h 08m </td>
+								<td>46h 27m </td>
+							</tr>							<tr class="spreadsheet">
+								<td>Xbox One								</td>
+								<td class="center time_60_text">11</td>
+								<td>5h 56m </td>
+								<td>4h 46m </td>
+								<td>20h </td>
+								<td>3h 45m </td>
+								<td>20h </td>
+							</tr>							<tr class="spreadsheet">
+								<td>Xbox Series X/S								</td>
+								<td class="center time_40_text">2</td>
+								<td>6h 31m </td>
+								<td>--</td>
+								<td>--</td>
+								<td>4h 29m </td>
+								<td>8h 34m </td>
+							</tr>							</tbody>
+						</table>
+						<div class="mobile_show_block scrollable_hint">Scroll for More &#9658</div>
+					</div>					<div class="global_padding back_form">	<div style='padding: 5px 0;height: 26px;line-height:16px;vertical-align:middle;'>
+			        			<div style='height: 16px;float:left;'>Nintendo DS		</div>
+			        			<div style='height: 16px;width:60px;float:right;text-align:right;'><strong>34</strong></div>
+			              		<div style='height: 16px;width:60px;float:right;text-align:center;'>0.66%</div>
+			              		<div style='border-radius:2px;height: 16px;margin: 0 0 0 20%;padding: 0 .5% 0 .5%; width:5px;background-color: #959595;color:#FFFFFF;'></div>
+			        		</div>	<div style='padding: 5px 0;height: 26px;line-height:16px;vertical-align:middle;'>
+			        			<div style='height: 16px;float:left;'>PC		</div>
+			        			<div style='height: 16px;width:60px;float:right;text-align:right;'><strong>3K</strong></div>
+			              		<div style='height: 16px;width:60px;float:right;text-align:center;'>58.27%</div>
+			              		<div style='border-radius:2px;height: 16px;margin: 0 0 0 20%;padding: 0 .5% 0 .5%; width:46.2221%;background-color: #FFC200;color:#000000;'></div>
+			        		</div>	<div style='padding: 5px 0;height: 26px;line-height:16px;vertical-align:middle;'>
+			        			<div style='height: 16px;float:left;'>PlayStation 3		</div>
+			        			<div style='height: 16px;width:60px;float:right;text-align:right;'><strong>677</strong></div>
+			              		<div style='height: 16px;width:60px;float:right;text-align:center;'>13.1%</div>
+			              		<div style='border-radius:2px;height: 16px;margin: 0 0 0 20%;padding: 0 .5% 0 .5%; width:10.3961%;background-color: #0a3246;color:#FFFFFF;'></div>
+			        		</div>	<div style='padding: 5px 0;height: 26px;line-height:16px;vertical-align:middle;'>
+			        			<div style='height: 16px;float:left;'>Xbox 360		</div>
+			        			<div style='height: 16px;width:60px;float:right;text-align:right;'><strong>1.4K</strong></div>
+			              		<div style='height: 16px;width:60px;float:right;text-align:center;'>27.39%</div>
+			              		<div style='border-radius:2px;height: 16px;margin: 0 0 0 20%;padding: 0 .5% 0 .5%; width:21.729%;background-color: #a4cd3c;color:#000000;'></div>
+			        		</div>	<div style='padding: 5px 0;height: 26px;line-height:16px;vertical-align:middle;'>
+			        			<div style='height: 16px;float:left;'>Xbox One		</div>
+			        			<div style='height: 16px;width:60px;float:right;text-align:right;'><strong>27</strong></div>
+			              		<div style='height: 16px;width:60px;float:right;text-align:center;'>0.52%</div>
+			              		<div style='border-radius:2px;height: 16px;margin: 0 0 0 20%;padding: 0 .5% 0 .5%; width:5px;background-color: #0f7a0f;color:#000000;'></div>
+			        		</div>	<div style='padding: 5px 0;height: 26px;line-height:16px;vertical-align:middle;'>
+			        			<div style='height: 16px;float:left;'>Xbox Series X/S		</div>
+			        			<div style='height: 16px;width:60px;float:right;text-align:right;'><strong>3</strong></div>
+			              		<div style='height: 16px;width:60px;float:right;text-align:center;'>0.06%</div>
+			              		<div style='border-radius:2px;height: 16px;margin: 0 0 0 20%;padding: 0 .5% 0 .5%; width:5px;background-color: #107C0F;color:#000000;'></div>
+			        		</div>		<div style='text-align: right;border-top: 1px solid #e6e9ed;padding: 3px 5px 0 5px;'>
+			Unique: 
+			<strong>6			</strong>
+			Total: 
+			<strong>5.2K			</strong>
+		</div>					</div>			</div>				</div>
+				<div class="clear"></div> 		</div>
+	</div>				<div class="contain_out">
+					<div class="contain_in">
+						<div class="content_break  center"> 						</div>
+					</div>
+				</div>
+			</div> <!-- End Global Site -->
+		</div> <!-- End #top / main -->
+		<div class="footer back_primary">
+			<div class="contain_out">
+				<div class="contain_in">
+				    <div class="content_25" style="margin-top:0;">
+				        <div class="in">
+							<h3>HowLongToBeat</h3>
+				            <ul>
+								<li><a href="feedback">Contact Us</a></li>
+								<li><a href="forum?conduct">Code of Conduct</a></li>
+								<li><a href="privacy">Privacy Policy</a></li>								
+							</ul>
+				        </div>                    
+				    </div>
+				    <div class="content_25" style="margin-top:0;">
+				        <div class="in">
+				            <h3>Social</h3>
+				            <ul>
+								<li><a href="https://discord.gg/v5F26Dk" target="_blank" rel="nofollow noopener noreferrer">Discord</a></li>
+				            	<li><a href="https://facebook.com/HowLongToBeat/" target="_blank" rel="nofollow noopener noreferrer">Facebook</a></li>
+				            	<li><a href="https://twitter.com/HowLongToBeat/" target="_blank" rel="nofollow noopener noreferrer">Twitter</a></li>
+				            </ul>
+				        </div>    
+				    </div>
+				    <div class="content_50" style="margin-top:0;">
+				        <div class="in">
+				            <h3>
+				                &#169;
+				                2022
+				                Ziff Davis, LLC
+				            </h3>
+							<ul>
+								<li>Powered By Community, Built With Love</li>
+								<li><a href="#" class="showConsentTool" onclick="window.zdconsent.showConsentTool(event);"><img src="https://c.evidon.com/pub/icong1.png" class="evidon-consent-link-image" style="vertical-align: middle;"> AdChoices</a></li>
+							</ul>
+				        </div>    
+				    </div>
+				    <div class="clear"></div>
+				</div>
+		    </div>
+		</div>
+	</body>
 </html>
