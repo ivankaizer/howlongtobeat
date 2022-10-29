@@ -2,81 +2,97 @@
 
 namespace IvanKayzer\HowLongToBeat;
 
-use Goutte\Client;
+use GuzzleHttp\Client;
+use GuzzleHttp\Exception\GuzzleException;
+use Symfony\Component\DomCrawler\Crawler;
 
 class HowLongToBeat
 {
-    protected $client;
-
     /**
-     * HowLongToBeat constructor.
-     * @param Client|null $client
+     * @var Client|null
      */
+    private $client;
+
     public function __construct(Client $client = null)
     {
         $this->client = $client ?? HttpClientCreator::create();
     }
 
     /**
-     * @param $query
-     * @param int $page
-     * @return array
+     * @throws GuzzleException
      */
-    public function search($query, $page = 1)
+    public function search($query, int $page = 1): array
     {
-        $crawler = $this->client->request('POST', "https://howlongtobeat.com/search_results?page={$page}", [
-            'queryString' => $query,
-            't' => 'games',
-            'sorthead' => 'popular',
-            'sortd' => 'Normal Order',
-        ]);
+        $response = $this->client->post('https://howlongtobeat.com/api/search', [
+            'json' =>
+                [
+                    'searchType' => 'games',
+                    'searchTerms' => [
+                        $query
+                    ],
+                    'searchPage' => $page,
+                    'size' => 20,
+                    'searchOptions' => [
+                        'games' => [
+                            'userId' => 0,
+                            'platform' => '',
+                            'sortCategory' => 'popular',
+                            'rangeCategory' => 'main',
+                            'rangeTime' => [
+                                'min' => 0,
+                                'max' => 0
+                            ],
+                            'gameplay' => [
+                                'perspective' => '',
+                                'flow' => '',
+                                'genre' => ''
+                            ],
+                            'year' => '',
+                            'modifier' => ''
+                        ],
+                        'users' => [
+                            'sortCategory' => 'postcount'
+                        ],
+                        'filter' => '',
+                        'sort' => 0,
+                        'randomizer' => 0
+                    ]
+                ]]);
 
-        $results = $crawler->filter('.back_darkish')->each(function ($node) {
-            $node = new ListNodeCrawler($node);
+        $searchResult = json_decode($response->getBody()->getContents(), true);
 
-            return [
-                'ID' => $node->getId(),
-                'Image' => $node->getImage(),
-                'Title' => $node->getTitle(),
-                'Time' => $node->getTime()
-            ];
-        });
-
-        $pageCount = $crawler->filter('.search_list_page:last-child');
+        $games = array_map(
+            static function ($game): array {
+                return (new JSONExtractor($game))->extract();
+            },
+            $searchResult['data']
+        );
 
         return [
-            'Results' => $results,
+            'Results' => $games,
             'Pagination' => [
+                'Total Results' => $searchResult['count'],
                 'Current Page' => $page,
-                'Last Page' => $pageCount->count() ? (int)$pageCount->text() : $page
+                'Last Page' => $searchResult['pageTotal'],
             ]
         ];
     }
 
     /**
-     * @param $id
-     * @return array
+     * @throws GuzzleException
      */
-    public function get($id)
+    public function get($id): array
     {
-        $crawler = $this->client->request('GET', 'https://howlongtobeat.com/game?id=' . $id);
+        $node = new Crawler(
+            $this->client->get('https://howlongtobeat.com/game?id=' . $id)->getBody()->getContents()
+        );
 
-        $node = new PageNodeCrawler($crawler, $id);
+        $json = json_decode($node->filter('#__NEXT_DATA__')->html(), true);
+        $game = $json['props']['pageProps']['game']['data']['game'][0];
 
-        $gameInfo = [
-            'ID' => $id,
-            'Title' => $node->getTitle(),
-            'Image' => $node->getImage(),
-            'Description' => $node->getDescription(),
-            'Developer' => $node->getDeveloper(),
-            'Publisher' => $node->getPublisher(),
-            'Last Update' => $node->getLastUpdate(),
-            'Playable On' => $node->getPlayableOn(),
-            'Genres' => $node->getGenres(),
-            'Statistics' => $node->getStatistics(),
-            'Summary' => $node->getGameTimes(),
-        ];
+        $jsonExtractor = new JSONExtractor($game);
+        $crawlerExtractor = new CrawlerExtractor($node);
 
-        return array_merge($gameInfo, $node->getGameTimeTables());
+        return array_merge($jsonExtractor->extract(), $crawlerExtractor->extract());
     }
 }

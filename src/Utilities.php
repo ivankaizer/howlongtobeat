@@ -33,13 +33,21 @@ class Utilities
     }
 
     /**
-     * @param string $time
      * @return null|string
      */
-    public function formatTime($time)
+    public function formatTimeString($time): ?string
     {
         $time = str_replace('½', '.5', $time);
 
         return $time === '--' ? null : $time;
+    }
+
+    public function formatTimeSeconds(?int $time): ?string
+    {
+        if ($time === 0) {
+            return null;
+        }
+
+        return round($time / 60 / 60) . ' Hours';
     }
 }
