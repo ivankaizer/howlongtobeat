@@ -1,5 +1,6 @@
 .DS_Store
 .idea/
+.fleet/
 
 /vendor/
 .php_cs.cache

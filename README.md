@@ -37,7 +37,7 @@ returns
       "ID": "5265",
       "Image": "https://howlongtobeat.com/gameimages/220px-Lego_Lord_of_the_Rings_cover.jpg",
       "Title": "LEGO The Lord of the Rings: The Video Game",
-      "Time": {
+      "Summary": {
         "Main Story": "10 Hours",
         "Main + Extra": "16 Hours",
         "Completionist": "33 Hours"
@@ -47,7 +47,7 @@ returns
       "ID": "5263",
       "Image": "https://howlongtobeat.com/gameimages/256px-Lego_Star_Wars-The_Complete_Saga.jpg",
       "Title": "LEGO Star Wars: The Complete Saga",
-      "Time": {
+      "Summary": {
         "Main Story": "14 Hours",
         "Main + Extra": "23 Hours",
         "Completionist": "39.5 Hours"
@@ -57,7 +57,7 @@ returns
       "ID": "16635",
       "Image": "https://howlongtobeat.com/gameimages/LegoTheHobbit.jpg",
       "Title": "LEGO The Hobbit",
-      "Time": {
+      "Summary": {
         "Main Story": "9 Hours",
         "Main + Extra": "16 Hours",
         "Completionist": "35.5 Hours"
@@ -87,7 +87,7 @@ $hl2b->search('Lego', 2);
 use IvanKayzer\HowLongToBeat\HowLongToBeat;
 
 $hl2b = new HowLongToBeat();
-$hl2b->search(5265);
+$hl2b->get(5265);
 ```
 
 returns

@@ -42,17 +42,24 @@ class UtilitiesTest extends \PHPUnit\Framework\TestCase
     }
 
     /** @test */
-    public function formatTime_converts_dashes_to_null()
+    public function formatTimeString_converts_dashes_to_null()
     {
-        $this->assertNull($this->utilities->formatTime('--'));
-        $this->assertEquals('10h', $this->utilities->formatTime('10h'));
-        $this->assertEquals('10h 5m', $this->utilities->formatTime('10h 5m'));
-        $this->assertEquals('5m', $this->utilities->formatTime('5m'));
+        $this->assertNull($this->utilities->formatTimeString('--'));
+        $this->assertEquals('10h', $this->utilities->formatTimeString('10h'));
+        $this->assertEquals('10h 5m', $this->utilities->formatTimeString('10h 5m'));
+        $this->assertEquals('5m', $this->utilities->formatTimeString('5m'));
     }
 
     /** @test */
-    public function formatTime_converts_special_symbols()
+    public function formatTimeString_converts_special_symbols()
     {
-        $this->assertEquals('10.5 Hours', $this->utilities->formatTime('10½ Hours'));
+        $this->assertEquals('10.5 Hours', $this->utilities->formatTimeString('10½ Hours'));
+    }
+
+    public function formatTimeSeconds_converts_0_to_null()
+    {
+        $this->assertNull($this->utilities->formatTimeSeconds(0));
+        $this->assertEquals('33 Hours', $this->utilities->formatTimeSeconds(33 * 60 * 60));
+        $this->assertEquals('34 Hours', $this->utilities->formatTimeSeconds(33.5 * 60 * 60));
     }
 }
