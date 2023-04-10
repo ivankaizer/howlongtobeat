@@ -13,7 +13,7 @@ This library is a simple wrapper to fetch data from howlongtobeat.com. Please ch
 Use the package manager [composer](https://getcomposer.org/download/) to install howlongtobeat.
 
 ```bash
-composer require ivankayzer/howlongtobeat
+composer require askancy/howlongtobeat
 ```
 
 ## Usage
