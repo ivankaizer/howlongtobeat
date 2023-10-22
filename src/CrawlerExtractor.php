@@ -1,6 +1,6 @@
 <?php
 
-namespace IvanKayzer\HowLongToBeat;
+namespace Askancy\HowLongToBeat;
 
 use Symfony\Component\DomCrawler\Crawler;
 
